@@ -1,0 +1,37 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+    <main class="contact_page">
+        <div class="container_form">
+            {% if registerSuccess is defined %}
+                <span class="success_block">{{ contactSuccess }}</span>
+            {% endif %}
+            <h2 class="title">Me contacter</h2>
+            {% if contactErrors is defined and contactErrors is not empty %}
+                {% for error in contactErrors %}
+                    <span class="error_block">{{ error }}</span><br>
+                {% endfor %}
+            {% endif %}
+            <form action="?action=contact" method="POST">
+                <div class="login_form" >
+                    <label for="username"><p>Votre nom : </p></label>
+                    <input type="text" id="username" name="username" placeholder="Votre nom">
+                </div>
+                <div class="login_form" >
+                    <label for="email"><p>Votre email : </p></label>
+                    <input id="email" type="email" name="email" placeholder="Votre adresse email">
+                </div>
+                <div class="login_form" >
+                    <label for="sujet"><p>Sujet du mail : </p></label>
+                    <input  id="sujet" type="text" name="sujet" placeholder="Sujet du mail">
+                </div>
+                <div class="login_form" >
+                    <label for="message"><p>Message : </p></label>
+                    <textarea id="message" placeholder="Message" name="message"></textarea>
+                </div>
+                <button type="submit" class="button"><img src="assets/img/send-button.png">&nbsp;&nbsp;Envoyer</button>
+            </form>
+        </div>
+    </main>
+
+{% endblock %}

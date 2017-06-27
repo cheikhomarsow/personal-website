@@ -1,0 +1,42 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+
+    <main class="user_page">
+        <div class="container_form">
+            <h2 class="title">Modifier mes coordonnées</h2>
+            {% if loginErrors is defined and loginErrors is not empty %}
+                <span class="error_block">{{ loginErrors }}</span><br>
+            {% endif %}
+            <form action="?action=user" method="POST">
+                <div class="login_form" >
+                    <label for="username"><p>Votre nom : </p></label>
+                    <input id="username" type="text" name="username" value="{{ user.username }}">
+                </div>
+                <div class="login_form" >
+                    <label for="email"><p>Votre adresse email : </p></label>
+                    <input type="text" id="email" name="email" value="{{ user.email }}">
+                </div>
+                <button type="submit" class="button"><img src="assets/img/man-user.png">&nbsp;&nbsp;Modifier</button>
+            </form>
+        </div>
+        <div class="container_form">
+            <h2 class="title">Modifier mon mot de passe</h2>
+            {% if loginErrors is defined and loginErrors is not empty %}
+                <span class="error_block">{{ loginErrors }}</span><br>
+            {% endif %}
+            <form action="?action=user" method="POST">
+                <div class="login_form" >
+                    <label for="password"><p>Actuel mot de passe : </p></label>
+                    <input id="password" type="password" name="password" placeholder="Actuel mot de passe">
+                </div>
+                <div class="login_form" >
+                    <label for="verifpassword"><p>Nouveau mot de passe : </p></label>
+                    <input type="password" id="verifpassword" name="verifpassword" placeholder="Nouveau mot de passe">
+                </div>
+                <button type="submit" class="button"><img src="assets/img/man-user.png">&nbsp;&nbsp;Modifier</button>
+            </form>
+        </div>
+    </main>
+
+{% endblock %}

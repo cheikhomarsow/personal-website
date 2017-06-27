@@ -1,0 +1,511 @@
+@import url("https://fonts.googleapis.com/css?family=Permanent+Marker");
+@font-face {
+  src: url("../fonts/Roboto-Bold.ttf");
+  font-family: 'robotoBold';
+}
+@font-face {
+  src: url("../fonts/Roboto-Regular.ttf");
+  font-family: 'robotoRegular';
+}
+@font-face {
+  src: url("../fonts/Roboto-Light.ttf");
+  font-family: 'robotoLight';
+}
+@font-face {
+  src: url("../fonts/Poppins-Medium.ttf");
+  font-family: 'PoppinsMedium';
+}
+@font-face {
+  src: url("../fonts/Poppins-Regular.ttf");
+  font-family: 'PoppinsRegular';
+}
+@font-face {
+  src: url("../fonts/Poppins-Regular.ttf");
+  font-family: 'PoppinsSemiBold';
+}
+@keyframes move_to_trash_tablet {
+  0% {
+    margin-top: 140px;
+    margin-left: 25px;
+  }
+  100% {
+    margin-top: 125px;
+    margin-left: 295px;
+  }
+}
+@keyframes move_to_trash_desktop {
+  0% {
+    margin-top: 140px;
+    margin-left: 25px;
+  }
+  100% {
+    margin-top: 125px;
+    margin-left: 475px;
+  }
+}
+@keyframes move_to_trash_very_large {
+  0% {
+    margin-top: 140px;
+    margin-left: 175px;
+  }
+  100% {
+    margin-top: 125px;
+    margin-left: 625px;
+  }
+}
+@media screen {
+  body {
+    margin: 0px;
+  }
+
+  p, ul {
+    margin: 0px;
+    padding: 0px;
+  }
+
+  li {
+    list-style: none;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  header {
+    background-color: #2C3E50;
+    box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.1);
+    width: 100%;
+    z-index: 3;
+    position: fixed;
+  }
+  header .mobile_dropdown {
+    clear: both;
+    max-height: 0;
+    transition: max-height .2s ease-out;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow: hidden;
+  }
+  header .mobile_dropdown li a {
+    display: block;
+    padding: 20px 20px;
+    text-decoration: none;
+    font-family: "robotoRegular";
+    color: white;
+  }
+  header .mobile_dropdown li a:hover {
+    color: #2EBC99;
+  }
+  header .mobile_dropdown li .active {
+    background: #1A242F;
+  }
+}
+@media screen and (min-width: 1024px) {
+  header .mobile_dropdown {
+    display: none;
+  }
+}
+@media screen {
+  header .menu_desktop {
+    display: none;
+  }
+}
+@media screen and (min-width: 1024px) {
+  header .menu_desktop {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  header .menu_desktop li a {
+    display: block;
+    padding: 20px 20px;
+    text-decoration: none;
+    font-family: "robotoRegular";
+    color: white;
+  }
+  header .menu_desktop li a:hover {
+    color: #2EBC99;
+  }
+  header .menu_desktop li .active {
+    background: #1A242F;
+  }
+}
+@media screen {
+  header .menu-btn {
+    display: none;
+  }
+  header .menu-btn:hover {
+    background-color: #f4f4f4;
+  }
+  header .menu-btn:checked ~ .mobile_dropdown {
+    max-height: 240px;
+  }
+  header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before, header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+    top: 0;
+  }
+  header .logo {
+    display: block;
+    float: left;
+    font-size: 1.5em;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: white;
+    font-family: 'Permanent Marker', cursive;
+  }
+  header .menu-icon {
+    cursor: pointer;
+    display: inline-block;
+    float: right;
+    padding: 28px 20px;
+    position: relative;
+    user-select: none;
+  }
+}
+@media screen and (min-width: 1024px) {
+  header .menu-icon {
+    display: none;
+  }
+}
+@media screen {
+  header .menu-icon .navicon {
+    background: white;
+    display: block;
+    height: 2px;
+    position: relative;
+    transition: background .2s ease-out;
+    width: 18px;
+  }
+  header .menu-icon .navicon:after, header .menu-icon .navicon:before {
+    background: white;
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    width: 100%;
+  }
+  header .menu-icon .navicon:before {
+    top: 5px;
+  }
+  header .menu-icon .navicon:after {
+    top: -5px;
+  }
+
+  .home_page {
+    padding: 75px 20px 15px 20px;
+  }
+  .home_page .about_me p {
+    font-family: "robotoLight";
+  }
+  .home_page .last-posts .title {
+    color: #2C3E50;
+    font-family: "robotoLight";
+    border-bottom: 2px solid #2C3E50;
+  }
+
+  .admin_page {
+    padding: 75px 20px 15px 20px;
+  }
+  .admin_page .container_form {
+    margin: 0 10px;
+  }
+  .admin_page .container_form .success_block {
+    color: #08ED34;
+    font-family: "PoppinsSemiBold";
+  }
+}
+@media screen and (min-width: 768px) {
+  .admin_page .container_form {
+    width: 40%;
+  }
+}
+@media screen {
+  .admin_page .container_form .title {
+    color: #2C3E50;
+    font-family: "robotoLight";
+    border-bottom: 2px solid #2C3E50;
+  }
+  .admin_page .container_form .error_block {
+    color: #ed6147;
+    font-family: "PoppinsSemiBold";
+  }
+  .admin_page .container_form .login_form p {
+    color: #2C3E50;
+    font-family: "robotoBold";
+  }
+  .admin_page .container_form .login_form input {
+    width: 94%;
+    margin: 10px 0;
+    padding: 10px 10px;
+    font-size: 15px;
+    line-height: 1.42857143;
+    border-radius: 5px;
+  }
+  .admin_page .container_form .login_form input:focus {
+    border: 2px solid #2C3E50;
+  }
+  .admin_page .container_form .button {
+    width: 100%;
+    padding: 10px 10px;
+    margin: 30px 0;
+    font-size: 15px;
+    line-height: 1.42857143;
+    background: #2C3E50;
+    color: white;
+    border: 1px solid #2C3E50;
+    border-radius: 5px;
+  }
+
+  .user_page {
+    padding-top: 58px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .user_page {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+}
+@media screen {
+  .user_page .container_form {
+    margin: 0 10px;
+  }
+  .user_page .container_form .success_block {
+    color: #08ED34;
+    font-family: "PoppinsSemiBold";
+  }
+}
+@media screen and (min-width: 768px) {
+  .user_page .container_form {
+    width: 40%;
+  }
+}
+@media screen {
+  .user_page .container_form .title {
+    color: #2C3E50;
+    font-family: "robotoLight";
+    border-bottom: 2px solid #2C3E50;
+  }
+  .user_page .container_form .error_block {
+    color: #ed6147;
+    font-family: "PoppinsSemiBold";
+  }
+  .user_page .container_form .login_form p {
+    color: #2C3E50;
+    font-family: "robotoBold";
+  }
+  .user_page .container_form .login_form input {
+    width: 94%;
+    margin: 10px 0;
+    padding: 10px 10px;
+    font-size: 15px;
+    line-height: 1.42857143;
+    border-radius: 5px;
+  }
+  .user_page .container_form .login_form input:focus {
+    border: 2px solid #2C3E50;
+  }
+  .user_page .container_form .button {
+    width: 100%;
+    padding: 10px 10px;
+    margin-bottom: 30px;
+    font-size: 15px;
+    line-height: 1.42857143;
+    background: #2C3E50;
+    color: white;
+    border: 1px solid #2C3E50;
+    border-radius: 5px;
+  }
+
+  .reglog_page {
+    padding-top: 58px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .reglog_page {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+}
+@media screen {
+  .reglog_page .container_form {
+    margin: 0 10px;
+  }
+  .reglog_page .container_form .success_block {
+    color: #08ED34;
+    font-family: "PoppinsSemiBold";
+  }
+}
+@media screen and (min-width: 768px) {
+  .reglog_page .container_form {
+    width: 40%;
+  }
+}
+@media screen {
+  .reglog_page .container_form .title {
+    color: #2C3E50;
+    font-family: "robotoLight";
+    border-bottom: 2px solid #2C3E50;
+  }
+  .reglog_page .container_form .error_block {
+    color: #ed6147;
+    font-family: "PoppinsSemiBold";
+  }
+  .reglog_page .container_form .login_form p {
+    color: #2C3E50;
+    font-family: "robotoBold";
+  }
+  .reglog_page .container_form .login_form input {
+    width: 94%;
+    margin: 10px 0;
+    padding: 10px 10px;
+    font-size: 15px;
+    line-height: 1.42857143;
+    border-radius: 5px;
+  }
+  .reglog_page .container_form .login_form input:focus {
+    border: 2px solid #2C3E50;
+  }
+  .reglog_page .container_form .button {
+    width: 100%;
+    padding: 10px 10px;
+    margin-bottom: 30px;
+    font-size: 15px;
+    line-height: 1.42857143;
+    background: #2C3E50;
+    color: white;
+    border: 1px solid #2C3E50;
+    border-radius: 5px;
+  }
+
+  .contact_page {
+    padding-top: 58px;
+    margin: 0 10px;
+  }
+  .contact_page .success_block {
+    color: #08ED34;
+    font-family: "PoppinsSemiBold";
+  }
+}
+@media screen and (min-width: 768px) {
+  .contact_page {
+    width: 80%;
+    margin: auto;
+  }
+}
+@media screen {
+  .contact_page .title {
+    color: #2C3E50;
+    font-family: "robotoLight";
+    border-bottom: 2px solid #2C3E50;
+  }
+  .contact_page .error_block {
+    color: #ed6147;
+    font-family: "PoppinsSemiBold";
+  }
+  .contact_page .login_form p {
+    color: #2C3E50;
+    font-family: "robotoBold";
+  }
+  .contact_page .login_form input, .contact_page .login_form textarea {
+    width: 94%;
+    margin: 10px 0;
+    padding: 10px 10px;
+    font-size: 15px;
+    line-height: 1.42857143;
+    border-radius: 5px;
+  }
+  .contact_page .login_form input:focus, .contact_page .login_form textarea:focus {
+    border: 2px solid #2C3E50;
+  }
+  .contact_page .login_form textarea {
+    height: 200px;
+  }
+  .contact_page .button {
+    width: 97.5%;
+    padding: 10px 10px;
+    margin-bottom: 30px;
+    font-size: 15px;
+    line-height: 1.42857143;
+    background: #2C3E50;
+    color: white;
+    border: 1px solid #2C3E50;
+    border-radius: 5px;
+  }
+
+  footer {
+    margin: 0 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+}
+@media screen and (min-width: 768px) {
+  footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+}
+@media screen {
+  footer .title {
+    color: #2C3E50;
+    font-family: "PoppinsMedium";
+    border-bottom: 2px solid #2C3E50;
+  }
+}
+@media screen and (min-width: 768px) {
+  footer .title {
+    width: 100%;
+  }
+}
+@media screen {
+  footer .about {
+    margin: 10px 10px;
+  }
+}
+@media screen and (min-width: 768px) {
+  footer .about {
+    width: 40%;
+  }
+}
+@media screen {
+  footer .about .sous-titre {
+    color: #2C3E50;
+    font-family: "robotoBold";
+  }
+  footer .about .about_me {
+    font-family: "robotoLight";
+  }
+  footer .social {
+    margin: 10px 10px;
+  }
+}
+@media screen and (min-width: 768px) {
+  footer .social {
+    width: 40%;
+  }
+}
+@media screen {
+  footer .social .sous-titre {
+    color: #2C3E50;
+    font-family: "robotoBold";
+  }
+  footer .social img {
+    opacity: 0.5;
+    margin: 5px;
+  }
+  footer .social img:hover {
+    opacity: 1;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

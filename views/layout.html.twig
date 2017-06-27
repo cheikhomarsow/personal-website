@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Cheikh Omar SOW</title>
+        <meta name="viewport" content="width=device-width, user-scalable=no">
+        <link rel="stylesheet" href="assets/style/style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="assets/script/script.js"></script>
+        <script src="assets/script/ckeditor/ckeditor.js"></script>
+
+    </head>
+    <body>
+    <header>
+            <a href="?action=home" class="logo">COS</a>
+            <input class="menu-btn" type="checkbox" id="menu-btn" />
+            <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+            <ul class="mobile_dropdown">
+                <li><a href="?action=home"><img src="assets/img/home.png">&nbsp;&nbsp;Accueil</a></li>
+                {% if user.username is defined %}
+                    <li><a href="?action=user"><img src="assets/img/man-user.png">&nbsp;&nbsp;Mon profil</a></li>
+                    {% if admin == true %}
+                        <li><a href="?action=admin"><img src="assets/img/man-with-tie.png">&nbsp;&nbsp;Administration</a></li>
+                    {% endif %}
+                {% endif %}
+                <li><a href="?action=contact"><img src="assets/img/contact.png">&nbsp;&nbsp;Contact</a></li>
+                {% if user.username is defined %}
+                    <li><a href="?action=logout"><img src="assets/img/logout.png">&nbsp;&nbsp;Deconnexion</a></li>
+                {% else %}
+                    <li><a href="?action=user"><img src="assets/img/man-user.png">&nbsp;&nbsp;Espace membre</a></li>
+                {% endif %}
+                </ul>
+
+        <ul class="menu_desktop">
+            <li><a href="?action=home"><img src="assets/img/home.png">&nbsp;&nbsp;Accueil</a></li>
+            {% if user.username is defined %}
+                <li><a href="?action=user"><img src="assets/img/man-user.png">&nbsp;&nbsp;Mon profil</a></li>
+                {% if admin == true %}
+                    <li><a href="?action=admin"><img src="assets/img/man-with-tie.png">&nbsp;&nbsp;Administration</a></li>
+                {% endif %}
+            {% endif %}
+            <li><a href="?action=contact"><img src="assets/img/contact.png">&nbsp;&nbsp;Contact</a></li>
+            {% if user.username is defined %}
+                <li><a href="?action=logout"><img src="assets/img/logout.png">&nbsp;&nbsp;Deconnexion</a></li>
+            {% else %}
+                <li><a href="?action=user"><img src="assets/img/man-user.png">&nbsp;&nbsp;Espace membre</a></li>
+            {% endif %}
+        </ul>
+    </header>
+        {% block content %}
+        {% endblock %}
+    <footer>
+        <h4 class="title">A propos de Cheikh Omar SOW</h4>
+        <div class="about">
+            <p class="sous-titre">Qui suis-je?</p>
+            <p class="about_me">
+                Je m'appelle Cheikh Omar, j'ai 23 ans, je suis
+                passionné par tout ce qui touche à l'informatique.
+            </p>
+        </div>
+        <div class="social">
+            <p class="sous-titre">Retrouvez-moi sur nos résaux sociaux !</p>
+            <a href="https://www.facebook.com/cheikhomar.sow" target="_blank"><img src="assets/img/facebook.png" alt="social"></a>
+            <a href="https://twitter.com/cos45sin45" target="_blank"><img src="assets/img/twitter.png" alt="social"></a>
+            <a href="https://www.instagram.com/cos221_/?hl=fr" target="_blank"><img src="assets/img/instagram.png" alt="social"></a>
+            <a href="https://www.linkedin.com/in/cheikh-omar-sow-54904412b/" target="_blank"><img src="assets/img/linkedin.png" alt="social"></a>
+        </div>
+    </footer>
+
+    </body>
+</html>

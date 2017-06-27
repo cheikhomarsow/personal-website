@@ -1,0 +1,17 @@
+routes:
+    home:       'Default:home'
+    logout:     'Security:logout'
+    register:   'Reglog:register'
+    login:      'Reglog:login'
+    reglog:     'Security:reglog'
+    user:       'User:user'
+    contact:    'Default:contact'
+    admin:      'Security:admin'
+
+defaut_route: 'home'
+
+db_config:
+    name: 'cos'
+    host: 'localhost'
+    user: 'root'
+    pass: 'root'
