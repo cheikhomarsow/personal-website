@@ -1,0 +1,10 @@
+*~
+.#*
+#*#
+/vendor
+/cache
+/.sass-cache
+/.idea
+/node_modules
+/config
+/uploads
