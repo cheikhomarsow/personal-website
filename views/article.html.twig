@@ -1,0 +1,28 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+    <main class="article_page">
+       <div class="article">
+           {% if tokenExist is defined and tokenExist == true %}
+               <h4 class="title_article">
+                   {% autoescape false %}
+                       {{ article.title | striptags }}
+                   {% endautoescape %}
+               </h4>
+               <p class="resume_autor">By <span class="autor">{{user.username}}</span> - <span class="date">{{ article.date | date("M d Y") }}</span></p>
+               <div class="img">
+                   <img src="{{ article.file }}" alt="article_img">
+               </div>
+               <div class="content_article">
+                   <p>
+                       {% autoescape false %}
+                           {{ article.content | raw }}
+                       {% endautoescape %}
+                   </p>
+               </div>
+               {% else %}
+                    <div>Cet article n'est plus disponible</div>
+           {% endif %}
+       </div>
+    </main>
+{% endblock %}

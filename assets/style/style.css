@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Permanent+Marker");
+@import url("https://fonts.googleapis.com/css?family=Roboto");
 @font-face {
   src: url("../fonts/Roboto-Bold.ttf");
   font-family: 'robotoBold';
@@ -22,36 +23,6 @@
 @font-face {
   src: url("../fonts/Poppins-Regular.ttf");
   font-family: 'PoppinsSemiBold';
-}
-@keyframes move_to_trash_tablet {
-  0% {
-    margin-top: 140px;
-    margin-left: 25px;
-  }
-  100% {
-    margin-top: 125px;
-    margin-left: 295px;
-  }
-}
-@keyframes move_to_trash_desktop {
-  0% {
-    margin-top: 140px;
-    margin-left: 25px;
-  }
-  100% {
-    margin-top: 125px;
-    margin-left: 475px;
-  }
-}
-@keyframes move_to_trash_very_large {
-  0% {
-    margin-top: 140px;
-    margin-left: 175px;
-  }
-  100% {
-    margin-top: 125px;
-    margin-left: 625px;
-  }
 }
 @media screen {
   body {
@@ -203,6 +174,118 @@
     color: #2C3E50;
     font-family: "robotoLight";
     border-bottom: 2px solid #2C3E50;
+    width: 100%;
+  }
+}
+@media screen and (min-width: 768px) {
+  .home_page .last-posts {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+}
+@media screen {
+  .home_page .last-posts .article_summary {
+    padding: 5px 10px;
+    margin: 10px 0;
+    background: #F6F7F9;
+    border-radius: 5px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .home_page .last-posts .article_summary {
+    width: 45%;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .home_page .last-posts .article_summary {
+    width: 30%;
+  }
+}
+@media screen {
+  .home_page .last-posts .article_summary .title_article {
+    font-family: "robotoLight";
+    color: #000000;
+  }
+  .home_page .last-posts .article_summary .resume_autor {
+    font-size: 0.8em;
+  }
+  .home_page .last-posts .article_summary .resume_autor .autor {
+    font-family: "PoppinsSemiBold";
+    color: #2C3E50;
+  }
+  .home_page .last-posts .article_summary img {
+    width: 100%;
+    padding-bottom: 5px;
+  }
+  .home_page .last-posts .article_summary .content_article {
+    font-family: "PoppinsMedium";
+  }
+
+  .article_page {
+    padding: 75px 20px 15px 20px;
+  }
+  .article_page .article {
+    padding: 5px 10px;
+    margin: 10px 0;
+    background: #F6F7F9;
+    border-radius: 5px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .article_page .article {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+}
+@media screen {
+  .article_page .article .title_article {
+    font-family: "robotoLight";
+    color: #000000;
+    width: 100%;
+  }
+  .article_page .article .resume_autor {
+    font-size: 0.8em;
+  }
+  .article_page .article .resume_autor .autor {
+    font-family: "PoppinsSemiBold";
+    color: #2C3E50;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .article_page .article .resume_autor {
+    width: 100%;
+  }
+}
+@media screen and (min-width: 768px) {
+  .article_page .article .img {
+    width: 80%;
+    margin-left: 10%;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .article_page .article .img {
+    width: 35%;
+    margin: 0;
+  }
+}
+@media screen {
+  .article_page .article .img img {
+    width: 100%;
+    padding-bottom: 5px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .article_page .article .content_article {
+    width: 60%;
+  }
+}
+@media screen {
+  .article_page .article .content_article p {
+    font-family: 'Roboto', sans-serif;
   }
 
   .admin_page {
@@ -234,8 +317,9 @@
   .admin_page .container_form .login_form p {
     color: #2C3E50;
     font-family: "robotoBold";
+    padding: 10px;
   }
-  .admin_page .container_form .login_form input {
+  .admin_page .container_form .login_form .input {
     width: 94%;
     margin: 10px 0;
     padding: 10px 10px;
@@ -243,7 +327,7 @@
     line-height: 1.42857143;
     border-radius: 5px;
   }
-  .admin_page .container_form .login_form input:focus {
+  .admin_page .container_form .login_form .input:focus {
     border: 2px solid #2C3E50;
   }
   .admin_page .container_form .button {

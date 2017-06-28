@@ -106,6 +106,12 @@ class DBManager
         return $date . " " . $heure;
     }
 
+    public function getDatetimeNow()
+    {
+        date_default_timezone_set('Europe/Paris');
+        return date("Y/m/d H:i:s");
+    }
+
     function watch_action_log($file, $text)
     {
         $file_log = fopen('logs/' . $file, 'a');

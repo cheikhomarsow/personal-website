@@ -17,6 +17,7 @@ $twig = new Twig_Environment($loader, array(
 ));
 $twig->addExtension(new Twig_Extension_Debug());
 
+
 $router = new Router($config['routes'], $twig);
 if (!empty($_GET['action']))
     $router->callAction($_GET['action']);

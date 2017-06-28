@@ -2,40 +2,9 @@
 @import 'partials/var';
 @import 'partials/font';
 @import url('https://fonts.googleapis.com/css?family=Permanent+Marker');
+@import url('https://fonts.googleapis.com/css?family=Roboto');
 
 
-@keyframes move_to_trash_tablet {
-  0% {
-    margin-top: 140px;
-    margin-left: 25px;
-  }
-  100% {
-    margin-top: 125px;
-    margin-left: 295px;
-  }
-}
-
-@keyframes move_to_trash_desktop {
-  0% {
-    margin-top: 140px;
-    margin-left: 25px;
-  }
-  100% {
-    margin-top: 125px;
-    margin-left: 475px;
-  }
-}
-
-@keyframes move_to_trash_very_large {
-  0% {
-    margin-top: 140px;
-    margin-left: 175px;
-  }
-  100% {
-    margin-top: 125px;
-    margin-left: 625px;
-  }
-}
 
 @media screen {
 
@@ -187,6 +156,96 @@
         color: $neutralColor;
         font-family: "robotoLight";
         border-bottom: 2px solid $neutralColor;
+        width: 100%;
+      }
+
+      @media(min-width: 768px) {
+        @include flex_trinity(row, space-around);
+      }
+
+      .article_summary{
+        padding: 5px 10px;
+        margin: 10px 0;
+        background: $backgroundArticle;
+        border-radius: 5px;
+        @media(min-width: 768px) {
+          width: 45%;
+        }
+        @media(min-width: 1024px) {
+          width: 30%;
+        }
+        .title_article{
+          font-family: "robotoLight";
+          color: #000000;
+        }
+        .resume_autor{
+          font-size: 0.8em;
+          .autor{
+            font-family: "PoppinsSemiBold";
+            color: $neutralColor;
+          }
+        }
+
+        img{
+          width: 100%;
+          padding-bottom: 5px;
+        }
+        .content_article{
+          font-family: "PoppinsMedium";
+        }
+      }
+    }
+
+  }
+
+  .article_page{
+    padding: 75px 20px 15px 20px;
+    .article{
+      padding: 5px 10px;
+      margin: 10px 0;
+      background: $backgroundArticle;
+      border-radius: 5px;
+
+      @media(min-width: 1024px) {
+        @include flex_trinity(row, space-around);
+      }
+      .title_article{
+        font-family: "robotoLight";
+        color: #000000;
+        width: 100%;
+      }
+      .resume_autor{
+        font-size: 0.8em;
+        .autor{
+          font-family: "PoppinsSemiBold";
+          color: $neutralColor;
+        }
+        @media(min-width: 1024px) {
+          width: 100%;
+        }
+      }
+
+      .img{
+        @media(min-width: 768px) {
+          width: 80%;
+          margin-left: 10%;
+        }
+        @media(min-width: 1024px) {
+          width: 35%;
+          margin: 0;
+        }
+        img{
+          width: 100%;
+          padding-bottom: 5px;
+        }
+      }
+      .content_article{
+        @media(min-width: 1024px) {
+          width: 60%;
+        }
+        p{
+          font-family: 'Roboto', sans-serif;
+        }
       }
     }
   }
@@ -214,8 +273,9 @@
         p {
           color: $neutralColor;
           font-family: "robotoBold";
+          padding: 10px;
         }
-        input {
+        .input {
           width: 94%;
           margin: 10px 0;
           padding: 10px 10px;
@@ -226,6 +286,7 @@
             border: 2px solid $neutralColor;
           }
         }
+
       }
       .button {
         width: 100%;

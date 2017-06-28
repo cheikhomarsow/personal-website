@@ -7,7 +7,26 @@
         </div>
         <div class="last-posts">
             <h3 class="title">Articles récents</h3>
-            <p>test</p>
+            {% for article in  availableArticle %}
+                <div class="article_summary">
+                        <h4>
+                            {% autoescape false %}
+                                <a class="title_article" href="?action=article&token={{ article.token }}">
+                                    {{ article.title | striptags }}
+                                </a>
+                            {% endautoescape %}
+                        </h4>
+                        <p class="resume_autor">By <span class="autor">{{user.username}}</span> - <span class="date">{{ article.date | date("M d Y") }}</span></p>
+                        <a class="etc" href="?action=article&token={{ article.token }}">
+                            <img src="{{ article.file }}" alt="article_img">
+                        </a>
+                        <p class="content_article">
+                            {% autoescape false %}
+                                {{ article.content | raw | slice(0, 140) }} <a class="etc" href="?action=article&token={{ article.token }}">[Lire la suite]</a>
+                            {% endautoescape %}
+                        </p>
+                </div>
+            {% endfor %}
         </div>
     </main>
 {% endblock %}

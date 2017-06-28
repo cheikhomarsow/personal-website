@@ -6,7 +6,9 @@ routes:
     reglog:     'Security:reglog'
     user:       'User:user'
     contact:    'Default:contact'
+    article:    'Default:article'
     admin:      'Security:admin'
+    add_article: 'Article:add_article'
 
 defaut_route: 'home'
 

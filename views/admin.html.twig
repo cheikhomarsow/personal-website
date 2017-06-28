@@ -5,30 +5,40 @@
     <div class="admin_page">
         <div class="container_form">
             <h2 class="title">Publier un article</h2>
-            {% if loginErrors is defined and loginErrors is not empty %}
-                <span class="error_block">{{ loginErrors }}</span><br>
+            {% if addArticleErrors is defined and addArticleErrors is not empty %}
+                {% for error in addArticleErrors %}
+                    <span class="error_block">{{ error }}</span><br>
+                {% endfor %}
             {% endif %}
-            <form action="?action=admin" method="POST" enctype="multipart/form-data">
+            {% if addArticleSuccess is defined and addArticleSuccess is not empty %}
+                <span class="success_block">{{ addArticleSuccess }}</span><br>
+
+            {% endif %}
+            <form action="?action=add_article" method="POST" enctype="multipart/form-data">
                 <div class="login_form" >
                     <label for="title"><p>Titre : </p></label>
-                    <input id="title" type="text" name="Title" placeholder="Titre de l'article" ">
+                    <input id="title" class="input" type="text" name="title" placeholder="Titre de l'article" ">
                 </div>
                 <div class="login_form" >
                     <label for="file"><p>Image : </p></label>
-                    <input type="file" id="file" name="file" value="{{ user.email }}">
+                    <input type="file" class="input" id="file" name="file">
                 </div>
                 <textarea class="ckeditor" name="editor1" id="editor1">
                 </textarea>
                 <script>
-                    // Replace the <textarea id="editor1"> with a CKEditor
-                    // instance, using default configuration.
                     CKEDITOR.replace( 'editor1' );
                 </script>
+                <div class="login_form" >
+                    <p>Visible ?</p>
+                    <div id="radio">
+                        <label for="yes"><p>Oui : </p></label>
+                        <input type="radio" name="visible" checked value="1" id="yes">
+                        <label for="no"><p>Non : </p></label>
+                        <input type="radio" name="visible" value="0" id="no">
+                    </div>
+                </div>
                 <button type="submit" class="button"><img src="assets/img/man-user.png">&nbsp;&nbsp;Publier</button>
             </form>
-            <!--<form>
-
-            </form>-->
         </div>
     </div>
 

@@ -107,7 +107,7 @@ class UserManager
         $user['username'] = $data['username'];
         $user['email'] = $data['email'];
         $user['password'] = $this->userHash($data['password']);
-        $user['registerDate'] = $this->getDatetimeNow();
+        $user['registerDate'] = $this->DBManager->getDatetimeNow();
         $this->DBManager->insert('users', $user);
     }
 
@@ -153,10 +153,5 @@ class UserManager
 
     }
 
-    public function getDatetimeNow()
-    {
-        date_default_timezone_set('Europe/Paris');
-        return date("Y/m/d H:i:s");
-    }
 
 }
