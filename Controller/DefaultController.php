@@ -32,17 +32,26 @@ class DefaultController extends BaseController
         $articleManager = ArticleManager::getInstance();
         $userManager = UserManager::getInstance();
         $tokenExist = true;
+        $isLog = false;
         $token = $_GET['token'];
         $article = $articleManager->getArticleByToken($token);
+
         if(!$article){
             $tokenExist = false;
         }
-        $user = $userManager->getUserById($article['user_id']);
+        if(!empty($_SESSION['user_id'])){
+            $isLog = true;
+        }
+        $user = $userManager->getUserById($_SESSION['user_id']);
+        $autor = $userManager->getUserById($article['user_id']);
+
         echo $this->renderView('article.html.twig',
                                     [
                                         'article' => $article,
                                         'user' => $user,
+                                        'autor' => $autor,
                                         'tokenExist' => $tokenExist,
+                                        'isLog' => $isLog,
                                     ]
             );
     }

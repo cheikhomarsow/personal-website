@@ -245,6 +245,22 @@
         }
         p{
           font-family: 'Roboto', sans-serif;
+          line-height: 180%;
+        }
+      }
+      .comment-box{
+        margin: 50px 0;
+        .cantComment{
+          width: 90%;
+          margin-left: 2.5%;
+          padding: 10px;
+          background: $red;
+          border-radius: 5px;
+          text-align: center;
+          a{
+            color: white;
+            font-family: 'Roboto', sans-serif;
+          }
         }
       }
     }
@@ -501,11 +517,7 @@
         font-family: "robotoBold";
       }
       img {
-        opacity: 0.5;
         margin: 5px;
-        &:hover {
-          opacity: 1;
-        }
       }
     }
   }
