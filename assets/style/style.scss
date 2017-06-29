@@ -24,6 +24,9 @@
   a {
     text-decoration: none;
   }
+  .none{
+    display: none;
+  }
   header {
     background-color: $neutralColor;
     box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, .1);
@@ -93,6 +96,7 @@
         &:not(.steps) {
           .navicon:before, .navicon:after {
             top: 0;
+            background: $red;
           }
         }
       }
@@ -249,8 +253,31 @@
         }
       }
       .comment-box{
-        margin: 50px 0;
+        margin: 75px 0 50px 0;
+        width: 100%;
+        .available_comment{
+          border: 1px solid $backgroundComment;
+          background: $backgroundComment;
+          border-radius: 10px;
+          padding: 10px;
+          p{
+            font-family: 'Roboto', sans-serif;
+            line-height: 150%;
+            margin-bottom: 5px;
+            .userComment{
+                color: $neutralColor;
+            }
+          }
+          .zeroComment{
+            text-align: center;
+            color: $neutralColor;
+          }
+        }
         .cantComment{
+          @media(min-width: 1024px) {
+            width: 60%;
+            margin-left: 20%;
+          }
           width: 90%;
           margin-left: 2.5%;
           padding: 10px;
@@ -260,6 +287,37 @@
           a{
             color: white;
             font-family: 'Roboto', sans-serif;
+          }
+        }
+        .comment{
+          width: 90%;
+          margin-left: 5%;
+          .error_comment{
+            color: $red;
+            padding: 5px;
+          }
+          textarea {
+            width: 99%;
+            margin: 10px 0;
+            padding: 10px 10px;
+            font-size: 15px;
+            line-height: 1.42857143;
+            border-radius: 5px;
+            &:focus {
+              border: 2px solid $neutralColor;
+            }
+          }
+          .button {
+            width: 80%;
+            margin-left: 10%;
+            padding: 10px 10px;
+            margin-bottom: 30px;
+            font-size: 15px;
+            line-height: 1.42857143;
+            background: $neutralColor;
+            color: white;
+            border: 1px solid $neutralColor;
+            border-radius: 5px;
           }
         }
       }

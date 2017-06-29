@@ -22,11 +22,22 @@
                </div>
                <div class="comment-box">
                    {% if isLog is defined and isLog == true %}
+                       <div class="available_comment">
+                            {% if comments is defined and comments is not empty %}
+                                {% for comment in comments %}
+                                    <p><span class="userComment">{{ comment.userComment }} :</span> <br> &nbsp;&nbsp;&nbsp;&nbsp;{{ comment.contentComment }}</p>
+                                {% endfor %}
+                                {% else %}
+                                    <p class="zeroComment">Aucun commentaire pour l’instant.</p>
+                            {% endif %}
+                       </div>
                        <div class="comment">
-                           <form action="?action=article&token={{ article.token }}" METHOD="POST">
-                               <input type="text" />
-                               <textarea name="content_comment" placeholder="Votre commentaire..."></textarea>
-                               <button type="submit" class="button"><img src="assets/img/man-user.png">&nbsp;&nbsp;Publier</button>
+                           <p class="error_comment"></p>
+                           <form action="?action=article&token={{ article.token }}" name="form-comment" id="formComment" METHOD="POST">
+                               <input type="text" class="none articleIdAjax" name="article_id" value="{{ article.id }}"/>
+                               <input type="text" class="none articleUserAjax" name="user_id" value="{{ user.id }}"/>
+                               <textarea class="contentCommentAjax" name="content_comment" placeholder="Votre commentaire..."></textarea>
+                               <button type="submit" class="button"><img src="assets/img/chat.png">&nbsp;&nbsp;Commenter</button>
                            </form>
                        </div>
                        {% else %}

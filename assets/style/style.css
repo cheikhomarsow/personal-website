@@ -42,6 +42,10 @@
     text-decoration: none;
   }
 
+  .none {
+    display: none;
+  }
+
   header {
     background-color: #2C3E50;
     box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.1);
@@ -115,6 +119,7 @@
   }
   header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before, header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
     top: 0;
+    background: #ed6147;
   }
   header .logo {
     display: block;
@@ -289,7 +294,26 @@
     line-height: 180%;
   }
   .article_page .article .comment-box {
-    margin: 50px 0;
+    margin: 75px 0 50px 0;
+    width: 100%;
+  }
+  .article_page .article .comment-box .available_comment {
+    border: 1px solid #E9EAEC;
+    background: #E9EAEC;
+    border-radius: 10px;
+    padding: 10px;
+  }
+  .article_page .article .comment-box .available_comment p {
+    font-family: 'Roboto', sans-serif;
+    line-height: 150%;
+    margin-bottom: 5px;
+  }
+  .article_page .article .comment-box .available_comment p .userComment {
+    color: #2C3E50;
+  }
+  .article_page .article .comment-box .available_comment .zeroComment {
+    text-align: center;
+    color: #2C3E50;
   }
   .article_page .article .comment-box .cantComment {
     width: 90%;
@@ -299,9 +323,48 @@
     border-radius: 5px;
     text-align: center;
   }
+}
+@media screen and (min-width: 1024px) {
+  .article_page .article .comment-box .cantComment {
+    width: 60%;
+    margin-left: 20%;
+  }
+}
+@media screen {
   .article_page .article .comment-box .cantComment a {
     color: white;
     font-family: 'Roboto', sans-serif;
+  }
+  .article_page .article .comment-box .comment {
+    width: 90%;
+    margin-left: 5%;
+  }
+  .article_page .article .comment-box .comment .error_comment {
+    color: #ed6147;
+    padding: 5px;
+  }
+  .article_page .article .comment-box .comment textarea {
+    width: 99%;
+    margin: 10px 0;
+    padding: 10px 10px;
+    font-size: 15px;
+    line-height: 1.42857143;
+    border-radius: 5px;
+  }
+  .article_page .article .comment-box .comment textarea:focus {
+    border: 2px solid #2C3E50;
+  }
+  .article_page .article .comment-box .comment .button {
+    width: 80%;
+    margin-left: 10%;
+    padding: 10px 10px;
+    margin-bottom: 30px;
+    font-size: 15px;
+    line-height: 1.42857143;
+    background: #2C3E50;
+    color: white;
+    border: 1px solid #2C3E50;
+    border-radius: 5px;
   }
 
   .admin_page {

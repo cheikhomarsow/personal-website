@@ -16,7 +16,7 @@
                                 </a>
                             {% endautoescape %}
                         </h4>
-                        <p class="resume_autor">By <span class="autor">{{user.username}}</span> - <span class="date">{{ article.date | date("M d Y") }}</span></p>
+                        <p class="resume_autor">By <span class="autor">{{autor.username}}</span> - <span class="date">{{ article.date | date("M d Y") }}</span></p>
                         <a class="etc" href="?action=article&token={{ article.token }}">
                             <img src="{{ article.file }}" alt="article_img">
                         </a>

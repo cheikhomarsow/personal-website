@@ -47,7 +47,11 @@ class SecurityController extends BaseController
                             }
                         }
                     }else{
-                        echo $this->renderView('reglog.html.twig', ['loginErrors' => 'Adresse email ou mot de passe incorrect']);
+                        echo $this->renderView('reglog.html.twig', [
+                            'loginErrors' => 'Adresse email ou mot de passe incorrect',
+                            'from' => $from,
+                            'token'=>$token
+                            ]);
                     }
                 }
                 if (isset($_POST['register'])) {
@@ -55,11 +59,11 @@ class SecurityController extends BaseController
                     $result = $manager->userCheckRegister($_POST);
                     if ($result['isFormGood']) {
                         $manager->userRegister($result['data']);
-                        echo $this->renderView('reglog.html.twig', ['registerSuccess' => 'Inscription reussie !']);
+                        echo $this->renderView('reglog.html.twig', ['registerSuccess' => 'Inscription reussie !','from' => $from, 'token'=>$token]);
                     }
                     else {
                         $errors = $result['errors'];
-                        echo $this->renderView('reglog.html.twig', ['registerErrors' => $errors]);
+                        echo $this->renderView('reglog.html.twig', ['registerErrors' => $errors,'from' => $from, 'token'=>$token]);
                     }
                 }
             }else{

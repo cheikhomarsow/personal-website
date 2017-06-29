@@ -16,6 +16,8 @@ class DefaultController extends BaseController
         $email = $user['email'];
         $admin = false;
         $availableArticle = $articleManager->availableArticle();
+        $autor = $userManager->getUserByEmail("cheikhomar60@gmail.com");
+
 
         if($email == 'cheikhomar60@gmail.com'){
             $admin = true;
@@ -25,6 +27,7 @@ class DefaultController extends BaseController
                 'user'=>$user,
                 'admin' => $admin,
                 'availableArticle' => $availableArticle,
+                'autor' => $autor,
             ]);
     }
     public function articleAction()
@@ -35,6 +38,7 @@ class DefaultController extends BaseController
         $isLog = false;
         $token = $_GET['token'];
         $article = $articleManager->getArticleByToken($token);
+        $comments = [];
 
         if(!$article){
             $tokenExist = false;
@@ -45,6 +49,23 @@ class DefaultController extends BaseController
         $user = $userManager->getUserById($_SESSION['user_id']);
         $autor = $userManager->getUserById($article['user_id']);
 
+
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $res = $articleManager->checkComment($_POST);
+            if($res['isFormGood']){
+                $articleManager->addComment($_POST);
+            }
+        }
+
+        $availableComment = $articleManager->availableComment($article['id']);
+
+
+        foreach ($availableComment as $value){
+            $userComment = $userManager->getUserById($value['user_id'])['username'];
+            $comments[$value['id']] = ['userComment' => $userComment, 'contentComment' => $value['content']];
+        }
+
+
         echo $this->renderView('article.html.twig',
                                     [
                                         'article' => $article,
@@ -52,6 +73,7 @@ class DefaultController extends BaseController
                                         'autor' => $autor,
                                         'tokenExist' => $tokenExist,
                                         'isLog' => $isLog,
+                                        'comments' => $comments
                                     ]
             );
     }

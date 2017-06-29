@@ -76,9 +76,71 @@ class ArticleManager
         move_uploaded_file($data['file_tmp_name'],$pathImage);
         chmod($pathImage, 0666);
     }
+    public function checkComment($data)
+    {
+        header('Content-Type: application/json; charset=utf-8');
+        header('Access-Control-Allow-Origin: *');
+        header('Access-Control-Allow-Methods: GET, POST');
+
+        $errors = [];
+        $res = [];
+        $isFormGood = true;
+
+
+        if (!isset($data['content_comment']) || $data['content_comment'] == '') {
+            $errors['content_comment'] = 'Ce champs ne doit pas être vide';
+            $isFormGood = false;
+        }else{
+            $str = trim($data['content_comment']);
+            if(empty($str)){
+                $errors['content_comment'] = 'Ce champs ne doit pas être vide';
+                $isFormGood = false;
+            }else{
+                if(strlen($data['content_comment']) > 1000){
+                    $errors['content_comment'] = 'Nombre de caractère non autorisé (max 1000)';
+                    $isFormGood = false;
+                }
+            }
+        }
+        if (!isset($data['user_id']) || $data['user_id'] == '' || !isset($data['article_id']) || $data['article_id'] == '') {
+            $errors['content_comment'] = 'Veillez remplir le commentaire';
+            $isFormGood = false;
+        }
+
+        if($isFormGood)
+        {
+            echo(json_encode(array('success'=>true, 'data'=>$data), JSON_UNESCAPED_UNICODE ,http_response_code(200)));
+            $res['isFormGood'] = $isFormGood;
+            $res['errors'] = $errors;
+            $res['data'] = $data;
+            //exit(0);
+            return $res;
+
+        }else
+        {
+            echo(json_encode(array('error'=>false, 'error'=>$errors), JSON_UNESCAPED_UNICODE ,http_response_code(400)));
+            exit(0);
+        }
+
+    }
+
+    public function addComment($data){
+        $comment['content'] = $data['content_comment'];
+        $comment['article_id'] = $data['article_id'];
+        $comment['user_id'] =  $data['user_id'];
+        $comment['date'] = $this->DBManager->getDatetimeNow();
+
+        $this->DBManager->insert('comments', $comment);
+    }
 
     public function availableArticle(){
         return $this->DBManager->findAllSecure("SELECT * FROM articles WHERE visible = 1 ORDER BY date DESC");
+    }
+    public function availableComment($data){
+        $article_id = (int)$data;
+        return $this->DBManager->findAllSecure("SELECT * FROM comments WHERE article_id =:article_id",
+                                                ['article_id' => $article_id]
+            );
     }
 
     public function token()
