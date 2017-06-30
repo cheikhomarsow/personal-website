@@ -2,7 +2,8 @@
 
 {% block content %}
 
-    <div class="admin_page">
+    <main class="admin_page">
+        <div class="dashbord"><a href="?action=admin_users">Tableau de bord</a></div>
         <div class="container_form">
             <h2 class="title">Publier un article</h2>
             {% if addArticleErrors is defined and addArticleErrors is not empty %}
@@ -40,7 +41,7 @@
                 <button type="submit" class="button"><img src="assets/img/man-user.png">&nbsp;&nbsp;Publier</button>
             </form>
         </div>
-    </div>
+    </main>
 
 
 {% endblock %}

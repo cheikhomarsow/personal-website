@@ -25,6 +25,11 @@ class ArticleManager
                                             ['token' => $token]
             );
     }
+    public function getArticleById($id){
+        return $this->DBManager->findOneSecure("SELECT * FROM articles WHERE visible = 1 AND id =:id",
+            ['id' => $id]
+        );
+    }
 
 
     public function checkArticle($data)
@@ -141,6 +146,26 @@ class ArticleManager
         return $this->DBManager->findAllSecure("SELECT * FROM comments WHERE article_id =:article_id",
                                                 ['article_id' => $article_id]
             );
+    }
+
+    public function getAllComments(){
+        return $this->DBManager->findAllSecure("SELECT * FROM comments ORDER BY date DESC");
+    }
+
+    public function removeComment($id){
+        return $this->DBManager->findOneSecure('DELETE FROM comments WHERE id = :id',['id' => $id]);
+    }
+    public function removeArticle($id){
+        $article_id = $id;
+        $this->DBManager->findAllSecure('DELETE FROM comments WHERE article_id = :article_id',['article_id' => $article_id]);
+        return $this->DBManager->findOneSecure('DELETE FROM articles WHERE id = :id',['id' => $id]);
+    }
+
+    public function removeUser($id){
+        $user_id = $id;
+        $this->DBManager->findAllSecure('DELETE FROM comments WHERE user_id = :user_id',['user_id' => $user_id]);
+        $this->DBManager->findAllSecure('DELETE FROM articles WHERE user_id = :user_id',['user_id' => $user_id]);
+        return $this->DBManager->findOneSecure('DELETE FROM users WHERE id = :id',['id' => $id]);
     }
 
     public function token()

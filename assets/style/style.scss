@@ -180,7 +180,7 @@
         }
         .title_article{
           font-family: "robotoLight";
-          color: #000000;
+          color: $neutralColor;
         }
         .resume_autor{
           font-size: 0.8em;
@@ -188,9 +188,18 @@
             font-family: "PoppinsSemiBold";
             color: $neutralColor;
           }
+          .date{
+            font-style: italic;
+          }
+          img{
+            max-width: 10px;
+            @media(min-width: 1024px) {
+              max-width: 12px;
+            }
+          }
         }
 
-        img{
+        .img{
           width: 100%;
           padding-bottom: 5px;
         }
@@ -215,8 +224,9 @@
       }
       .title_article{
         font-family: "robotoLight";
-        color: #000000;
+        color: $neutralColor;
         width: 100%;
+        text-align: center;
       }
       .resume_autor{
         font-size: 0.8em;
@@ -224,8 +234,17 @@
           font-family: "PoppinsSemiBold";
           color: $neutralColor;
         }
+        .date{
+          font-style: italic;
+        }
         @media(min-width: 1024px) {
           width: 100%;
+        }
+        img{
+          max-width: 10px;
+          @media(min-width: 1024px) {
+            max-width: 12px;
+          }
         }
       }
 
@@ -244,17 +263,33 @@
         }
       }
       .content_article{
+        width: 100%;
+
         @media(min-width: 1024px) {
           width: 60%;
         }
         p{
           font-family: 'Roboto', sans-serif;
           line-height: 180%;
+          width: 100%;
+          img{
+            @media(min-width: 768px) {
+              width: 80% !important;
+              margin: 10px 10%;
+            }
+          }
         }
+
       }
       .comment-box{
         margin: 75px 0 50px 0;
         width: 100%;
+        .title{
+          color: $neutralColor;
+          font-family: "robotoLight";
+          border-bottom: 2px solid $neutralColor;
+          width: 100%;
+        }
         .available_comment{
           border: 1px solid $backgroundComment;
           background: $backgroundComment;
@@ -323,8 +358,279 @@
       }
     }
   }
+  .admin_comments_page{
+    padding: 75px 20px 15px 20px;
+    .dashbord{
+      width: 100%;
+      .title {
+        color: $neutralColor;
+        font-family: "robotoLight";
+        border-bottom: 2px solid $neutralColor;
+        width: 100%;
+      }
+      .users,.articles {
+        width: 100%;
+        text-align: center;
+        padding: 10px 0;
+        background: $neutralColor;
+        border-radius: 5px;
+        margin-bottom: 15px;
+        a{
+          color: #FFF;
+          font-family: "robotoBold";
+        }
+      }
+      .comments{
+        width: 100%;
+        text-align: center;
+        padding: 10px 0;
+        background: #1A242F;
+        border-radius: 5px;
+        margin-bottom: 15px;
+        a{
+          color: #FFF;
+          font-family: "robotoBold";
+        }
+      }
+    }
+    .recap{
+      width: 100%;
+      padding: 30px 0;
+      table{
+        width: 100%;
+        .subject_infos{
+          text-align: center;
+          background: $green;
+          font-family: "robotoBold";
+          color: white;
+
+          .autor{
+            border-radius: 10px 0 0 10px;
+            width: 25%;
+            padding: 5px;
+          }
+          .comment{
+            width: 60%;
+            padding: 5px;
+          }
+          .date{
+            border-radius: 0px 10px 10px 0;
+            width: 25%;
+            padding: 5px;
+          }
+        }
+        .infos_comments{
+          background: $backgroundArticle;
+          td{
+            padding: 5px;
+            label{
+              float: right;
+            }
+            .id1{
+              color: $idColor1;
+            }
+            .id_val1{
+              color: $idColor1;
+              opacity: 0.7;
+            }
+            .id2{
+              color: $idColor2;
+            }
+            .id_val2{
+              color: $idColor2;
+              opacity: 0.7;
+            }
+            .id3{
+              color: $idColor3;
+            }
+            .id_val3{
+              color: $idColor3;
+              opacity: 0.7;
+            }
+          }
+          .none{
+            display: none;
+          }
+        }
+      }
+    }
+  }
+
+  .admin_articles_page{
+    padding: 75px 20px 15px 20px;
+    .dashbord{
+      width: 100%;
+      .title {
+        color: $neutralColor;
+        font-family: "robotoLight";
+        border-bottom: 2px solid $neutralColor;
+        width: 100%;
+      }
+      .users, .comments{
+        width: 100%;
+        text-align: center;
+        padding: 10px 0;
+        background: $neutralColor;
+        border-radius: 5px;
+        margin-bottom: 15px;
+        a{
+          color: #FFF;
+          font-family: "robotoBold";
+        }
+      }
+      .articles{
+        width: 100%;
+        text-align: center;
+        padding: 10px 0;
+        background: #1A242F;
+        border-radius: 5px;
+        margin-bottom: 15px;
+        a{
+          color: #FFF;
+          font-family: "robotoBold";
+        }
+      }
+    }
+    .recap{
+      width: 100%;
+      padding: 30px 0;
+      table{
+        width: 100%;
+        .subject_infos{
+          text-align: center;
+          background: $green;
+          font-family: "robotoBold";
+          color: white;
+
+          .autor{
+            border-radius: 10px 0 0 10px;
+            width: 25%;
+            padding: 5px;
+          }
+          .title{
+            width: 60%;
+            padding: 5px;
+          }
+          .date{
+            border-radius: 0px 10px 10px 0;
+            width: 25%;
+            padding: 5px;
+          }
+        }
+        .infos_articles{
+          background: $backgroundArticle;
+          td{
+            padding: 5px;
+            label{
+              float: right;
+            }
+            .id{
+              color: $idColor2;
+            }
+            .id_val{
+              color: $idColor2;
+              opacity: 0.7;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .admin_users_page{
+    padding: 75px 20px 15px 20px;
+    .dashbord{
+      width: 100%;
+      .title {
+        color: $neutralColor;
+        font-family: "robotoLight";
+        border-bottom: 2px solid $neutralColor;
+        width: 100%;
+      }
+      .users{
+        width: 100%;
+        text-align: center;
+        padding: 10px 0;
+        background: #1A242F;
+        border-radius: 5px;
+        margin-bottom: 15px;
+        a{
+          color: #FFF;
+          font-family: "robotoBold";
+        }
+      }
+      .articles, .comments{
+        width: 100%;
+        text-align: center;
+        padding: 10px 0;
+        background: $neutralColor;
+        border-radius: 5px;
+        margin-bottom: 15px;
+        a{
+          color: #FFF;
+          font-family: "robotoBold";
+        }
+      }
+    }
+    .recap{
+      width: 100%;
+      padding: 30px 0;
+      table{
+        width: 100%;
+        .subject_infos{
+          text-align: center;
+          background: $green;
+          font-family: "robotoBold";
+          color: white;
+
+          .username{
+            border-radius: 10px 0 0 10px;
+            width: 35%;
+            padding: 5px;
+          }
+          .email{
+            width: 40%;
+            padding: 5px;
+          }
+          .registerDate{
+            border-radius: 0px 10px 10px 0;
+            width: 25%;
+            padding: 5px;
+          }
+        }
+        .infos_users{
+          background: $backgroundArticle;
+          td{
+            padding: 5px;
+            label{
+              float: right;
+            }
+            .id{
+              color: $idColor1;
+            }
+            .id_val{
+              color: $idColor1;
+              opacity: 0.7;
+            }
+          }
+        }
+      }
+    }
+  }
   .admin_page {
     padding: 75px 20px 15px 20px;
+    .dashbord{
+      width: 100%;
+      text-align: center;
+      padding: 10px 0;
+      background: $neutralColor;
+      border-radius: 5px;
+      a{
+        color: #FFF;
+        font-family: "robotoBold";
+      }
+
+    }
     .container_form {
       margin: 0 10px;
       .success_block {

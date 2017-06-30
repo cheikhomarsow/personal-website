@@ -5,7 +5,10 @@ routes:
     user:       'User:user'
     contact:    'Default:contact'
     article:    'Default:article'
-    admin:      'Security:admin'
+    admin:       'Security:admin'
+    admin_users: 'Security:admin_users'
+    admin_articles: 'Security:admin_articles'
+    admin_comments: 'Security:admin_comments'
     add_article: 'Article:add_article'
 
 defaut_route: 'home'

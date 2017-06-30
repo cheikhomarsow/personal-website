@@ -9,16 +9,16 @@
             <h3 class="title">Articles récents</h3>
             {% for article in  availableArticle %}
                 <div class="article_summary">
-                        <h4>
+                        <h3>
                             {% autoescape false %}
                                 <a class="title_article" href="?action=article&token={{ article.token }}">
                                     {{ article.title | striptags }}
                                 </a>
                             {% endautoescape %}
-                        </h4>
-                        <p class="resume_autor">By <span class="autor">{{autor.username}}</span> - <span class="date">{{ article.date | date("M d Y") }}</span></p>
+                        </h3>
+                        <p class="resume_autor">By <span class="autor">{{autor.username}}</span> - <span class="date">{{ article.date | date("M d Y") }}</span>&nbsp;&nbsp;<img class="icon_comment" src="assets/img/chat2.png">&nbsp;&nbsp;</p>
                         <a class="etc" href="?action=article&token={{ article.token }}">
-                            <img src="{{ article.file }}" alt="article_img">
+                            <img class="img" src="{{ article.file }}" alt="article_img">
                         </a>
                         <p class="content_article">
                             {% autoescape false %}

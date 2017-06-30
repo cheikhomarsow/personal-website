@@ -12,19 +12,6 @@ $(document).ready(function() {
         $('header a[href^="?action=user"]').addClass('active');
     }
 
-    /*$('form').submit(function () {
-        var article_id = $('.articleIdAjax');
-        var user_id = $('.userIdAjax');
-        var content_comment = $('.contentCommentAjax');
-
-        if(url.split("&token=").length == 2){
-            token = url.split("&token=")[1];
-        }
-        $.post('?action=article',{article_id:article_id, user_id:user_id, content:content_comment},function(data){
-
-        });
-        return false;
-    });*/
     var frm = $('#formComment');
 
     frm.submit(function (e) {
@@ -51,7 +38,6 @@ $(document).ready(function() {
                 if(errorORsuccess == 'success'){
                     $('.contentCommentAjax').val('');
                     $('.error_comment').html('');
-                    $(".available_commentx").load(location.href + " .comment-box>*", "")
                 }
             }
         });

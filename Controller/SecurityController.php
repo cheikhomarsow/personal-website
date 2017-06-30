@@ -96,5 +96,98 @@ class SecurityController extends BaseController
            $this->redirect('user');
        }
    }
+   public function admin_usersAction(){
+       if (!empty($_SESSION['user_id'])) {
+           $manager = UserManager::getInstance();
+           $articleManager = ArticleManager::getInstance();
+           $admin = false;
+           $user_id = $_SESSION['user_id'];
+           $user = $manager->getUserById($user_id);
+           $email = $user['email'];
+           if($email == 'cheikhomar60@gmail.com'){
+               if($email == 'cheikhomar60@gmail.com'){
+                   $admin = true;
+               }
+               if($_SERVER['REQUEST_METHOD'] === 'POST'){
+                   $articleManager->removeUser($_POST['user_id']);
+               }
+               $allUsers = $manager->getAllUsers();
+               echo $this->renderView('admin_users.html.twig',
+                   [
+                       'user'  => $user,
+                       'admin' => $admin,
+                       'allUsers' => $allUsers,
+                   ]);
+           }else{
+               $this->redirect('user');
+           }
+       }else{
+           $this->redirect('user');
+       }
+   }
+    public function admin_articlesAction(){
+        if (!empty($_SESSION['user_id'])) {
+            $articleManager = ArticleManager::getInstance();
+            $userManager = UserManager::getInstance();
+            $admin = false;
+            $user_id = $_SESSION['user_id'];
+            $autor = $userManager->getUserByEmail("cheikhomar60@gmail.com");
+            $user = $userManager->getUserById($user_id);
+            $email = $user['email'];
+
+            if($email == 'cheikhomar60@gmail.com'){
+                if($email == 'cheikhomar60@gmail.com'){
+                    $admin = true;
+                }
+                if($_SERVER['REQUEST_METHOD'] === 'POST'){
+                    $articleManager->removeArticle($_POST['article_id']);
+                }
+                $availableArticle = $articleManager->availableArticle();
+                echo $this->renderView('admin_articles.html.twig',
+                    [
+                        'user'  => $user,
+                        'admin' => $admin,
+                        'autor' => $autor,
+                        'availableArticle' => $availableArticle,
+                    ]);
+            }else{
+                $this->redirect('user');
+            }
+        }else{
+            $this->redirect('user');
+        }
+    }
+    public function admin_commentsAction(){
+        if (!empty($_SESSION['user_id'])) {
+            $articleManager = ArticleManager::getInstance();
+            $userManager = UserManager::getInstance();
+            $admin = false;
+            $user_id = $_SESSION['user_id'];
+            $user = $userManager->getUserById($user_id);
+            $email = $user['email'];
+
+            if($email == 'cheikhomar60@gmail.com'){
+                if($email == 'cheikhomar60@gmail.com'){
+                    $admin = true;
+                }
+                if($_SERVER['REQUEST_METHOD'] === 'POST'){
+                    $articleManager->removeComment($_POST['comment_id']);
+                }
+
+                $allComments = $articleManager->getAllComments();
+
+                echo $this->renderView('admin_comments.html.twig',
+                    [
+                        'user'  => $user,
+                        'admin' => $admin,
+                        'allComments' => $allComments,
+                    ]);
+            }else{
+                $this->redirect('user');
+            }
+        }else{
+            $this->redirect('user');
+        }
+    }
 
 }

@@ -4,12 +4,12 @@
     <main class="article_page">
        <div class="article">
            {% if tokenExist is defined and tokenExist == true %}
-               <h4 class="title_article">
+               <h3 class="title_article">
                    {% autoescape false %}
                        {{ article.title | striptags }}
                    {% endautoescape %}
-               </h4>
-               <p class="resume_autor">By <span class="autor">{{autor.username}}</span> - <span class="date">{{ article.date | date("M d Y") }}</span></p>
+               </h3>
+               <p class="resume_autor">By <span class="autor">{{autor.username}}</span> - <span class="date">{{ article.date | date("M d Y") }}</span>&nbsp;&nbsp;<img class="icon_comment" src="assets/img/chat2.png">&nbsp;&nbsp;</p>
                <div class="img">
                    <img src="{{ article.file }}" alt="article_img">
                </div>
@@ -22,10 +22,11 @@
                </div>
                <div class="comment-box">
                    {% if isLog is defined and isLog == true %}
+                       <h4 class="title">Commentaires</h4>
                        <div class="available_comment">
                             {% if comments is defined and comments is not empty %}
                                 {% for comment in comments %}
-                                    <p><span class="userComment">{{ comment.userComment }} :</span> <br> &nbsp;&nbsp;&nbsp;&nbsp;{{ comment.contentComment }}</p>
+                                    <p><span class="userComment">{{ comment.userComment }} :</span> <br> &nbsp;&nbsp;&nbsp;&nbsp;{{ comment.contentComment | nl2br }}</p>
                                 {% endfor %}
                                 {% else %}
                                     <p class="zeroComment">Aucun commentaire pour l’instant.</p>

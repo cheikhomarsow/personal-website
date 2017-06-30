@@ -33,12 +33,11 @@ class UserManager
             ['email' => $email]);
         return $data;
     }
-    public function allUsers()
+    public function getAllUsers()
     {
-        return $this->DBManager->findAllSecure("SELECT * FROM users");
+        $email = "cheikhomar60@gmail.com";
+        return $this->DBManager->findAllSecure("SELECT * FROM users WHERE email !=:email ORDER BY registerDate DESC",['email'=> $email]);
     }
-
-
 
 
     public function userCheckRegister($data)

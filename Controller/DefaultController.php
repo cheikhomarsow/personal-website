@@ -36,6 +36,7 @@ class DefaultController extends BaseController
         $userManager = UserManager::getInstance();
         $tokenExist = true;
         $isLog = false;
+        $admin = false;
         $token = $_GET['token'];
         $article = $articleManager->getArticleByToken($token);
         $comments = [];
@@ -49,7 +50,11 @@ class DefaultController extends BaseController
         $user = $userManager->getUserById($_SESSION['user_id']);
         $autor = $userManager->getUserById($article['user_id']);
 
+        $email = $user['email'];
 
+        if($email == 'cheikhomar60@gmail.com'){
+            $admin = true;
+        }
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $res = $articleManager->checkComment($_POST);
             if($res['isFormGood']){
@@ -73,7 +78,8 @@ class DefaultController extends BaseController
                                         'autor' => $autor,
                                         'tokenExist' => $tokenExist,
                                         'isLog' => $isLog,
-                                        'comments' => $comments
+                                        'comments' => $comments,
+                                        'admin' => $admin,
                                     ]
             );
     }
