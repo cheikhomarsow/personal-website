@@ -142,13 +142,13 @@ class SecurityController extends BaseController
                 if($_SERVER['REQUEST_METHOD'] === 'POST'){
                     $articleManager->removeArticle($_POST['article_id']);
                 }
-                $availableArticle = $articleManager->availableArticle();
+                $allArticle = $articleManager->allArticle();
                 echo $this->renderView('admin_articles.html.twig',
                     [
                         'user'  => $user,
                         'admin' => $admin,
                         'autor' => $autor,
-                        'availableArticle' => $availableArticle,
+                        'allArticle' => $allArticle,
                     ]);
             }else{
                 $this->redirect('user');

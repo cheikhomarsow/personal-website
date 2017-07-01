@@ -5,8 +5,10 @@
     <main class="user_page">
         <div class="container_form">
             <h2 class="title">Modifier mes coordonnées</h2>
-            {% if loginErrors is defined and loginErrors is not empty %}
-                <span class="error_block">{{ loginErrors }}</span><br>
+            {% if errorsUpdateContact is defined and errorsUpdateContact is not empty %}
+                {% for error in errorsUpdateContact %}
+                    <span class="error_block">{{ error }}</span><br>
+                {% endfor %}
             {% endif %}
             <form action="?action=user" method="POST">
                 <div class="login_form" >
@@ -17,24 +19,31 @@
                     <label for="email"><p>Votre adresse email : </p></label>
                     <input type="text" id="email" name="email" value="{{ user.email }}">
                 </div>
-                <button type="submit" class="button"><img src="assets/img/man-user.png">&nbsp;&nbsp;Modifier</button>
+                <button type="submit" name="updateContact" class="button"><img src="assets/img/update.png">&nbsp;&nbsp;Modifier mes coordonnées</button>
             </form>
         </div>
         <div class="container_form">
             <h2 class="title">Modifier mon mot de passe</h2>
-            {% if loginErrors is defined and loginErrors is not empty %}
-                <span class="error_block">{{ loginErrors }}</span><br>
+            {% if errorsUpdatePassword is defined and errorsUpdatePassword is not empty %}
+                {% for error in errorsUpdatePassword %}
+                    <span class="error_block">{{ error }}</span><br>
+                {% endfor %}
+            {% endif %}
+            {% if successUpdatePassword is defined and successUpdatePassword is not empty%}
+                {% for message in successUpdatePassword %}
+                    <span class="success_block">{{ message }}</span><br>
+                {% endfor %}
             {% endif %}
             <form action="?action=user" method="POST">
                 <div class="login_form" >
                     <label for="password"><p>Actuel mot de passe : </p></label>
-                    <input id="password" type="password" name="password" placeholder="Actuel mot de passe">
+                    <input id="password" type="password" name="oldPassword" placeholder="Actuel mot de passe">
                 </div>
                 <div class="login_form" >
                     <label for="verifpassword"><p>Nouveau mot de passe : </p></label>
-                    <input type="password" id="verifpassword" name="verifpassword" placeholder="Nouveau mot de passe">
+                    <input type="password" id="verifpassword" name="newPassword" placeholder="Nouveau mot de passe">
                 </div>
-                <button type="submit" class="button"><img src="assets/img/man-user.png">&nbsp;&nbsp;Modifier</button>
+                <button type="submit" name="updatePassword" class="button"><img src="assets/img/update.png">&nbsp;&nbsp;Modifier mon mot de passe</button>
             </form>
         </div>
     </main>

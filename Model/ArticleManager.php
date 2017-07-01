@@ -21,7 +21,7 @@ class ArticleManager
     }
 
     public function getArticleByToken($token){
-        return $this->DBManager->findOneSecure("SELECT * FROM articles WHERE visible = 1 AND token =:token",
+        return $this->DBManager->findOneSecure("SELECT * FROM articles WHERE token =:token",
                                             ['token' => $token]
             );
     }
@@ -80,6 +80,29 @@ class ArticleManager
         $this->DBManager->insert('articles', $article);
         move_uploaded_file($data['file_tmp_name'],$pathImage);
         chmod($pathImage, 0666);
+    }
+    public function editArticle($data){
+        $title = $data['title'];
+        $content = $data['editor1'];
+        $id = (int)$data['id'];
+        $visible = (int)$data['visible'];
+
+        if($data['file'] == ''){
+            $file = 'assets/img/default-image.jpg';
+        }else{
+            $file = 'uploads/cosinus/'.$data['file'];
+            move_uploaded_file($data['file_tmp_name'],$file);
+            chmod($file, 0666);
+        }
+        return $this->DBManager->findOneSecure(
+            "UPDATE articles SET title = :title, content = :content, file = :file, visible = :visible WHERE id=:id",
+            [
+                'title' => $title,
+                'content' => $content,
+                'file' => $file,
+                'id' => $id,
+                'visible'=> $visible,
+            ]);
     }
     public function checkComment($data)
     {
@@ -141,6 +164,12 @@ class ArticleManager
     public function availableArticle(){
         return $this->DBManager->findAllSecure("SELECT * FROM articles WHERE visible = 1 ORDER BY date DESC");
     }
+    public function hiddenArticle(){
+        return $this->DBManager->findAllSecure("SELECT * FROM articles WHERE visible = 0 ORDER BY date DESC");
+    }
+    public function allArticle(){
+        return $this->DBManager->findAllSecure("SELECT * FROM articles ORDER BY date DESC");
+    }
     public function availableComment($data){
         $article_id = (int)$data;
         return $this->DBManager->findAllSecure("SELECT * FROM comments WHERE article_id =:article_id",
@@ -168,6 +197,11 @@ class ArticleManager
         return $this->DBManager->findOneSecure('DELETE FROM users WHERE id = :id',['id' => $id]);
     }
 
+    public function countComments($article_id){
+        $data = $this->DBManager->findAllSecure('SELECT COUNT(*) FROM comments WHERE article_id =:article_id',['article_id' => $article_id]);
+        return $data[0]["COUNT(*)"];
+    }
+
     public function token()
     {
         $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
@@ -177,9 +211,6 @@ class ArticleManager
         }
         return $randstring;
     }
-
-
-
 
 
 

@@ -17,6 +17,12 @@ class DefaultController extends BaseController
         $admin = false;
         $availableArticle = $articleManager->availableArticle();
         $autor = $userManager->getUserByEmail("cheikhomar60@gmail.com");
+        $commentsNumber = [];
+
+
+        foreach ($availableArticle as $article){
+            $commentsNumber[$article['id']] = $articleManager->countComments($article['id']);
+        }
 
 
         if($email == 'cheikhomar60@gmail.com'){
@@ -28,6 +34,7 @@ class DefaultController extends BaseController
                 'admin' => $admin,
                 'availableArticle' => $availableArticle,
                 'autor' => $autor,
+                'commentsNumber' => $commentsNumber,
             ]);
     }
     public function articleAction()
@@ -40,10 +47,12 @@ class DefaultController extends BaseController
         $token = $_GET['token'];
         $article = $articleManager->getArticleByToken($token);
         $comments = [];
+        $commentsNumber = [];
 
-        if(!$article){
+        if(!$article || ($article && ($article['visible']) == 0)){
             $tokenExist = false;
         }
+
         if(!empty($_SESSION['user_id'])){
             $isLog = true;
         }
@@ -55,6 +64,7 @@ class DefaultController extends BaseController
         if($email == 'cheikhomar60@gmail.com'){
             $admin = true;
         }
+        $commentsNumber[$article['id']] = $articleManager->countComments($article['id']);
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $res = $articleManager->checkComment($_POST);
             if($res['isFormGood']){
@@ -80,6 +90,7 @@ class DefaultController extends BaseController
                                         'isLog' => $isLog,
                                         'comments' => $comments,
                                         'admin' => $admin,
+                                        'commentsNumber' => $commentsNumber,
                                     ]
             );
     }

@@ -10,6 +10,8 @@ routes:
     admin_articles: 'Security:admin_articles'
     admin_comments: 'Security:admin_comments'
     add_article: 'Article:add_article'
+    edit_article: 'Article:edit_article'
+
 
 defaut_route: 'home'
 

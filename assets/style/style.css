@@ -324,6 +324,9 @@
     line-height: 180%;
     width: 100%;
   }
+  .article_page .article .content_article p code {
+    background: white;
+  }
 }
 @media screen and (min-width: 768px) {
   .article_page .article .content_article p img {
@@ -578,7 +581,7 @@
   .admin_articles_page .recap table .infos_articles td {
     padding: 5px;
   }
-  .admin_articles_page .recap table .infos_articles td label {
+  .admin_articles_page .recap table .infos_articles td .label {
     float: right;
   }
   .admin_articles_page .recap table .infos_articles td .id {
@@ -587,6 +590,53 @@
   .admin_articles_page .recap table .infos_articles td .id_val {
     color: #f72525;
     opacity: 0.7;
+  }
+
+  .edit_article_page {
+    padding: 75px 20px 15px 20px;
+  }
+  .edit_article_page .container_form {
+    margin: 0 10px;
+  }
+  .edit_article_page .container_form .success_block {
+    color: #39B54A;
+    font-family: "PoppinsSemiBold";
+  }
+  .edit_article_page .container_form .title {
+    color: #2C3E50;
+    font-family: "robotoLight";
+    border-bottom: 2px solid #2C3E50;
+  }
+  .edit_article_page .container_form .error_block {
+    color: #ed6147;
+    font-family: "PoppinsSemiBold";
+  }
+  .edit_article_page .container_form .login_form p {
+    color: #2C3E50;
+    font-family: "robotoBold";
+    padding: 10px;
+  }
+  .edit_article_page .container_form .login_form .input {
+    width: 94%;
+    margin: 10px 0;
+    padding: 10px 10px;
+    font-size: 15px;
+    line-height: 1.42857143;
+    border-radius: 5px;
+  }
+  .edit_article_page .container_form .login_form .input:focus {
+    border: 2px solid #2C3E50;
+  }
+  .edit_article_page .container_form .button {
+    width: 100%;
+    padding: 10px 10px;
+    margin: 30px 0;
+    font-size: 15px;
+    line-height: 1.42857143;
+    background: #2C3E50;
+    color: white;
+    border: 1px solid #2C3E50;
+    border-radius: 5px;
   }
 
   .admin_users_page {
@@ -685,18 +735,14 @@
   }
   .admin_page .container_form {
     margin: 0 10px;
+    /*@media(min-width: 768px) {
+      width: 40%;
+    }*/
   }
   .admin_page .container_form .success_block {
     color: #39B54A;
     font-family: "PoppinsSemiBold";
   }
-}
-@media screen and (min-width: 768px) {
-  .admin_page .container_form {
-    width: 40%;
-  }
-}
-@media screen {
   .admin_page .container_form .title {
     color: #2C3E50;
     font-family: "robotoLight";

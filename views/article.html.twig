@@ -9,7 +9,8 @@
                        {{ article.title | striptags }}
                    {% endautoescape %}
                </h3>
-               <p class="resume_autor">By <span class="autor">{{autor.username}}</span> - <span class="date">{{ article.date | date("M d Y") }}</span>&nbsp;&nbsp;<img class="icon_comment" src="assets/img/chat2.png">&nbsp;&nbsp;</p>
+               {% set comNb = article.id %}
+               <p class="resume_autor">By <span class="autor">{{autor.username}}</span> - <span class="date">{{ article.date | date("M d Y") }}</span>&nbsp;&nbsp;<img class="icon_comment" src="assets/img/chat2.png">&nbsp;{{ commentsNumber[comNb] }}</p>
                <div class="img">
                    <img src="{{ article.file }}" alt="article_img">
                </div>

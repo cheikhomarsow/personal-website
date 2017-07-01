@@ -46,10 +46,12 @@ class UserManager
         $res = array();
         $isFormGood = true;
 
-        if (!isset($data['username']) || !$this->usernameValid($data['username'])) {
+        $username = trim($data['username']);
+        if(empty($username)){
             $errors['username'] = 'Pseudo de 2 caractères minimum';
             $isFormGood = false;
         }
+
 
         if (!$this->emailValid($data['email'])) {
             $errors['email'] = "email non valide";
@@ -82,10 +84,10 @@ class UserManager
         return filter_var($email, FILTER_VALIDATE_EMAIL);
     }
 
-    private function usernameValid($username)
+    /*private function usernameValid($username)
     {
-        return preg_match('`^([a-zA-Z0-9]{2,20})$`', $username);
-    }
+        return preg_match('`^([a-zA-Z0-9- ]{2,20})$`', $username);
+    }*/
 
 
     //Minimum : 8 caractères avec au moins une lettre majuscule et un nombre
@@ -150,6 +152,84 @@ class UserManager
             return true;
         }
 
+    }
+
+    public function checkContact($data){
+        $isFormGood = true;
+        $errors = [];
+        $res = [];
+
+        $email = $data['email'];
+        $user = $this->getUserById($_SESSION['user_id']);
+        $username = trim($data['username']);
+        if(empty($username)){
+            $errors['username'] = 'Pseudo de 2 caractères minimum';
+            $isFormGood = false;
+        }
+        if(!$this->emailValid($email)){
+            $errors['email'] = "email non valide";
+            $isFormGood = false;
+        }else{
+            $referee = $this->getUserByEmail($email);
+            if($referee == true && $user['id'] != $referee['id']){
+                $errors['email'] = "L'adresse email est déjà utilisé";
+                $isFormGood = false;
+            }
+        }
+        $res['isFormGood'] = $isFormGood;
+        $res['errors'] = $errors;
+        $res['data'] = $data;
+
+        return $res;
+    }
+    public function updateContact($data){
+        $username = $data['username'];
+        $email = $data['email'];
+        $id = $_SESSION['user_id'];
+        return $this->DBManager->findOneSecure(
+            "UPDATE users SET username = :username, email = :email WHERE id=:id",
+            [
+                'email' => $email,
+                'username' => $username,
+                'id' => $id
+            ]);
+    }
+    public function checkPassword($data){
+        $isFormGood = true;
+        $errors = [];
+        $res = [];
+
+        $old = $data['oldPassword'];
+        $new = $data['newPassword'];
+
+        $user = $this->getUserById($_SESSION['user_id']);
+
+        if(!password_verify($old, $user['password'])){
+            $errors['password'] = "Mot de passe ";
+            $isFormGood = false;
+        }else{
+            if(!$this->passwordValid($new)){
+                $errors['password'] = "Nouveau mot de passe non valide";
+                $isFormGood = false;
+            }
+        }
+
+
+        $res['isFormGood'] = $isFormGood;
+        $res['errors'] = $errors;
+        $res['data'] = $data;
+
+        return $res;
+    }
+    public function updatePassword($data){
+        $new = $this->userHash($data['newPassword']);
+        $id = $_SESSION['user_id'];
+        return $this->DBManager->findOneSecure(
+            "UPDATE users SET password = :new WHERE id=:id",
+            [
+                'new' => $new,
+                'id' => $id
+            ]);
     }
 
 

@@ -16,15 +16,16 @@
                                 </a>
                             {% endautoescape %}
                         </h3>
-                        <p class="resume_autor">By <span class="autor">{{autor.username}}</span> - <span class="date">{{ article.date | date("M d Y") }}</span>&nbsp;&nbsp;<img class="icon_comment" src="assets/img/chat2.png">&nbsp;&nbsp;</p>
+                        {% set comNb = article.id %}
+                        <p class="resume_autor">By <span class="autor">{{autor.username}}</span> - <span class="date">{{ article.date | date("M d Y") }}</span>&nbsp;&nbsp;<img class="icon_comment" src="assets/img/chat2.png">&nbsp;{{ commentsNumber[comNb] }}</p>
                         <a class="etc" href="?action=article&token={{ article.token }}">
                             <img class="img" src="{{ article.file }}" alt="article_img">
                         </a>
-                        <p class="content_article">
+                        <!--<p class="content_article">
                             {% autoescape false %}
                                 {{ article.content | raw | slice(0, 140) }} <a class="etc" href="?action=article&token={{ article.token }}">[Lire la suite]</a>
                             {% endautoescape %}
-                        </p>
+                        </p>-->
                 </div>
             {% endfor %}
         </div>
