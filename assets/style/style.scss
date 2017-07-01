@@ -50,11 +50,11 @@
           font-family: "robotoRegular";
           color: white;
           &:hover {
-            color: $hover;
+            font-family: "robotoBold";
           }
         }
         .active{
-          background: #1A242F;
+          background: #3B5998;
         }
       }
       @media(min-width: 1024px) {
@@ -74,11 +74,11 @@
             font-family: "robotoRegular";
             color: white;
             &:hover {
-              color: $hover;
+              font-family: "robotoBold";
             }
           }
           .active{
-            background: #1A242F;
+            background: #3B5998;
           }
         }
       }
@@ -150,6 +150,9 @@
 
   .home_page {
     padding: 75px 20px 15px 20px;
+    @media(min-width: 768px) {
+      min-height: 500px;
+    }
     .about_me{
       p{
         font-family: "robotoLight";
@@ -157,9 +160,9 @@
     }
     .last-posts{
       .title {
-        color: $neutralColor;
+        color: $neutral;
         font-family: "robotoLight";
-        border-bottom: 2px solid $neutralColor;
+        border-bottom: 2px solid $neutral;
         width: 100%;
       }
 
@@ -180,13 +183,13 @@
         }
         .title_article{
           font-family: "robotoLight";
-          color: $neutralColor;
+          color: $neutral;
         }
         .resume_autor{
           font-size: 0.8em;
           .autor{
             font-family: "PoppinsSemiBold";
-            color: $neutralColor;
+            color: $neutral;
           }
           .date{
             font-style: italic;
@@ -224,7 +227,7 @@
       }
       .title_article{
         font-family: "robotoLight";
-        color: $neutralColor;
+        color: $neutral;
         width: 100%;
         text-align: center;
       }
@@ -232,7 +235,7 @@
         font-size: 0.8em;
         .autor{
           font-family: "PoppinsSemiBold";
-          color: $neutralColor;
+          color: $neutral;
         }
         .date{
           font-style: italic;
@@ -289,9 +292,9 @@
         margin: 75px 0 50px 0;
         width: 100%;
         .title{
-          color: $neutralColor;
+          color: $neutral;
           font-family: "robotoLight";
-          border-bottom: 2px solid $neutralColor;
+          border-bottom: 2px solid $neutral;
           width: 100%;
         }
         .available_comment{
@@ -304,12 +307,17 @@
             line-height: 150%;
             margin-bottom: 5px;
             .userComment{
-                color: $neutralColor;
+                color: $neutral;
+            }
+            .dateComment{
+              font-style: italic;
+              font-size: 0.8em;
+              color: $grey;
             }
           }
           .zeroComment{
             text-align: center;
-            color: $neutralColor;
+            color: $neutral;
           }
         }
         .cantComment{
@@ -353,7 +361,7 @@
             margin-bottom: 30px;
             font-size: 15px;
             line-height: 1.42857143;
-            background: $neutralColor;
+            background: $neutral;
             color: white;
             border: 1px solid $neutralColor;
             border-radius: 5px;
@@ -740,6 +748,7 @@
     padding-top: 58px;
     @media(min-width: 768px) {
       @include flex_trinity(row, space-around);
+      min-height: 500px;
     }
 
     .container_form {
@@ -752,9 +761,9 @@
         width: 40%;
       }
       .title {
-        color: $neutralColor;
+        color: $neutral;
         font-family: "robotoLight";
-        border-bottom: 2px solid $neutralColor;
+        border-bottom: 2px solid $neutral;
       }
       .error_block {
         color: $red;
@@ -762,7 +771,7 @@
       }
       .login_form {
         p {
-          color: $neutralColor;
+          color: $neutral;
           font-family: "robotoBold";
         }
         input {
@@ -783,7 +792,7 @@
         margin-bottom: 30px;
         font-size: 15px;
         line-height: 1.42857143;
-        background: $neutralColor;
+        background: $neutral;
         color: white;
         border: 1px solid $neutralColor;
         border-radius: 5px;
@@ -795,6 +804,7 @@
     padding-top: 58px;
     @media(min-width: 768px) {
       @include flex_trinity(row, space-around);
+      min-height: 500px;
     }
 
     .container_form {
@@ -807,9 +817,9 @@
         width: 40%;
       }
       .title {
-        color: $neutralColor;
+        color: $neutral;
         font-family: "robotoLight";
-        border-bottom: 2px solid $neutralColor;
+        border-bottom: 2px solid $neutral;
       }
       .error_block {
         color: $red;
@@ -817,7 +827,7 @@
       }
       .login_form {
         p {
-          color: $neutralColor;
+          color: $neutral;
           font-family: "robotoBold";
         }
         input {
@@ -838,7 +848,7 @@
         margin-bottom: 30px;
         font-size: 15px;
         line-height: 1.42857143;
-        background: $neutralColor;
+        background: $neutral;
         color: white;
         border: 1px solid $neutralColor;
         border-radius: 5px;
@@ -855,11 +865,12 @@
     @media(min-width: 768px) {
       width: 80%;
       margin: auto;
+      min-height: 500px;
     }
     .title {
-      color: $neutralColor;
+      color: $neutral;
       font-family: "robotoLight";
-      border-bottom: 2px solid $neutralColor;
+      border-bottom: 2px solid $neutral;
     }
     .error_block {
       color: $red;
@@ -867,7 +878,7 @@
     }
     .login_form {
       p {
-        color: $neutralColor;
+        color: $neutral;
         font-family: "robotoBold";
       }
       input, textarea {
@@ -891,7 +902,7 @@
       margin-bottom: 30px;
       font-size: 15px;
       line-height: 1.42857143;
-      background: $neutralColor;
+      background: $neutral;
       color: white;
       border: 1px solid $neutralColor;
       border-radius: 5px;

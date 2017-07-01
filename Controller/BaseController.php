@@ -74,8 +74,8 @@ class BaseController
         $mail->Password = 'password9154';                           // SMTP password
         $mail->SMTPSecure = 'tls';                           // Enable TLS encryption, `ssl` also accepted
         $mail->Port = 587;
-        $mail->setFrom("chesow94@gmail.com", "Devenir partenaire");
-        $mail->addAddress("tritusfundation@gmail.com");
+        $mail->setFrom("chesow94@gmail.com", "cos-contact");
+        $mail->addAddress("cheikhomar60@gmail.com");
         $mail->isHTML(true);
         $mail->CharSet = 'UTF-8';
 

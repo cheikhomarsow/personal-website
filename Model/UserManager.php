@@ -50,6 +50,11 @@ class UserManager
         if(empty($username)){
             $errors['username'] = 'Pseudo de 2 caractères minimum';
             $isFormGood = false;
+        }else{
+            if(strlen($username) < 2){
+                $errors['username'] = 'Pseudo de 2 caractères minimum';
+                $isFormGood = false;
+            }
         }
 
 
@@ -166,6 +171,12 @@ class UserManager
             $errors['username'] = 'Pseudo de 2 caractères minimum';
             $isFormGood = false;
         }
+        else {
+            if (strlen($username) < 2) {
+                $errors['username'] = 'Pseudo de 2 caractères minimum';
+                $isFormGood = false;
+            }
+        }
         if(!$this->emailValid($email)){
             $errors['email'] = "email non valide";
             $isFormGood = false;
@@ -205,7 +216,7 @@ class UserManager
         $user = $this->getUserById($_SESSION['user_id']);
 
         if(!password_verify($old, $user['password'])){
-            $errors['password'] = "Mot de passe ";
+            $errors['password'] = "Le mot de passe n'est pas valide";
             $isFormGood = false;
         }else{
             if(!$this->passwordValid($new)){
@@ -231,6 +242,69 @@ class UserManager
                 'id' => $id
             ]);
     }
+
+    public function checkContactMe($data){
+        header('Content-Type: application/json; charset=utf-8');
+        header('Access-Control-Allow-Origin: *');
+        header('Access-Control-Allow-Methods: GET, POST');
+
+        $isFormGood = true;
+        $errors = [];
+        $res = [];
+
+        $email = $data['email'];
+        $sujet = trim($data['sujet']);
+        $message = trim($data['message']);
+        $username = trim($data['username']);
+
+        if(empty($username) ){
+            $isFormGood = false;
+        }else{
+            if(strlen($username) < 2) {
+                $isFormGood = false;
+            }
+        }
+        if(empty($sujet) ){
+            $isFormGood = false;
+        }else{
+            if(strlen($username) < 10) {
+                $isFormGood = false;
+            }
+        }
+        if(empty($message) ){
+            $isFormGood = false;
+        }else{
+            if(strlen($username) < 2) {
+                $isFormGood = false;
+            }
+            if(strlen($username) > 5000) {
+                $isFormGood = false;
+            }
+        }
+
+        if(!$this->emailValid($email)){
+            $errors['email'] = "email non valide";
+            $isFormGood = false;
+        }
+        if(!$isFormGood){
+            $errors['erreur'] = "Veillez remplir tous les champs";
+        }
+        if($isFormGood)
+        {
+            echo(json_encode(array('success'=>true, 'data'=>$data), JSON_UNESCAPED_UNICODE ,http_response_code(200)));
+            $res['isFormGood'] = $isFormGood;
+            $res['errors'] = $errors;
+            $res['data'] = $data;
+            //exit(0);
+            return $res;
+
+        }else
+        {
+            echo(json_encode(array('error'=>false, 'error'=>$errors), JSON_UNESCAPED_UNICODE ,http_response_code(400)));
+            exit(0);
+        }
+    }
+
 
 
 }

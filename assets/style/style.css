@@ -47,7 +47,7 @@
   }
 
   header {
-    background-color: #2C3E50;
+    background-color: #0077B5;
     box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.1);
     width: 100%;
     z-index: 3;
@@ -70,10 +70,10 @@
     color: white;
   }
   header .mobile_dropdown li a:hover {
-    color: #2EBC99;
+    font-family: "robotoBold";
   }
   header .mobile_dropdown li .active {
-    background: #1A242F;
+    background: #3B5998;
   }
 }
 @media screen and (min-width: 1024px) {
@@ -101,10 +101,10 @@
     color: white;
   }
   header .menu_desktop li a:hover {
-    color: #2EBC99;
+    font-family: "robotoBold";
   }
   header .menu_desktop li .active {
-    background: #1A242F;
+    background: #3B5998;
   }
 }
 @media screen {
@@ -172,6 +172,13 @@
   .home_page {
     padding: 75px 20px 15px 20px;
   }
+}
+@media screen and (min-width: 768px) {
+  .home_page {
+    min-height: 500px;
+  }
+}
+@media screen {
   .home_page .about_me p {
     font-family: "robotoLight";
   }
@@ -359,6 +366,11 @@
   .article_page .article .comment-box .available_comment p .userComment {
     color: #2C3E50;
   }
+  .article_page .article .comment-box .available_comment p .dateComment {
+    font-style: italic;
+    font-size: 0.8em;
+    color: grey;
+  }
   .article_page .article .comment-box .available_comment .zeroComment {
     text-align: center;
     color: #2C3E50;
@@ -400,7 +412,7 @@
     border-radius: 5px;
   }
   .article_page .article .comment-box .comment textarea:focus {
-    border: 2px solid #2C3E50;
+    border: 2px solid #0077B5;
   }
   .article_page .article .comment-box .comment .button {
     width: 80%;
@@ -411,7 +423,7 @@
     line-height: 1.42857143;
     background: #2C3E50;
     color: white;
-    border: 1px solid #2C3E50;
+    border: 1px solid #0077B5;
     border-radius: 5px;
   }
 
@@ -422,16 +434,16 @@
     width: 100%;
   }
   .admin_comments_page .dashbord .title {
-    color: #2C3E50;
+    color: #0077B5;
     font-family: "robotoLight";
-    border-bottom: 2px solid #2C3E50;
+    border-bottom: 2px solid #0077B5;
     width: 100%;
   }
   .admin_comments_page .dashbord .users, .admin_comments_page .dashbord .articles {
     width: 100%;
     text-align: center;
     padding: 10px 0;
-    background: #2C3E50;
+    background: #0077B5;
     border-radius: 5px;
     margin-bottom: 15px;
   }
@@ -519,16 +531,16 @@
     width: 100%;
   }
   .admin_articles_page .dashbord .title {
-    color: #2C3E50;
+    color: #0077B5;
     font-family: "robotoLight";
-    border-bottom: 2px solid #2C3E50;
+    border-bottom: 2px solid #0077B5;
     width: 100%;
   }
   .admin_articles_page .dashbord .users, .admin_articles_page .dashbord .comments {
     width: 100%;
     text-align: center;
     padding: 10px 0;
-    background: #2C3E50;
+    background: #0077B5;
     border-radius: 5px;
     margin-bottom: 15px;
   }
@@ -603,16 +615,16 @@
     font-family: "PoppinsSemiBold";
   }
   .edit_article_page .container_form .title {
-    color: #2C3E50;
+    color: #0077B5;
     font-family: "robotoLight";
-    border-bottom: 2px solid #2C3E50;
+    border-bottom: 2px solid #0077B5;
   }
   .edit_article_page .container_form .error_block {
     color: #ed6147;
     font-family: "PoppinsSemiBold";
   }
   .edit_article_page .container_form .login_form p {
-    color: #2C3E50;
+    color: #0077B5;
     font-family: "robotoBold";
     padding: 10px;
   }
@@ -625,7 +637,7 @@
     border-radius: 5px;
   }
   .edit_article_page .container_form .login_form .input:focus {
-    border: 2px solid #2C3E50;
+    border: 2px solid #0077B5;
   }
   .edit_article_page .container_form .button {
     width: 100%;
@@ -633,9 +645,9 @@
     margin: 30px 0;
     font-size: 15px;
     line-height: 1.42857143;
-    background: #2C3E50;
+    background: #0077B5;
     color: white;
-    border: 1px solid #2C3E50;
+    border: 1px solid #0077B5;
     border-radius: 5px;
   }
 
@@ -646,9 +658,9 @@
     width: 100%;
   }
   .admin_users_page .dashbord .title {
-    color: #2C3E50;
+    color: #0077B5;
     font-family: "robotoLight";
-    border-bottom: 2px solid #2C3E50;
+    border-bottom: 2px solid #0077B5;
     width: 100%;
   }
   .admin_users_page .dashbord .users {
@@ -667,7 +679,7 @@
     width: 100%;
     text-align: center;
     padding: 10px 0;
-    background: #2C3E50;
+    background: #0077B5;
     border-radius: 5px;
     margin-bottom: 15px;
   }
@@ -726,7 +738,7 @@
     width: 100%;
     text-align: center;
     padding: 10px 0;
-    background: #2C3E50;
+    background: #0077B5;
     border-radius: 5px;
   }
   .admin_page .dashbord a {
@@ -744,16 +756,16 @@
     font-family: "PoppinsSemiBold";
   }
   .admin_page .container_form .title {
-    color: #2C3E50;
+    color: #0077B5;
     font-family: "robotoLight";
-    border-bottom: 2px solid #2C3E50;
+    border-bottom: 2px solid #0077B5;
   }
   .admin_page .container_form .error_block {
     color: #ed6147;
     font-family: "PoppinsSemiBold";
   }
   .admin_page .container_form .login_form p {
-    color: #2C3E50;
+    color: #0077B5;
     font-family: "robotoBold";
     padding: 10px;
   }
@@ -766,7 +778,7 @@
     border-radius: 5px;
   }
   .admin_page .container_form .login_form .input:focus {
-    border: 2px solid #2C3E50;
+    border: 2px solid #0077B5;
   }
   .admin_page .container_form .button {
     width: 100%;
@@ -774,9 +786,9 @@
     margin: 30px 0;
     font-size: 15px;
     line-height: 1.42857143;
-    background: #2C3E50;
+    background: #0077B5;
     color: white;
-    border: 1px solid #2C3E50;
+    border: 1px solid #0077B5;
     border-radius: 5px;
   }
 
@@ -790,6 +802,7 @@
     flex-direction: row;
     justify-content: space-around;
     flex-wrap: wrap;
+    min-height: 500px;
   }
 }
 @media screen {
@@ -829,7 +842,7 @@
     border-radius: 5px;
   }
   .user_page .container_form .login_form input:focus {
-    border: 2px solid #2C3E50;
+    border: 2px solid #0077B5;
   }
   .user_page .container_form .button {
     width: 100%;
@@ -839,7 +852,7 @@
     line-height: 1.42857143;
     background: #2C3E50;
     color: white;
-    border: 1px solid #2C3E50;
+    border: 1px solid #0077B5;
     border-radius: 5px;
   }
 
@@ -853,6 +866,7 @@
     flex-direction: row;
     justify-content: space-around;
     flex-wrap: wrap;
+    min-height: 500px;
   }
 }
 @media screen {
@@ -892,7 +906,7 @@
     border-radius: 5px;
   }
   .reglog_page .container_form .login_form input:focus {
-    border: 2px solid #2C3E50;
+    border: 2px solid #0077B5;
   }
   .reglog_page .container_form .button {
     width: 100%;
@@ -902,7 +916,7 @@
     line-height: 1.42857143;
     background: #2C3E50;
     color: white;
-    border: 1px solid #2C3E50;
+    border: 1px solid #0077B5;
     border-radius: 5px;
   }
 
@@ -919,6 +933,7 @@
   .contact_page {
     width: 80%;
     margin: auto;
+    min-height: 500px;
   }
 }
 @media screen {
@@ -944,7 +959,7 @@
     border-radius: 5px;
   }
   .contact_page .login_form input:focus, .contact_page .login_form textarea:focus {
-    border: 2px solid #2C3E50;
+    border: 2px solid #0077B5;
   }
   .contact_page .login_form textarea {
     height: 200px;
@@ -957,7 +972,7 @@
     line-height: 1.42857143;
     background: #2C3E50;
     color: white;
-    border: 1px solid #2C3E50;
+    border: 1px solid #0077B5;
     border-radius: 5px;
   }
 
@@ -979,9 +994,9 @@
 }
 @media screen {
   footer .title {
-    color: #2C3E50;
+    color: #0077B5;
     font-family: "PoppinsMedium";
-    border-bottom: 2px solid #2C3E50;
+    border-bottom: 2px solid #0077B5;
   }
 }
 @media screen and (min-width: 768px) {
@@ -1001,7 +1016,7 @@
 }
 @media screen {
   footer .about .sous-titre {
-    color: #2C3E50;
+    color: #0077B5;
     font-family: "robotoBold";
   }
   footer .about .about_me {
@@ -1018,7 +1033,7 @@
 }
 @media screen {
   footer .social .sous-titre {
-    color: #2C3E50;
+    color: #0077B5;
     font-family: "robotoBold";
   }
   footer .social img {

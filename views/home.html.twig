@@ -3,7 +3,7 @@
 {% block content %}
     <main class="home_page">
         <div class="about_me">
-            <p>Bienvenue sur mon site ! Je m'appelle Cheikh Omar, j'ai 23 ans et je suis passionné par tout ce qui touche à l'informatique.</p>
+            <p>Bienvenue sur mon site ! </p>
         </div>
         <div class="last-posts">
             <h3 class="title">Articles récents</h3>
@@ -21,11 +21,6 @@
                         <a class="etc" href="?action=article&token={{ article.token }}">
                             <img class="img" src="{{ article.file }}" alt="article_img">
                         </a>
-                        <!--<p class="content_article">
-                            {% autoescape false %}
-                                {{ article.content | raw | slice(0, 140) }} <a class="etc" href="?action=article&token={{ article.token }}">[Lire la suite]</a>
-                            {% endautoescape %}
-                        </p>-->
                 </div>
             {% endfor %}
         </div>

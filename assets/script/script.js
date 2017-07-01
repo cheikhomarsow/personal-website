@@ -47,4 +47,36 @@ $(document).ready(function() {
             $(".available_comment").load(location.href + " .available_comment>*", "");
         }, 1000
     );
+
+    var frmBis = $('#formContactMe');
+    frmBis.submit(function (e) {
+        
+        e.preventDefault();
+
+        $.ajax({
+            type: frmBis.attr('method'),
+            url: frmBis.attr('action'),
+            data: frmBis.serialize(),
+
+            success: function (data) {
+                console.log('Submission was successful.');
+                console.log(data);
+            },
+            error: function (data) {
+
+                var res = data.responseText.split('<!DOCTYPE html>')[0];
+                var t0 = res.split(":")[0];
+                var errorORsuccess = t0.split("\"")[1];
+                if(errorORsuccess == 'error'){
+                    var error_message = res.split(":")[2].split("}}")[0].replace('"',' ').replace('"','');
+                    $('.error_contact_me').html(error_message);
+                }
+                if(errorORsuccess == 'success'){
+                    $('.success_contact_me').html("Votre message a été envoyé.");
+                    $('.contentMeVal').val('');
+                    $('.error_contact_me').html('');
+                }
+            }
+        });
+    });
 });
