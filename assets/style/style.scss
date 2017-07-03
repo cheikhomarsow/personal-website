@@ -193,6 +193,8 @@
           }
           .date{
             font-style: italic;
+            font-size: 0.8em;
+            color: $grey;
           }
           img{
             max-width: 10px;
@@ -200,6 +202,11 @@
               max-width: 12px;
             }
           }
+        }
+
+        .more{
+          width: 100%;
+          text-align: center;
         }
 
         .img{
@@ -286,7 +293,16 @@
             }
           }
         }
-
+      }
+      .share-button{
+        @include flex_trinity(row, flex-start);
+        margin-top: 30px;
+        .IN-widget{
+          margin: 5px;
+        }
+        .fb-share-button{
+          margin: 5px;
+        }
       }
       .comment-box{
         margin: 75px 0 50px 0;
@@ -895,6 +911,12 @@
       textarea {
         height: 200px;
       }
+    }
+    .waiting{
+      width: 100%;
+      text-align: center;
+      color: $neutral;
+      font-size: 0.8em;
     }
     .button {
       width: 97.5%;

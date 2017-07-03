@@ -229,6 +229,8 @@
   }
   .home_page .last-posts .article_summary .resume_autor .date {
     font-style: italic;
+    font-size: 0.8em;
+    color: grey;
   }
   .home_page .last-posts .article_summary .resume_autor img {
     max-width: 10px;
@@ -240,6 +242,10 @@
   }
 }
 @media screen {
+  .home_page .last-posts .article_summary .more {
+    width: 100%;
+    text-align: center;
+  }
   .home_page .last-posts .article_summary .img {
     width: 100%;
     padding-bottom: 5px;
@@ -342,6 +348,19 @@
   }
 }
 @media screen {
+  .article_page .article .share-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    margin-top: 30px;
+  }
+  .article_page .article .share-button .IN-widget {
+    margin: 5px;
+  }
+  .article_page .article .share-button .fb-share-button {
+    margin: 5px;
+  }
   .article_page .article .comment-box {
     margin: 75px 0 50px 0;
     width: 100%;
@@ -963,6 +982,12 @@
   }
   .contact_page .login_form textarea {
     height: 200px;
+  }
+  .contact_page .waiting {
+    width: 100%;
+    text-align: center;
+    color: #2C3E50;
+    font-size: 0.8em;
   }
   .contact_page .button {
     width: 97.5%;

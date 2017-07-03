@@ -50,7 +50,7 @@ $(document).ready(function() {
 
     var frmBis = $('#formContactMe');
     frmBis.submit(function (e) {
-        
+
         e.preventDefault();
 
         $.ajax({
@@ -72,11 +72,16 @@ $(document).ready(function() {
                     $('.error_contact_me').html(error_message);
                 }
                 if(errorORsuccess == 'success'){
-                    $('.success_contact_me').html("Votre message a été envoyé.");
-                    $('.contentMeVal').val('');
-                    $('.error_contact_me').html('');
+                    $('.waiting').html("Traitement en cours ...");
+                    setInterval(function() {
+                        $('.contentMeVal').val('');
+                        $('.error_contact_me').html('');
+                        $('.waiting').html("<img src='assets/img/checkmark-for-verification.png' alt='img'>");
+                        }, 5000
+                    );
                 }
             }
         });
     });
+
 });

@@ -12,7 +12,6 @@
             <h2 class="title">Me contacter</h2>
             <form action="?action=contact" id="formContactMe" method="POST">
                 <span class="error_block error_contact_me"></span>
-                <span class="success_block success_contact_me"></span>
                 <div class="login_form" >
                     <label for="username"><p>Votre nom : </p></label>
                     <input type="text" id="username" name="username" value='{{ username }}' placeholder="Votre nom">
@@ -29,6 +28,7 @@
                     <label for="message"><p>Message : </p></label>
                     <textarea id="message" class="contentMeVal" placeholder="Message" name="message"></textarea>
                 </div>
+                <div class="waiting"></div>
                 <button type="submit" class="button"><img src="assets/img/send-button.png">&nbsp;&nbsp;Envoyer</button>
             </form>
         </div>

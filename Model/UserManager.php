@@ -266,10 +266,6 @@ class UserManager
         }
         if(empty($sujet) ){
             $isFormGood = false;
-        }else{
-            if(strlen($username) < 10) {
-                $isFormGood = false;
-            }
         }
         if(empty($message) ){
             $isFormGood = false;
@@ -283,7 +279,7 @@ class UserManager
         }
 
         if(!$this->emailValid($email)){
-            $errors['email'] = "email non valide";
+            $errors['erreur'] = "Adresse email non valide";
             $isFormGood = false;
         }
         if(!$isFormGood){
