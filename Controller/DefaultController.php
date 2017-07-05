@@ -49,6 +49,8 @@ class DefaultController extends BaseController
         $comments = [];
         $commentsNumber = [];
 
+        $articleManager->checkIP($articleManager->get_ip(), $token);
+
         if(!$article || ($article && ($article['visible']) == 0)){
             $tokenExist = false;
         }

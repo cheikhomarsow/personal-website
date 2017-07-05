@@ -77,6 +77,7 @@ class ArticleManager
         $article['date'] = $this->DBManager->getDatetimeNow();
         $article['token'] = $this->token();
         $article['visible'] =  (int)$data['visible'];
+        $article['countVisites'] =  0;
         $this->DBManager->insert('articles', $article);
         move_uploaded_file($data['file_tmp_name'],$pathImage);
         chmod($pathImage, 0666);
@@ -213,6 +214,83 @@ class ArticleManager
         }
         return $randstring;
     }
+
+    public function alreadyRead($ip,$token){
+        return $this->DBManager->findOneSecure("SELECT * FROM users_IP WHERE ip =:ip AND token =:token",
+            [
+                'ip' => $ip,
+                'token' => $token,
+            ]
+        );
+    }
+
+    public function checkIP($ip, $token){
+        $data = $this->alreadyRead($ip, $token);
+        if($data !== false){
+            $date = date('Y/m/d H:i:s',strtotime($data['date']));
+            $currentDate = $this->DBManager->getDatetimeNow();
+
+            $date1 = date_create($date);
+            $date2 = date_create($currentDate);
+            $diff = date_diff($date1, $date2);
+            $interval = (int)$diff->format("%R%a");
+            if($interval > 1){
+                $this->updateCounter($token);
+                $this->DBManager->findOneSecure(
+                    "UPDATE users_IP SET date =:currentDate WHERE ip=:ip AND token =:token",
+                    [
+                        'ip' => $ip,
+                        'currentDate' => $currentDate,
+                        'token' => $token,
+                    ]);
+            }else{
+                $this->DBManager->findOneSecure(
+                    "UPDATE users_IP SET date =:currentDate WHERE ip=:ip AND token =:token",
+                    [
+                        'ip' => $ip,
+                        'currentDate' => $currentDate,
+                        'token' => $token,
+                    ]);
+            }
+        }else{
+            $this->updateCounter($token);
+            $this->addIP($ip,$token);
+        }
+    }
+
+    public function updateCounter($token){
+        $d = $this->getArticleByToken($token);
+        $countVisites = (int)$d['countVisites'] + 1;
+        return $this->DBManager->findOneSecure(
+            "UPDATE articles SET countVisites=:countVisites WHERE token=:token",
+            [
+                'token' => $token,
+                'countVisites' => $countVisites,
+            ]);
+    }
+
+    public function addIP($ip, $token){
+        $IP['ip'] = $ip;
+        $IP['token'] = $token;
+        $IP['date'] = $this->DBManager->getDatetimeNow();
+        $this->DBManager->insert('users_IP', $IP);
+    }
+
+    public function get_ip() {
+        // IP si internet partagé
+        if (isset($_SERVER['HTTP_CLIENT_IP'])) {
+            return $_SERVER['HTTP_CLIENT_IP'];
+        }
+        // IP derrière un proxy
+        elseif (isset($_SERVER['HTTP_X_FORWARDED_FOR'])) {
+            return $_SERVER['HTTP_X_FORWARDED_FOR'];
+        }
+        // Sinon : IP normale
+        else {
+            return (isset($_SERVER['REMOTE_ADDR']) ? $_SERVER['REMOTE_ADDR'] : '');
+        }
+    }
+
 
 
 
