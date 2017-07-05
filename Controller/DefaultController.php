@@ -77,11 +77,17 @@ class DefaultController extends BaseController
 
         foreach ($availableComment as $value){
             $userComment = $userManager->getUserById($value['user_id'])['username'];
+            $email2 = $userManager->getUserById($value['user_id'])['email'];
+            $adminComment = false;
+            if($email2 == "cheikhomar60@gmail.com"){
+                $adminComment = true;
+            }
             $comments[$value['id']] = [
                 'userComment' => $userComment,
                 'contentComment' => $value['content'],
                 'dateComment' => $value['date'],
-                ];
+                'adminComment' => $adminComment,
+            ];
         }
 
 
@@ -112,9 +118,14 @@ class DefaultController extends BaseController
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $res = $manager->checkContactMe($_POST);
             if($res['isFormGood']){
-                $object = "COS - Contact";
-                $infoUser = "Nom : " . $_POST['username'] . "<br>Email : " . $_POST['email']."<br>Message : <br>".$_POST['message'];
-                $this->sendMailBis($object, $infoUser, $altContent = null);
+                $to      = 'cheikhomar60@gmail.com';
+                $subject = 'COS - Contact';
+                $message = "Nom : " . $_POST['username'] . "<br>Email : " . $_POST['email']."<br>Message : <br>".$_POST['message'];
+                $headers = 'From: postmaster@cheikhomarsow.ovh' . "\r\n" .
+                    'Reply-To: postmaster@cheikhomarsow.ovh' . "\r\n" .
+                    'X-Mailer: PHP/' . phpversion();
+
+                mail($to, $subject, $message, $headers);
             }
         }
         echo $this->renderView('contact.html.twig',

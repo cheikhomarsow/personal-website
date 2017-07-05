@@ -230,7 +230,7 @@
       border-radius: 5px;
 
       @media(min-width: 1024px) {
-        @include flex_trinity(row, space-around);
+        @include flex_trinity(column, space-around);
       }
       .title_article{
         font-family: "robotoLight";
@@ -240,6 +240,7 @@
       }
       .resume_autor{
         font-size: 0.8em;
+        text-align: center;
         .autor{
           font-family: "PoppinsSemiBold";
           color: $neutral;
@@ -260,12 +261,8 @@
 
       .img{
         @media(min-width: 768px) {
-          width: 80%;
-          margin-left: 10%;
-        }
-        @media(min-width: 1024px) {
-          width: 35%;
-          margin: 0;
+          width: 40%;
+          margin: auto;
         }
         img{
           width: 100%;
@@ -275,8 +272,22 @@
       .content_article{
         width: 100%;
 
-        @media(min-width: 1024px) {
-          width: 60%;
+        @media(min-width: 768px) {
+          width: 70%;
+          margin: auto;
+        }
+        pre{
+          white-space:pre-wrap;
+          background: $codeBackground;
+          color: #FFF;
+          width: 100%;
+          strong{
+            color: $codeFunction;
+          }
+          @media(min-width: 768px) {
+            width: 70%;
+            margin: auto;
+          }
         }
         p{
           code{
@@ -295,7 +306,8 @@
         }
       }
       .share-button{
-        @include flex_trinity(row, flex-start);
+        text-align: center;
+        width: 100%;
         margin-top: 30px;
         .IN-widget{
           margin: 5px;

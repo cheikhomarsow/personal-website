@@ -186,6 +186,8 @@ class ArticleManager
     }
     public function removeArticle($id){
         $article_id = $id;
+        $article  = $this->getArticleById($article_id);
+        $url = $article['file'];
         $this->DBManager->findAllSecure('DELETE FROM comments WHERE article_id = :article_id',['article_id' => $article_id]);
         return $this->DBManager->findOneSecure('DELETE FROM articles WHERE id = :id',['id' => $id]);
     }

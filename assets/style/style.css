@@ -267,7 +267,7 @@
 @media screen and (min-width: 1024px) {
   .article_page .article {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-around;
     flex-wrap: wrap;
   }
@@ -281,6 +281,7 @@
   }
   .article_page .article .resume_autor {
     font-size: 0.8em;
+    text-align: center;
   }
   .article_page .article .resume_autor .autor {
     font-family: "PoppinsSemiBold";
@@ -307,14 +308,8 @@
 }
 @media screen and (min-width: 768px) {
   .article_page .article .img {
-    width: 80%;
-    margin-left: 10%;
-  }
-}
-@media screen and (min-width: 1024px) {
-  .article_page .article .img {
-    width: 35%;
-    margin: 0;
+    width: 40%;
+    margin: auto;
   }
 }
 @media screen {
@@ -326,9 +321,27 @@
     width: 100%;
   }
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 768px) {
   .article_page .article .content_article {
-    width: 60%;
+    width: 70%;
+    margin: auto;
+  }
+}
+@media screen {
+  .article_page .article .content_article pre {
+    white-space: pre-wrap;
+    background: #272822;
+    color: #FFF;
+    width: 100%;
+  }
+  .article_page .article .content_article pre strong {
+    color: #5ABF2C;
+  }
+}
+@media screen and (min-width: 768px) {
+  .article_page .article .content_article pre {
+    width: 70%;
+    margin: auto;
   }
 }
 @media screen {
@@ -349,10 +362,8 @@
 }
 @media screen {
   .article_page .article .share-button {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    flex-wrap: wrap;
+    text-align: center;
+    width: 100%;
     margin-top: 30px;
   }
   .article_page .article .share-button .IN-widget {

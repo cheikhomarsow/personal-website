@@ -24,15 +24,6 @@
                <div class="share-button">
                    <script src="//platform.linkedin.com/in.js" type="text/javascript"> lang: fr_FR</script>
                    <script type="IN/Share"></script>
-                   <div id="fb-root"></div>
-                   <script>(function(d, s, id) {
-                           var js, fjs = d.getElementsByTagName(s)[0];
-                           if (d.getElementById(id)) return;
-                           js = d.createElement(s); js.id = id;
-                           js.src = "//connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v2.9";
-                           fjs.parentNode.insertBefore(js, fjs);
-                       }(document, 'script', 'facebook-jssdk'));</script>
-                   <div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse">Partager</a></div>
                </div>
                    <div class="comment-box">
                    {% if isLog is defined and isLog == true %}
@@ -40,8 +31,11 @@
                        <div class="available_comment">
                             {% if comments is defined and comments is not empty %}
                                 {% for comment in comments %}
-                                    <p><span class="userComment">{{ comment.userComment }} :</span>&nbsp;&nbsp;<span class="dateComment">{{ comment.dateComment | date("F jS \\a\\t g:ia")}}</span> <br> &nbsp;&nbsp;&nbsp;&nbsp;{{ comment.contentComment | nl2br }}</p>
-                                {% endfor %}
+                                    <p><span class="userComment">{{ comment.userComment }}
+                                            {% if comment.adminComment == true %}
+                                                &nbsp;<img src="assets/img/ok.png" alt="img">
+                                            {% endif %}
+                                            : </span>&nbsp;&nbsp;<span class="dateComment">{{ comment.dateComment | date("F jS \\a\\t g:ia")}}</span> <br> &nbsp;&nbsp;&nbsp;&nbsp;{{ comment.contentComment | nl2br }}</p>                                {% endfor %}
                                 {% else %}
                                     <p class="zeroComment">Aucun commentaire pour l’instant.</p>
                             {% endif %}
