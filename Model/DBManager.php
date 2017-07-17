@@ -118,4 +118,14 @@ class DBManager
         fwrite($file_log, $text);
         fclose($file_log);
     }
+
+    public function token()
+    {
+        $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        $randstring = '';
+        for ($i = 0; $i < 20; $i++) {
+            $randstring .= $characters[mt_rand(0, strlen($characters))];
+        }
+        return $randstring;
+    }
 }

@@ -25,10 +25,13 @@ class SecurityController extends BaseController
             $from = '';
             $token = '';
 
-            if($_GET['from'] != NULL AND $_GET['token'] != NULL) {
+            if($_GET['from'] != NULL) {
                 $from = $_GET['from'];
+            }
+            if($_GET['token'] != NULL){
                 $token = $_GET['token'];
             }
+
 
             if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 if (isset($_POST['login'])) {
@@ -37,14 +40,18 @@ class SecurityController extends BaseController
                         $userManager->userLogin($_POST['email']);
                         if($from != NULL && $token != NULL){
                             $token = $_GET['token'];
-                            $route = "article&from=".$from."&token=".$token;
+                            $route = $from."&token=".$token;
                             echo $this->redirect($route);
+                        }
+                        elseif ($from != NULL){
+                            echo $this->redirect($from);
                         }else{
                             if($_POST['email'] == 'cheikhomar60@gmail.com'){
                                 echo $this->redirect('admin');
                             }else{
                                 echo $this->redirect('user');
                             }
+
                         }
                     }else{
                         echo $this->renderView('reglog.html.twig', [

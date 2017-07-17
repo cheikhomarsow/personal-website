@@ -17,13 +17,22 @@
                             {% endautoescape %}
                         </h3>
                         {% set comNb = article.id %}
-                        <p class="resume_autor">By <span class="autor">{{autor.username}}</span> - <span class="date">{{ article.date | date("M d Y") }}</span>&nbsp;&nbsp;<img class="icon_comment" src="assets/img/chat2.png">&nbsp;{{ commentsNumber[comNb] }}&nbsp;&nbsp;<img class="icon_comment" src="assets/img/eye.png">&nbsp;{{ article.countVisites }}</p>
+                    <p class="resume_autor">
+                        <img  class="me" src="assets/img/me.jpg" alt="img">
+                        <span class="autor">{{autor.username}}</span>&nbsp;
+                        <img  src="assets/img/calendar.png" alt="img">
+                        <span class="date">{{ article.date | date("M d Y") }}</span>&nbsp;
+                        <img class="icon_comment" src="assets/img/com.png">&nbsp;{{ commentsNumber[comNb] }}&nbsp;
+                        <img class="icon_comment" src="assets/img/eye.png">
+                        {{ article.countVisites }}
+                    </p>
                         <a class="etc" href="?action=article&token={{ article.token }}">
                             <img class="img" src="{{ article.file }}" alt="article_img">
                         </a>
                         <div class="more">
                             <a href="?action=article&token={{ article.token }}">
-                                <img src="assets/img/round-add-button.png" alt="article_img">
+                                READ MORE &nbsp;
+                                <img src="assets/img/arrow.png" alt="article_img">
                             </a>
                         </div>
                 </div>

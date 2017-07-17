@@ -98,7 +98,7 @@ class UserManager
     //Minimum : 8 caractères avec au moins une lettre majuscule et un nombre
     private function passwordValid($password)
     {
-        return preg_match('`^([a-zA-Z0-9-_]{8,20})$`', $password);
+        return preg_match('`^([a-zA-Z0-9-_]{6,20})$`', $password);
     }
 
 
@@ -130,6 +130,45 @@ class UserManager
 
         }
         return $isFormGood;
+    }
+
+    public function userCheckDemo($data)
+    {
+        header('Content-Type: application/json; charset=utf-8');
+        header('Access-Control-Allow-Origin: *');
+        header('Access-Control-Allow-Methods: GET, POST');
+        $isFormGood = true;
+        if (empty($data['username'])) {
+            $isFormGood = false;
+            $errorsLogin['username'] = 'Ce champs est obligatoire';
+        }else{
+            if(!$this->usernameValid($data['username'])){
+                $isFormGood = false;
+                $errorsLogin['username'] = 'username non valide : entre 6 et 20 caractères';
+            }
+        }
+        if (empty($data['password'])) {
+            $isFormGood = false;
+            $errorsLogin['password'] = 'Ce champs est obligatoire';
+        }else{
+            if(!$this->passwordValid($data['password'])){
+                $isFormGood = false;
+                $errorsLogin['password'] = 'password non valide : entre 6 et 20 caractères';
+            }
+        }
+        if($isFormGood)
+        {
+            json_encode(array('success'=>true, 'user'=>$_POST));
+        }
+        else
+        {
+            echo(json_encode(array('success'=>false, 'errors'=>$errorsLogin), JSON_UNESCAPED_UNICODE ,http_response_code(400)));
+            exit(0);
+        }
+        return $isFormGood;
+    }
+    private function usernameValid($username){
+        return preg_match('`^([a-zA-Z0-9-_]{6,20})$`', $username);
     }
 
 

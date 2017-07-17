@@ -136,4 +136,35 @@ class DefaultController extends BaseController
                 'admin' => $admin,
             ]);
     }
+    public function demo_ajaxAction(){
+        $manager = UserManager::getInstance();
+        $user_id = $_SESSION['user_id'];
+        $user = $manager->getUserById($user_id);
+        $email = $user['email'];
+        $admin = false;
+        $error = '';
+
+
+        if($email == 'cheikhomar60@gmail.com'){
+            $admin = true;
+        }
+        if ($_SERVER['REQUEST_METHOD'] === 'POST')
+        {
+            $manager = UserManager::getInstance();
+            if ($manager->userCheckDemo($_POST))
+            {
+                /*$manager->userLogin($_POST['username']);
+                $this->redirect('home');*/
+            }
+            else {
+                $error = "Invalid username or password";
+            }
+        }
+        echo $this->renderView('demo_ajax.html.twig', ['error' => $error,
+                                                        'user'=>$user,
+                                                        'admin' => $admin,
+                                                        ]);
+    }
+
+
 }

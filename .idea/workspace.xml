@@ -2,9 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="91101795-3b1c-4335-a8ef-3e061bc6eb88" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/img/chat2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/img/round-add-button.png" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Controller/DefaultController.php" afterPath="$PROJECT_DIR$/Controller/DefaultController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Model/ArticleManager.php" afterPath="$PROJECT_DIR$/Model/ArticleManager.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Model/UserManager.php" afterPath="$PROJECT_DIR$/Model/UserManager.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/script/script.js" afterPath="$PROJECT_DIR$/assets/script/script.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/style/partials/_var.scss" afterPath="$PROJECT_DIR$/assets/style/partials/_var.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/style/style.css" afterPath="$PROJECT_DIR$/assets/style/style.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/style/style.css.map" afterPath="$PROJECT_DIR$/assets/style/style.css.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/style/style.scss" afterPath="$PROJECT_DIR$/assets/style/style.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/config.yml" afterPath="$PROJECT_DIR$/config/config.yml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/article.html.twig" afterPath="$PROJECT_DIR$/views/article.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/home.html.twig" afterPath="$PROJECT_DIR$/views/home.html.twig" />
     </list>
@@ -17,142 +25,151 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="DefaultController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Controller/DefaultController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="51" column="68" lean-forward="true" selection-start-line="51" selection-start-column="68" selection-end-line="51" selection-end-column="68" />
-              <folding>
-                <element signature="e#30#55#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ArticleController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Controller/ArticleController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="600">
-              <caret line="52" column="40" lean-forward="false" selection-start-line="52" selection-start-column="40" selection-end-line="52" selection-end-column="40" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-              <folding>
-                <element signature="e#7#25#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="script.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/script/script.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="940">
-              <caret line="47" column="15" lean-forward="false" selection-start-line="47" selection-start-column="15" selection-end-line="47" selection-end-column="15" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ArticleManager.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Model/ArticleManager.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="482">
-              <caret line="256" column="37" lean-forward="false" selection-start-line="256" selection-start-column="37" selection-end-line="256" selection-end-column="37" />
-              <folding>
-                <marker date="1499240767103" expanded="true" signature="483:511" ph="SELECT * FRO... articles" />
-                <marker date="1499240767103" expanded="true" signature="483:525" ph="SELECT * FRO... articles" />
-                <marker date="1499240767103" expanded="true" signature="702:754" ph="SELECT * FRO... articles" />
-                <marker date="1499240767103" expanded="true" signature="3099:3200" ph="UPDATE artic... " />
-                <marker date="1499240767103" expanded="true" signature="5529:5588" ph="SELECT * FRO... articles" />
-                <marker date="1499240767103" expanded="true" signature="5683:5742" ph="SELECT * FRO... articles" />
-                <marker date="1499240767103" expanded="true" signature="5834:5875" ph="SELECT * FRO... articles" />
-                <marker date="1499240767103" expanded="true" signature="6012:6064" ph="SELECT * FRO... comments" />
-                <marker date="1499240767103" expanded="true" signature="6253:6294" ph="SELECT * FRO... comments" />
-                <marker date="1499240767103" expanded="true" signature="6393:6428" ph="DELETE FROM " />
-                <marker date="1499240767103" expanded="true" signature="6649:6700" ph="DELETE FROM " />
-                <marker date="1499240767103" expanded="true" signature="6782:6817" ph="DELETE FROM " />
-                <marker date="1499240767103" expanded="true" signature="6944:6989" ph="DELETE FROM " />
-                <marker date="1499240767103" expanded="true" signature="7058:7103" ph="DELETE FROM " />
-                <marker date="1499240767103" expanded="true" signature="7179:7211" ph="DELETE FROM " />
-                <marker date="1499240767103" expanded="true" signature="7333:7392" ph="SELECT COUNT... comments" />
-                <marker date="1499240767103" expanded="true" signature="7353:7392" ph="DELETE FROM " />
-                <marker date="1499240767103" expanded="true" signature="7867:7921" ph="SELECT * FRO... users_IP" />
-                <marker date="1499240767103" expanded="true" signature="8619:8670" ph="UPDATE user_... " />
-                <marker date="1499240767103" expanded="true" signature="8619:8688" ph="UPDATE users... " />
-                <marker date="1499240767103" expanded="true" signature="8961:9030" ph="UPDATE users... " />
-                <marker date="1499240767103" expanded="true" signature="9544:9609" ph="UPDATE artic... " />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="home.html.twig" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/views/home.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="380">
-              <caret line="19" column="349" lean-forward="false" selection-start-line="19" selection-start-column="349" selection-end-line="19" selection-end-column="349" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="layout.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/layout.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="320">
-              <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="style.scss" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/style/style.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="6180">
-              <caret line="309" column="19" lean-forward="false" selection-start-line="309" selection-start-column="19" selection-end-line="309" selection-end-column="19" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_var.scss" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/style/partials/_var.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="280">
-              <caret line="14" column="24" lean-forward="false" selection-start-line="14" selection-start-column="24" selection-end-line="14" selection-end-column="24" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="article.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/article.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="222">
-              <caret line="12" column="340" lean-forward="false" selection-start-line="12" selection-start-column="340" selection-end-line="12" selection-end-column="340" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="horizontal" split-proportion="0.6044325">
+      <split-first>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file leaf-file-name="DefaultController.php" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/Controller/DefaultController.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="3120">
+                  <caret line="157" column="13" lean-forward="false" selection-start-line="157" selection-start-column="13" selection-end-line="157" selection-end-column="13" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="UserManager.php" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/Model/UserManager.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="2920">
+                  <caret line="146" column="90" lean-forward="false" selection-start-line="146" selection-start-column="90" selection-end-line="146" selection-end-column="90" />
+                  <folding>
+                    <marker date="1499578670953" expanded="true" signature="492:523" ph="SELECT * FRO... users" />
+                    <marker date="1499578670953" expanded="true" signature="660:700" ph="SELECT * FRO... users" />
+                    <marker date="1499578670953" expanded="true" signature="896:915" ph="SELECT * FRO... users" />
+                    <marker date="1499578670953" expanded="true" signature="896:963" ph="SELECT * FRO... users" />
+                    <marker date="1499578670953" expanded="true" signature="7542:7608" ph="UPDATE users... " />
+                    <marker date="1499578670953" expanded="true" signature="8679:8724" ph="UPDATE users... " />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="ArticleController.php" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/Controller/ArticleController.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="1980">
+                  <caret line="100" column="5" lean-forward="false" selection-start-line="100" selection-start-column="5" selection-end-line="100" selection-end-column="5" />
+                  <folding>
+                    <element signature="e#30#55#0#PHP" expanded="false" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="style.scss" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/assets/style/style.scss">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="220">
+                  <caret line="328" column="13" lean-forward="false" selection-start-line="328" selection-start-column="13" selection-end-line="328" selection-end-column="13" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="layout.html.twig" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/views/layout.html.twig">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="320">
+                  <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="reglog.html.twig" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/views/reglog.html.twig">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="460">
+                  <caret line="23" column="59" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="_font.scss" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/assets/style/partials/_font.scss">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="40">
+                  <caret line="2" column="16" lean-forward="false" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="26" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="_var.scss" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/assets/style/partials/_var.scss">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="160">
+                  <caret line="8" column="27" lean-forward="false" selection-start-line="8" selection-start-column="27" selection-end-line="8" selection-end-column="27" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="article.html.twig" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/views/article.html.twig">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="240">
+                  <caret line="12" column="39" lean-forward="false" selection-start-line="12" selection-start-column="39" selection-end-line="12" selection-end-column="39" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file leaf-file-name="article.html.twig" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/views/article.html.twig">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="760">
+                  <caret line="38" column="17" lean-forward="false" selection-start-line="38" selection-start-column="17" selection-end-line="38" selection-end-column="17" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="demo_ajax.html.twig" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/views/demo_ajax.html.twig">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="100">
+                  <caret line="5" column="46" lean-forward="false" selection-start-line="5" selection-start-column="46" selection-end-line="5" selection-end-column="46" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="ajax-login-demo.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/assets/script/ajax-login-demo.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="360">
+                  <caret line="18" column="20" lean-forward="false" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
       <find>console</find>
       <find>getArticleById</find>
       <find>img</find>
-      <find>.article_page</find>
       <find>article_pa</find>
       <find>admin</find>
       <find>.edit</find>
@@ -170,6 +187,12 @@
       <find>.article_pa</find>
       <find>.IN</find>
       <find>http://your-domain.com/path</find>
+      <find>.home_page</find>
+      <find>.article_page</find>
+      <find>.more</find>
+      <find>.reglo</find>
+      <find>trim</find>
+      <find>header</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -189,22 +212,24 @@
         <option value="$PROJECT_DIR$/Controller/UserController.php" />
         <option value="$PROJECT_DIR$/views/user.html.twig" />
         <option value="$PROJECT_DIR$/views/admin.html.twig" />
-        <option value="$PROJECT_DIR$/Controller/ArticleController.php" />
         <option value="$PROJECT_DIR$/views/edit_article.html.twig" />
         <option value="$PROJECT_DIR$/Controller/SecurityController.php" />
         <option value="$PROJECT_DIR$/views/admin_articles.html.twig" />
-        <option value="$PROJECT_DIR$/Model/UserManager.php" />
         <option value="$PROJECT_DIR$/views/contact.html.twig" />
-        <option value="$PROJECT_DIR$/config/config.yml" />
         <option value="$PROJECT_DIR$/Controller/BaseController.php" />
         <option value="$PROJECT_DIR$/views/layout.html.twig" />
-        <option value="$PROJECT_DIR$/assets/style/partials/_var.scss" />
-        <option value="$PROJECT_DIR$/assets/style/style.scss" />
-        <option value="$PROJECT_DIR$/assets/script/script.js" />
-        <option value="$PROJECT_DIR$/Controller/DefaultController.php" />
         <option value="$PROJECT_DIR$/Model/ArticleManager.php" />
         <option value="$PROJECT_DIR$/views/article.html.twig" />
+        <option value="$PROJECT_DIR$/assets/style/partials/_var.scss" />
+        <option value="$PROJECT_DIR$/Controller/ArticleController.php" />
         <option value="$PROJECT_DIR$/views/home.html.twig" />
+        <option value="$PROJECT_DIR$/config/config.yml" />
+        <option value="$PROJECT_DIR$/Controller/DefaultController.php" />
+        <option value="$PROJECT_DIR$/assets/script/script.js" />
+        <option value="$PROJECT_DIR$/Model/UserManager.php" />
+        <option value="$PROJECT_DIR$/assets/script/ajax-login-demo.js" />
+        <option value="$PROJECT_DIR$/views/demo_ajax.html.twig" />
+        <option value="$PROJECT_DIR$/assets/style/style.scss" />
       </list>
     </option>
   </component>
@@ -243,8 +268,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -257,155 +280,16 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cos" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cos" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cos" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cos" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Router" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cos" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cos" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Model" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cos" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cos" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Controller" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cos" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cos" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="config" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cos" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cos" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="style" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cos" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cos" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="style" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="partials" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cos" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cos" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="script" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cos" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cos" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../formation-laravel/mini-filer" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -512,29 +396,38 @@
       <workItem from="1499099166339" duration="4721000" />
       <workItem from="1499128673703" duration="4818000" />
       <workItem from="1499205184286" duration="8757000" />
-      <workItem from="1499236869524" duration="4259000" />
+      <workItem from="1499236869524" duration="4326000" />
+      <workItem from="1499296655694" duration="14496000" />
+      <workItem from="1499341918851" duration="3611000" />
+      <workItem from="1499483026118" duration="920000" />
+      <workItem from="1499574693025" duration="5532000" />
+      <workItem from="1499729796313" duration="2156000" />
+      <workItem from="1499819887585" duration="223000" />
+      <workItem from="1499839947730" duration="1117000" />
+      <workItem from="1499924425846" duration="1278000" />
+      <workItem from="1499983258629" duration="751000" />
+      <workItem from="1499984056174" duration="245000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="163570000" />
+    <option name="totallyTimeSpent" value="193966000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="64" y="-11" width="1537" height="912" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24378778" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19073203" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Grunt " active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -576,57 +469,10 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/assets/style/partials/_var.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Controller/ArticleController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="17" column="13" lean-forward="false" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Model/ArticleManager.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1400">
           <caret line="70" column="87" lean-forward="false" selection-start-line="70" selection-start-column="87" selection-end-line="70" selection-end-column="87" />
-          <folding>
-            <marker date="1499240767103" expanded="true" signature="483:511" ph="SELECT * FRO... articles" />
-            <marker date="1499240767103" expanded="true" signature="483:525" ph="SELECT * FRO... articles" />
-            <marker date="1499240767103" expanded="true" signature="702:754" ph="SELECT * FRO... articles" />
-            <marker date="1499240767103" expanded="true" signature="3099:3200" ph="UPDATE artic... " />
-            <marker date="1499240767103" expanded="true" signature="5529:5588" ph="SELECT * FRO... articles" />
-            <marker date="1499240767103" expanded="true" signature="5683:5742" ph="SELECT * FRO... articles" />
-            <marker date="1499240767103" expanded="true" signature="5834:5875" ph="SELECT * FRO... articles" />
-            <marker date="1499240767103" expanded="true" signature="6012:6064" ph="SELECT * FRO... comments" />
-            <marker date="1499240767103" expanded="true" signature="6253:6294" ph="SELECT * FRO... comments" />
-            <marker date="1499240767103" expanded="true" signature="6393:6428" ph="DELETE FROM " />
-            <marker date="1499240767103" expanded="true" signature="6649:6700" ph="DELETE FROM " />
-            <marker date="1499240767103" expanded="true" signature="6782:6817" ph="DELETE FROM " />
-            <marker date="1499240767103" expanded="true" signature="6944:6989" ph="DELETE FROM " />
-            <marker date="1499240767103" expanded="true" signature="7058:7103" ph="DELETE FROM " />
-            <marker date="1499240767103" expanded="true" signature="7179:7211" ph="DELETE FROM " />
-            <marker date="1499240767103" expanded="true" signature="7333:7392" ph="SELECT COUNT... comments" />
-            <marker date="1499240767103" expanded="true" signature="7353:7392" ph="DELETE FROM " />
-            <marker date="1499240767103" expanded="true" signature="7867:7921" ph="SELECT * FRO... users_IP" />
-            <marker date="1499240767103" expanded="true" signature="8619:8670" ph="UPDATE user_... " />
-            <marker date="1499240767103" expanded="true" signature="8619:8688" ph="UPDATE users... " />
-            <marker date="1499240767103" expanded="true" signature="8961:9030" ph="UPDATE users... " />
-            <marker date="1499240767103" expanded="true" signature="9544:9609" ph="UPDATE artic... " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -634,9 +480,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="500">
           <caret line="26" column="56" lean-forward="false" selection-start-line="26" selection-start-column="56" selection-end-line="26" selection-end-column="56" />
-          <folding>
-            <element signature="e#30#55#0#PHP" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -666,7 +510,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="9" column="8" lean-forward="false" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -688,30 +531,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1200">
           <caret line="60" column="32" lean-forward="false" selection-start-line="60" selection-start-column="32" selection-end-line="60" selection-end-column="32" />
-          <folding>
-            <marker date="1499240767103" expanded="true" signature="483:511" ph="SELECT * FRO... articles" />
-            <marker date="1499240767103" expanded="true" signature="483:525" ph="SELECT * FRO... articles" />
-            <marker date="1499240767103" expanded="true" signature="702:754" ph="SELECT * FRO... articles" />
-            <marker date="1499240767103" expanded="true" signature="3099:3200" ph="UPDATE artic... " />
-            <marker date="1499240767103" expanded="true" signature="5529:5588" ph="SELECT * FRO... articles" />
-            <marker date="1499240767103" expanded="true" signature="5683:5742" ph="SELECT * FRO... articles" />
-            <marker date="1499240767103" expanded="true" signature="5834:5875" ph="SELECT * FRO... articles" />
-            <marker date="1499240767103" expanded="true" signature="6012:6064" ph="SELECT * FRO... comments" />
-            <marker date="1499240767103" expanded="true" signature="6253:6294" ph="SELECT * FRO... comments" />
-            <marker date="1499240767103" expanded="true" signature="6393:6428" ph="DELETE FROM " />
-            <marker date="1499240767103" expanded="true" signature="6649:6700" ph="DELETE FROM " />
-            <marker date="1499240767103" expanded="true" signature="6782:6817" ph="DELETE FROM " />
-            <marker date="1499240767103" expanded="true" signature="6944:6989" ph="DELETE FROM " />
-            <marker date="1499240767103" expanded="true" signature="7058:7103" ph="DELETE FROM " />
-            <marker date="1499240767103" expanded="true" signature="7179:7211" ph="DELETE FROM " />
-            <marker date="1499240767103" expanded="true" signature="7333:7392" ph="SELECT COUNT... comments" />
-            <marker date="1499240767103" expanded="true" signature="7353:7392" ph="DELETE FROM " />
-            <marker date="1499240767103" expanded="true" signature="7867:7921" ph="SELECT * FRO... users_IP" />
-            <marker date="1499240767103" expanded="true" signature="8619:8670" ph="UPDATE user_... " />
-            <marker date="1499240767103" expanded="true" signature="8619:8688" ph="UPDATE users... " />
-            <marker date="1499240767103" expanded="true" signature="8961:9030" ph="UPDATE users... " />
-            <marker date="1499240767103" expanded="true" signature="9544:9609" ph="UPDATE artic... " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -720,12 +539,12 @@
         <state relative-caret-position="3160">
           <caret line="158" column="5" lean-forward="false" selection-start-line="158" selection-start-column="5" selection-end-line="158" selection-end-column="5" />
           <folding>
-            <marker date="1499036280851" expanded="true" signature="492:523" ph="SELECT * FRO... users" />
-            <marker date="1499036280851" expanded="true" signature="660:700" ph="SELECT * FRO... users" />
-            <marker date="1499036280851" expanded="true" signature="896:915" ph="SELECT * FRO... users" />
-            <marker date="1499036280851" expanded="true" signature="896:963" ph="SELECT * FRO... users" />
-            <marker date="1499036280851" expanded="true" signature="6110:6176" ph="UPDATE users... " />
-            <marker date="1499036280851" expanded="true" signature="7247:7292" ph="UPDATE users... " />
+            <marker date="1499578670953" expanded="true" signature="492:523" ph="SELECT * FRO... users" />
+            <marker date="1499578670953" expanded="true" signature="660:700" ph="SELECT * FRO... users" />
+            <marker date="1499578670953" expanded="true" signature="896:915" ph="SELECT * FRO... users" />
+            <marker date="1499578670953" expanded="true" signature="896:963" ph="SELECT * FRO... users" />
+            <marker date="1499578670953" expanded="true" signature="7542:7608" ph="UPDATE users... " />
+            <marker date="1499578670953" expanded="true" signature="8679:8724" ph="UPDATE users... " />
           </folding>
         </state>
       </provider>
@@ -734,7 +553,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="280">
           <caret line="15" column="60" lean-forward="false" selection-start-line="15" selection-start-column="60" selection-end-line="15" selection-end-column="77" />
-          <folding />
+          <folding>
+            <element signature="e#30#55#0#PHP" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -749,7 +570,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="9" column="8" lean-forward="false" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -762,13 +582,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/uploads/cosinus/calm.png" />
     <entry file="file://$PROJECT_DIR$/Controller/ReglogController.php" />
-    <entry file="file://$PROJECT_DIR$/views/reglog.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="740">
-          <caret line="37" column="41" lean-forward="false" selection-start-line="37" selection-start-column="41" selection-end-line="37" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/layout_admin.html.twig" />
     <entry file="file://$PROJECT_DIR$/views/admin_comments.html.twig">
       <provider selected="true" editor-type-id="text-editor">
@@ -840,13 +653,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/style/partials/_font.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="40">
-          <caret line="2" column="26" lean-forward="true" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/edit_article.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="840">
@@ -858,22 +664,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="222">
           <caret line="20" column="13" lean-forward="true" selection-start-line="18" selection-start-column="12" selection-end-line="20" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Model/UserManager.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-7">
-          <caret line="268" column="9" lean-forward="false" selection-start-line="268" selection-start-column="9" selection-end-line="268" selection-end-column="9" />
-          <folding>
-            <marker date="1499036280851" expanded="true" signature="492:523" ph="SELECT * FRO... users" />
-            <marker date="1499036280851" expanded="true" signature="660:700" ph="SELECT * FRO... users" />
-            <marker date="1499036280851" expanded="true" signature="896:915" ph="SELECT * FRO... users" />
-            <marker date="1499036280851" expanded="true" signature="896:963" ph="SELECT * FRO... users" />
-            <marker date="1499036280851" expanded="true" signature="6110:6176" ph="UPDATE users... " />
-            <marker date="1499036280851" expanded="true" signature="7247:7292" ph="UPDATE users... " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -881,9 +671,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="407">
           <caret line="113" column="0" lean-forward="false" selection-start-line="113" selection-start-column="0" selection-end-line="113" selection-end-column="0" />
-          <folding>
-            <marker date="1498599792027" expanded="true" signature="1100:1142" ph="INSERT INTO `${$table}`... " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -894,18 +681,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/config.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="21" column="21" lean-forward="false" selection-start-line="21" selection-start-column="21" selection-end-line="21" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Router/Router.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="460">
           <caret line="23" column="22" lean-forward="true" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -913,7 +692,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
           <caret line="15" column="27" lean-forward="false" selection-start-line="15" selection-start-column="27" selection-end-line="15" selection-end-column="27" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -921,7 +699,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3040">
           <caret line="153" column="40" lean-forward="false" selection-start-line="153" selection-start-column="16" selection-end-line="153" selection-end-column="40" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -929,9 +706,123 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="480">
           <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/style/partials/_mixin.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Model/ArticleManager.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5120">
+          <caret line="256" column="37" lean-forward="false" selection-start-line="256" selection-start-column="37" selection-end-line="256" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/style/partials/_var.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="8" column="27" lean-forward="false" selection-start-line="8" selection-start-column="27" selection-end-line="8" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Controller/ArticleController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1980">
+          <caret line="100" column="5" lean-forward="false" selection-start-line="100" selection-start-column="5" selection-end-line="100" selection-end-column="5" />
           <folding>
-            <element signature="e#7#25#0#PHP" expanded="true" />
+            <element signature="e#30#55#0#PHP" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/style/partials/_font.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="40">
+          <caret line="2" column="16" lean-forward="false" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Controller/DefaultController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3120">
+          <caret line="157" column="13" lean-forward="false" selection-start-line="157" selection-start-column="13" selection-end-line="157" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/script/script.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="577">
+          <caret line="90" column="7" lean-forward="false" selection-start-line="90" selection-start-column="7" selection-end-line="90" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/home.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="660">
+          <caret line="33" column="41" lean-forward="true" selection-start-line="33" selection-start-column="41" selection-end-line="33" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/config.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="13" column="34" lean-forward="false" selection-start-line="13" selection-start-column="34" selection-end-line="13" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/reglog.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="460">
+          <caret line="23" column="59" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Model/UserManager.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2920">
+          <caret line="146" column="90" lean-forward="false" selection-start-line="146" selection-start-column="90" selection-end-line="146" selection-end-column="90" />
+          <folding>
+            <marker date="1499578670953" expanded="true" signature="492:523" ph="SELECT * FRO... users" />
+            <marker date="1499578670953" expanded="true" signature="660:700" ph="SELECT * FRO... users" />
+            <marker date="1499578670953" expanded="true" signature="896:915" ph="SELECT * FRO... users" />
+            <marker date="1499578670953" expanded="true" signature="896:963" ph="SELECT * FRO... users" />
+            <marker date="1499578670953" expanded="true" signature="7542:7608" ph="UPDATE users... " />
+            <marker date="1499578670953" expanded="true" signature="8679:8724" ph="UPDATE users... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/article.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="760">
+          <caret line="38" column="17" lean-forward="false" selection-start-line="38" selection-start-column="17" selection-end-line="38" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/script/ajax-login-demo.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="18" column="20" lean-forward="false" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/demo_ajax.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="5" column="46" lean-forward="false" selection-start-line="5" selection-start-column="46" selection-end-line="5" selection-end-column="46" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -943,94 +834,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/style/partials/_var.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="14" column="24" lean-forward="false" selection-start-line="14" selection-start-column="24" selection-end-line="14" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/style/style.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6180">
-          <caret line="309" column="19" lean-forward="false" selection-start-line="309" selection-start-column="19" selection-end-line="309" selection-end-column="19" />
+        <state relative-caret-position="220">
+          <caret line="328" column="13" lean-forward="false" selection-start-line="328" selection-start-column="13" selection-end-line="328" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/script/script.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="940">
-          <caret line="47" column="15" lean-forward="false" selection-start-line="47" selection-start-column="15" selection-end-line="47" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Controller/DefaultController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="51" column="68" lean-forward="true" selection-start-line="51" selection-start-column="68" selection-end-line="51" selection-end-column="68" />
-          <folding>
-            <element signature="e#30#55#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Controller/ArticleController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="52" column="40" lean-forward="false" selection-start-line="52" selection-start-column="40" selection-end-line="52" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Model/ArticleManager.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="482">
-          <caret line="256" column="37" lean-forward="false" selection-start-line="256" selection-start-column="37" selection-end-line="256" selection-end-column="37" />
-          <folding>
-            <marker date="1499240767103" expanded="true" signature="483:511" ph="SELECT * FRO... articles" />
-            <marker date="1499240767103" expanded="true" signature="483:525" ph="SELECT * FRO... articles" />
-            <marker date="1499240767103" expanded="true" signature="702:754" ph="SELECT * FRO... articles" />
-            <marker date="1499240767103" expanded="true" signature="3099:3200" ph="UPDATE artic... " />
-            <marker date="1499240767103" expanded="true" signature="5529:5588" ph="SELECT * FRO... articles" />
-            <marker date="1499240767103" expanded="true" signature="5683:5742" ph="SELECT * FRO... articles" />
-            <marker date="1499240767103" expanded="true" signature="5834:5875" ph="SELECT * FRO... articles" />
-            <marker date="1499240767103" expanded="true" signature="6012:6064" ph="SELECT * FRO... comments" />
-            <marker date="1499240767103" expanded="true" signature="6253:6294" ph="SELECT * FRO... comments" />
-            <marker date="1499240767103" expanded="true" signature="6393:6428" ph="DELETE FROM " />
-            <marker date="1499240767103" expanded="true" signature="6649:6700" ph="DELETE FROM " />
-            <marker date="1499240767103" expanded="true" signature="6782:6817" ph="DELETE FROM " />
-            <marker date="1499240767103" expanded="true" signature="6944:6989" ph="DELETE FROM " />
-            <marker date="1499240767103" expanded="true" signature="7058:7103" ph="DELETE FROM " />
-            <marker date="1499240767103" expanded="true" signature="7179:7211" ph="DELETE FROM " />
-            <marker date="1499240767103" expanded="true" signature="7333:7392" ph="SELECT COUNT... comments" />
-            <marker date="1499240767103" expanded="true" signature="7353:7392" ph="DELETE FROM " />
-            <marker date="1499240767103" expanded="true" signature="7867:7921" ph="SELECT * FRO... users_IP" />
-            <marker date="1499240767103" expanded="true" signature="8619:8670" ph="UPDATE user_... " />
-            <marker date="1499240767103" expanded="true" signature="8619:8688" ph="UPDATE users... " />
-            <marker date="1499240767103" expanded="true" signature="8961:9030" ph="UPDATE users... " />
-            <marker date="1499240767103" expanded="true" signature="9544:9609" ph="UPDATE artic... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/article.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="222">
-          <caret line="12" column="340" lean-forward="false" selection-start-line="12" selection-start-column="340" selection-end-line="12" selection-end-column="340" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/home.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="19" column="349" lean-forward="false" selection-start-line="19" selection-start-column="349" selection-end-line="19" selection-end-column="349" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
   </component>
 </project>

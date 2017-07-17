@@ -148,8 +148,288 @@
     }
   }
 
+  .questions_responses_page {
+    padding: 75px 20px 15px 20px;
+    width: 90%;
+    min-height: 500px;
+
+    @media(min-width: 768px) {
+      width: 80%;
+      margin-left: 10%;
+    }
+
+    #tokenNotExist{
+      text-align: center;
+      font-family: "robotoLight";
+      padding-bottom: 60px;
+    }
+    .box{
+
+      .question_box {
+        margin-bottom: 30px;
+        h2 {
+          color: $neutral;
+          font-family: "robotoLight";
+          border-bottom: 2px solid $neutral;
+        }
+
+        .question_box_bis {
+          background: #ECF0F1;
+          padding: 10px;
+          border-radius: 10px;
+
+          .username {
+            color: $neutral;
+            padding-bottom: 15px;
+            font-weight: bold;
+          }
+          .question {
+            font-family: "robotoLight";
+            padding-left: 20px;
+          }
+          .date{
+            padding-top: 20px;
+            font-style: italic;
+            font-size: 0.8em;
+            color: $grey;
+          }
+        }
+      }
+
+      .other{
+        .answers_box{
+          .answers{
+            border-left: 3px solid $neutral;
+            margin-bottom: 10px;
+
+            .username{
+              color: $neutral;
+              font-weight: bold;
+              padding: 5px;
+
+            }
+            .answer {
+              font-family: "robotoLight";
+              padding-left: 20px;
+            }
+            .date{
+              padding-top: 20px;
+              font-style: italic;
+              font-size: 0.8em;
+              color: $grey;
+            }
+          }
+          .zeroAnswer{
+            text-align: center;
+            margin-bottom: 20px;
+          }
+        }
+        .comment{
+          width: 90%;
+
+          @media(min-width: 768px) {
+            width: 90%;
+            margin-left: 5%;
+          }
+          .error_comment{
+            color: $red;
+            padding: 5px;
+          }
+          textarea {
+            width: 99%;
+            margin: 10px 0;
+            padding: 10px 10px;
+            font-size: 15px;
+            line-height: 1.42857143;
+            border-radius: 5px;
+            &:focus {
+              border: 2px solid $neutralColor;
+            }
+          }
+          .button {
+            width: 80%;
+            margin-left: 10%;
+            padding: 10px 10px;
+            margin-bottom: 30px;
+            font-size: 15px;
+            line-height: 1.42857143;
+            background: $neutral;
+            color: white;
+            border: 1px solid $neutralColor;
+            border-radius: 5px;
+          }
+        }
+        .cantComment{
+          @media(min-width: 1024px) {
+            width: 60%;
+            margin-left: 20%;
+          }
+          width: 90%;
+          margin-left: 2.5%;
+          padding: 10px;
+          background: $red;
+          border-radius: 5px;
+          text-align: center;
+          a{
+            color: white;
+            font-family: 'Roboto', sans-serif;
+          }
+        }
+      }
+    }
+  }
+  .forum_page{
+    padding: 75px 20px 15px 20px;
+    width: 80%;
+    margin-left: 10%;
+    min-height: 500px;
+
+
+    .need_ask_question{
+      width: 100%;
+      text-align: center;
+
+      @media(min-width: 768px) {
+        width: 25%;
+        margin-left: 37.5%;
+      }
+
+      .ask_question{
+        cursor:default;
+        padding: 10px;
+        font-family: "robotoBold";
+        background: $green;
+        color: #FFF;
+        border-radius: 10px;
+
+      }
+      .cant{
+        a{
+          padding: 10px;
+          cursor:default;
+          font-family: "robotoBold";
+          background: $red;
+          color: #FFF;
+          border-radius: 10px;
+          line-height: 190%;
+
+        }
+      }
+
+    }
+    .container_form{
+      width: 100%;
+      display: none;
+      @media(min-width: 768px) {
+        width: 60%;
+        margin-left: 20%;
+      }
+      .success_block_ask_question {
+        color: $green;
+        font-family: "PoppinsSemiBold";
+      }
+      .error_block_ask_question {
+        color: $red;
+        font-family: "PoppinsSemiBold";
+      }
+      .title {
+        color: $neutral;
+        font-family: "robotoLight";
+        border-bottom: 2px solid $neutral;
+      }
+      .forum_form {
+          p {
+            color: $neutral;
+            font-family: "robotoBold";
+          }
+        input {
+          width: 94%;
+          margin: 10px 0;
+          padding: 10px 10px;
+          font-size: 15px;
+          line-height: 1.42857143;
+          border-radius: 5px;
+          &:focus {
+            border: 2px solid $neutralColor;
+          }
+        }
+        textarea {
+          width: 94%;
+          margin: 10px 0;
+          padding: 30px 10px;
+          font-size: 15px;
+          line-height: 1.42857143;
+          border-radius: 5px;
+          &:focus {
+            border: 2px solid $neutralColor;
+          }
+        }
+    }
+    .button {
+      width: 100%;
+      @media(min-width: 768px) {
+        width: 50%;
+        margin-left: 25%;
+      }
+      padding: 10px 10px;
+      margin-bottom: 30px;
+      font-size: 15px;
+      line-height: 1.42857143;
+      background: $neutral;
+      color: white;
+      border: 1px solid $neutralColor;
+      border-radius: 5px;
+    }
+  }
+    .questions{
+      .title {
+        color: $neutral;
+        font-family: "robotoLight";
+      }
+      .availables_questions{
+        .zeroQuestion{
+          text-align: center;
+          font-family: "robotoLight";
+        }
+        table{
+          width: 100%;
+          tr{
+            font-family: "robotoLight";
+            th{
+              color: $neutral;
+              border-bottom: 2px solid $neutral;
+            }
+            td{
+              padding: 5px 0;
+            }
+            .subject{
+              a{
+                color: #000;
+              }
+              width: 70%;
+
+              &:hover{
+                text-decoration: underline $neutral;
+              }
+            }
+            .response{
+              width: 10%;
+              text-align: center;
+            }
+            .date{
+              width: 20%;
+              text-align: center;
+            }
+          }
+        }
+      }
+    }
+  }
+
   .home_page {
     padding: 75px 20px 15px 20px;
+    min-height: 500px;
+
     @media(min-width: 768px) {
       min-height: 500px;
     }
@@ -172,7 +452,7 @@
 
       .article_summary{
         padding: 5px 10px;
-        margin: 10px 0;
+        margin: 10px 0 20px 0;
         background: $backgroundArticle;
         border-radius: 5px;
         @media(min-width: 768px) {
@@ -187,9 +467,12 @@
         }
         .resume_autor{
           font-size: 0.8em;
+
+
           .autor{
             font-family: "PoppinsSemiBold";
             color: $neutral;
+            font-size: 0.9em;
           }
           .date{
             font-style: italic;
@@ -198,15 +481,27 @@
           }
           img{
             max-width: 10px;
-            @media(min-width: 1024px) {
-              max-width: 12px;
+            opacity: 0.7;
+            &:hover{
+              opacity: 1;
             }
+          }
+          .me{
+            border-radius: 50%;
+            margin-right: 4px;
+            min-width: 20px;
+            opacity: 1;
           }
         }
 
         .more{
           width: 100%;
           text-align: center;
+          font-family: "robotoBold";
+          font-size: 0.9em;
+          a{
+            color: $neutral;
+          }
         }
 
         .img{
@@ -223,11 +518,14 @@
 
   .article_page{
     padding: 75px 20px 15px 20px;
+    min-height: 500px;
+
     .article{
       padding: 5px 10px;
       margin: 10px 0;
-      background: $backgroundArticle;
+      background: #FFF;
       border-radius: 5px;
+      font-family: 'robotoLight';
 
       @media(min-width: 1024px) {
         @include flex_trinity(column, space-around);
@@ -247,15 +545,33 @@
         }
         .date{
           font-style: italic;
+          font-size: 0.8em;
+          color: $grey;
         }
-        @media(min-width: 1024px) {
-          width: 100%;
+        #goCom{
+          opacity: 0.7;
+          &:hover{
+            opacity: 1;
+          }
+          color: #000000;
+          font-family: "PoppinsSemiBold";
+          img{
+            max-width: 10px;
+          }
         }
         img{
           max-width: 10px;
-          @media(min-width: 1024px) {
-            max-width: 12px;
+          opacity: 0.7;
+          &:hover{
+            opacity: 1;
           }
+        }
+        .me{
+          border-radius: 50%;
+          margin-right: 4px;
+          min-width: 20px;
+          opacity: 1;
+          bottom: -5px;
         }
       }
 
@@ -276,16 +592,30 @@
           width: 70%;
           margin: auto;
         }
+        table{
+          max-width: 20%;
+          @media(min-width: 768px) {
+            min-width: 90%;
+          }
+        }
         pre{
           white-space:pre-wrap;
           background: $codeBackground;
-          color: #FFF;
-          width: 100%;
+          border: 1px solid $grey;
+          border-radius: 10px;
+          color: #000;
+          width: 95%;
+          margin: auto;
+          border-radius: 10px;
+          padding: 10px;
           strong{
             color: $codeFunction;
           }
+          em{
+            color: $grey;
+          }
           @media(min-width: 768px) {
-            width: 70%;
+            width: 90%;
             margin: auto;
           }
         }
@@ -327,26 +657,35 @@
         }
         .available_comment{
           border: 1px solid $backgroundComment;
-          background: $backgroundComment;
+          //background: $backgroundComment;
           border-radius: 10px;
           padding: 10px;
           p{
             font-family: 'Roboto', sans-serif;
             line-height: 150%;
-            margin-bottom: 5px;
+            margin-bottom: 10px;
+            border-left: 3px solid $neutral;
             .userComment{
                 color: $neutral;
+                padding-left: 10px;
+                font-weight: bold;
             }
             .dateComment{
               font-style: italic;
               font-size: 0.8em;
               color: $grey;
             }
+            .content_comment{
+              padding-left: 20px;
+              font-family: "robotoLight";
+            }
           }
+
           .zeroComment{
             text-align: center;
             color: $neutral;
           }
+
         }
         .cantComment{
           @media(min-width: 1024px) {
@@ -774,6 +1113,8 @@
 
   .user_page{
     padding-top: 58px;
+    min-height: 500px;
+
     @media(min-width: 768px) {
       @include flex_trinity(row, space-around);
       min-height: 500px;
@@ -827,9 +1168,68 @@
       }
     }
   }
+  .demo_ajax_page{
+    padding-top: 58px;
+    min-height: 500px;
+
+    .container_form {
+      margin: 0 10px;
+      .success-block-login {
+        color: $green;
+        font-family: "PoppinsSemiBold";
+      }
+      @media(min-width: 768px) {
+        width: 40%;
+      }
+      .title {
+        color: $neutral;
+        font-family: "robotoLight";
+        border-bottom: 2px solid $neutral;
+      }
+
+      .login_form {
+        .error_username{
+          color: $red;
+          font-family: "PoppinsSemiBold";
+        }
+        .error_password{
+          color: $red;
+          font-family: "PoppinsSemiBold";
+        }
+        p {
+          color: $neutral;
+          font-family: "robotoBold";
+        }
+        input {
+          width: 94%;
+          margin: 10px 0;
+          padding: 10px 10px;
+          font-size: 15px;
+          line-height: 1.42857143;
+          border-radius: 5px;
+          &:focus {
+            border: 2px solid $neutralColor;
+          }
+        }
+      }
+      .button {
+        width: 100%;
+        padding: 10px 10px;
+        margin-bottom: 30px;
+        font-size: 15px;
+        line-height: 1.42857143;
+        background: $neutral;
+        color: white;
+        border: 1px solid $neutralColor;
+        border-radius: 5px;
+      }
+    }
+  }
   .reglog_page {
 
     padding-top: 58px;
+    min-height: 500px;
+
     @media(min-width: 768px) {
       @include flex_trinity(row, space-around);
       min-height: 500px;
@@ -980,7 +1380,14 @@
         font-family: "robotoBold";
       }
       img {
-        margin: 5px;
+        margin: 5px 10px;
+        &:hover{
+          filter: grayscale(50%);
+          -webkit-filter: grayscale(50%);
+          -moz-filter: grayscale(50%);
+          -ms-filter: grayscale(50%);
+          -o-filter: grayscale(50%);
+        }
       }
     }
   }

@@ -2,8 +2,11 @@
 
 {% block content %}
     {% set urlAction = "?action=reglog" %}
+    {% if from != '' %}
+       {% set urlAction = "?action=reglog&from="~ from %}
+    {% endif %}
     {% if from != '' and token != '' %}
-       {% set urlAction = "?action=reglog&from="~ from ~ "&token=" ~ token %}
+        {% set urlAction = "?action=reglog&from="~ from ~ "&token=" ~ token %}
     {% endif %}
     <main class="reglog_page">
         <div class="container_form">

@@ -11,6 +11,10 @@ routes:
     admin_comments: 'Security:admin_comments'
     add_article: 'Article:add_article'
     edit_article: 'Article:edit_article'
+    demo_ajax: 'Default:demo_ajax'
+    forum: 'Forum:forum'
+    questions_responses: 'Forum:questions_responses'
+
 
 
 defaut_route: 'home'

@@ -169,8 +169,281 @@
     top: -5px;
   }
 
+  .questions_responses_page {
+    padding: 75px 20px 15px 20px;
+    width: 90%;
+    min-height: 500px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .questions_responses_page {
+    width: 80%;
+    margin-left: 10%;
+  }
+}
+@media screen {
+  .questions_responses_page #tokenNotExist {
+    text-align: center;
+    font-family: "robotoLight";
+    padding-bottom: 60px;
+  }
+  .questions_responses_page .box .question_box {
+    margin-bottom: 30px;
+  }
+  .questions_responses_page .box .question_box h2 {
+    color: #2C3E50;
+    font-family: "robotoLight";
+    border-bottom: 2px solid #2C3E50;
+  }
+  .questions_responses_page .box .question_box .question_box_bis {
+    background: #ECF0F1;
+    padding: 10px;
+    border-radius: 10px;
+  }
+  .questions_responses_page .box .question_box .question_box_bis .username {
+    color: #2C3E50;
+    padding-bottom: 15px;
+    font-weight: bold;
+  }
+  .questions_responses_page .box .question_box .question_box_bis .question {
+    font-family: "robotoLight";
+    padding-left: 20px;
+  }
+  .questions_responses_page .box .question_box .question_box_bis .date {
+    padding-top: 20px;
+    font-style: italic;
+    font-size: 0.8em;
+    color: grey;
+  }
+  .questions_responses_page .box .other .answers_box .answers {
+    border-left: 3px solid #2C3E50;
+    margin-bottom: 10px;
+  }
+  .questions_responses_page .box .other .answers_box .answers .username {
+    color: #2C3E50;
+    font-weight: bold;
+    padding: 5px;
+  }
+  .questions_responses_page .box .other .answers_box .answers .answer {
+    font-family: "robotoLight";
+    padding-left: 20px;
+  }
+  .questions_responses_page .box .other .answers_box .answers .date {
+    padding-top: 20px;
+    font-style: italic;
+    font-size: 0.8em;
+    color: grey;
+  }
+  .questions_responses_page .box .other .answers_box .zeroAnswer {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .questions_responses_page .box .other .comment {
+    width: 90%;
+  }
+}
+@media screen and (min-width: 768px) {
+  .questions_responses_page .box .other .comment {
+    width: 90%;
+    margin-left: 5%;
+  }
+}
+@media screen {
+  .questions_responses_page .box .other .comment .error_comment {
+    color: #ed6147;
+    padding: 5px;
+  }
+  .questions_responses_page .box .other .comment textarea {
+    width: 99%;
+    margin: 10px 0;
+    padding: 10px 10px;
+    font-size: 15px;
+    line-height: 1.42857143;
+    border-radius: 5px;
+  }
+  .questions_responses_page .box .other .comment textarea:focus {
+    border: 2px solid #0077B5;
+  }
+  .questions_responses_page .box .other .comment .button {
+    width: 80%;
+    margin-left: 10%;
+    padding: 10px 10px;
+    margin-bottom: 30px;
+    font-size: 15px;
+    line-height: 1.42857143;
+    background: #2C3E50;
+    color: white;
+    border: 1px solid #0077B5;
+    border-radius: 5px;
+  }
+  .questions_responses_page .box .other .cantComment {
+    width: 90%;
+    margin-left: 2.5%;
+    padding: 10px;
+    background: #ed6147;
+    border-radius: 5px;
+    text-align: center;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .questions_responses_page .box .other .cantComment {
+    width: 60%;
+    margin-left: 20%;
+  }
+}
+@media screen {
+  .questions_responses_page .box .other .cantComment a {
+    color: white;
+    font-family: 'Roboto', sans-serif;
+  }
+
+  .forum_page {
+    padding: 75px 20px 15px 20px;
+    width: 80%;
+    margin-left: 10%;
+    min-height: 500px;
+  }
+  .forum_page .need_ask_question {
+    width: 100%;
+    text-align: center;
+  }
+}
+@media screen and (min-width: 768px) {
+  .forum_page .need_ask_question {
+    width: 25%;
+    margin-left: 37.5%;
+  }
+}
+@media screen {
+  .forum_page .need_ask_question .ask_question {
+    cursor: default;
+    padding: 10px;
+    font-family: "robotoBold";
+    background: #39B54A;
+    color: #FFF;
+    border-radius: 10px;
+  }
+  .forum_page .need_ask_question .cant a {
+    padding: 10px;
+    cursor: default;
+    font-family: "robotoBold";
+    background: #ed6147;
+    color: #FFF;
+    border-radius: 10px;
+    line-height: 190%;
+  }
+  .forum_page .container_form {
+    width: 100%;
+    display: none;
+  }
+}
+@media screen and (min-width: 768px) {
+  .forum_page .container_form {
+    width: 60%;
+    margin-left: 20%;
+  }
+}
+@media screen {
+  .forum_page .container_form .success_block_ask_question {
+    color: #39B54A;
+    font-family: "PoppinsSemiBold";
+  }
+  .forum_page .container_form .error_block_ask_question {
+    color: #ed6147;
+    font-family: "PoppinsSemiBold";
+  }
+  .forum_page .container_form .title {
+    color: #2C3E50;
+    font-family: "robotoLight";
+    border-bottom: 2px solid #2C3E50;
+  }
+  .forum_page .container_form .forum_form p {
+    color: #2C3E50;
+    font-family: "robotoBold";
+  }
+  .forum_page .container_form .forum_form input {
+    width: 94%;
+    margin: 10px 0;
+    padding: 10px 10px;
+    font-size: 15px;
+    line-height: 1.42857143;
+    border-radius: 5px;
+  }
+  .forum_page .container_form .forum_form input:focus {
+    border: 2px solid #0077B5;
+  }
+  .forum_page .container_form .forum_form textarea {
+    width: 94%;
+    margin: 10px 0;
+    padding: 30px 10px;
+    font-size: 15px;
+    line-height: 1.42857143;
+    border-radius: 5px;
+  }
+  .forum_page .container_form .forum_form textarea:focus {
+    border: 2px solid #0077B5;
+  }
+  .forum_page .container_form .button {
+    width: 100%;
+    padding: 10px 10px;
+    margin-bottom: 30px;
+    font-size: 15px;
+    line-height: 1.42857143;
+    background: #2C3E50;
+    color: white;
+    border: 1px solid #0077B5;
+    border-radius: 5px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .forum_page .container_form .button {
+    width: 50%;
+    margin-left: 25%;
+  }
+}
+@media screen {
+  .forum_page .questions .title {
+    color: #2C3E50;
+    font-family: "robotoLight";
+  }
+  .forum_page .questions .availables_questions .zeroQuestion {
+    text-align: center;
+    font-family: "robotoLight";
+  }
+  .forum_page .questions .availables_questions table {
+    width: 100%;
+  }
+  .forum_page .questions .availables_questions table tr {
+    font-family: "robotoLight";
+  }
+  .forum_page .questions .availables_questions table tr th {
+    color: #2C3E50;
+    border-bottom: 2px solid #2C3E50;
+  }
+  .forum_page .questions .availables_questions table tr td {
+    padding: 5px 0;
+  }
+  .forum_page .questions .availables_questions table tr .subject {
+    width: 70%;
+  }
+  .forum_page .questions .availables_questions table tr .subject a {
+    color: #000;
+  }
+  .forum_page .questions .availables_questions table tr .subject:hover {
+    text-decoration: underline #2C3E50;
+  }
+  .forum_page .questions .availables_questions table tr .response {
+    width: 10%;
+    text-align: center;
+  }
+  .forum_page .questions .availables_questions table tr .date {
+    width: 20%;
+    text-align: center;
+  }
+
   .home_page {
     padding: 75px 20px 15px 20px;
+    min-height: 500px;
   }
 }
 @media screen and (min-width: 768px) {
@@ -200,8 +473,8 @@
 @media screen {
   .home_page .last-posts .article_summary {
     padding: 5px 10px;
-    margin: 10px 0;
-    background: #F6F7F9;
+    margin: 10px 0 20px 0;
+    background: #ECF0F1;
     border-radius: 5px;
   }
 }
@@ -226,6 +499,7 @@
   .home_page .last-posts .article_summary .resume_autor .autor {
     font-family: "PoppinsSemiBold";
     color: #2C3E50;
+    font-size: 0.9em;
   }
   .home_page .last-posts .article_summary .resume_autor .date {
     font-style: italic;
@@ -234,17 +508,25 @@
   }
   .home_page .last-posts .article_summary .resume_autor img {
     max-width: 10px;
+    opacity: 0.7;
   }
-}
-@media screen and (min-width: 1024px) {
-  .home_page .last-posts .article_summary .resume_autor img {
-    max-width: 12px;
+  .home_page .last-posts .article_summary .resume_autor img:hover {
+    opacity: 1;
   }
-}
-@media screen {
+  .home_page .last-posts .article_summary .resume_autor .me {
+    border-radius: 50%;
+    margin-right: 4px;
+    min-width: 20px;
+    opacity: 1;
+  }
   .home_page .last-posts .article_summary .more {
     width: 100%;
     text-align: center;
+    font-family: "robotoBold";
+    font-size: 0.9em;
+  }
+  .home_page .last-posts .article_summary .more a {
+    color: #2C3E50;
   }
   .home_page .last-posts .article_summary .img {
     width: 100%;
@@ -256,12 +538,14 @@
 
   .article_page {
     padding: 75px 20px 15px 20px;
+    min-height: 500px;
   }
   .article_page .article {
     padding: 5px 10px;
     margin: 10px 0;
-    background: #F6F7F9;
+    background: #FFF;
     border-radius: 5px;
+    font-family: 'robotoLight';
   }
 }
 @media screen and (min-width: 1024px) {
@@ -289,21 +573,33 @@
   }
   .article_page .article .resume_autor .date {
     font-style: italic;
+    font-size: 0.8em;
+    color: grey;
   }
-}
-@media screen and (min-width: 1024px) {
-  .article_page .article .resume_autor {
-    width: 100%;
+  .article_page .article .resume_autor #goCom {
+    opacity: 0.7;
+    color: #000000;
+    font-family: "PoppinsSemiBold";
   }
-}
-@media screen {
-  .article_page .article .resume_autor img {
+  .article_page .article .resume_autor #goCom:hover {
+    opacity: 1;
+  }
+  .article_page .article .resume_autor #goCom img {
     max-width: 10px;
   }
-}
-@media screen and (min-width: 1024px) {
   .article_page .article .resume_autor img {
-    max-width: 12px;
+    max-width: 10px;
+    opacity: 0.7;
+  }
+  .article_page .article .resume_autor img:hover {
+    opacity: 1;
+  }
+  .article_page .article .resume_autor .me {
+    border-radius: 50%;
+    margin-right: 4px;
+    min-width: 20px;
+    opacity: 1;
+    bottom: -5px;
   }
 }
 @media screen and (min-width: 768px) {
@@ -328,19 +624,37 @@
   }
 }
 @media screen {
+  .article_page .article .content_article table {
+    max-width: 20%;
+  }
+}
+@media screen and (min-width: 768px) {
+  .article_page .article .content_article table {
+    min-width: 90%;
+  }
+}
+@media screen {
   .article_page .article .content_article pre {
     white-space: pre-wrap;
-    background: #272822;
-    color: #FFF;
-    width: 100%;
+    background: #FFF;
+    border: 1px solid grey;
+    border-radius: 10px;
+    color: #000;
+    width: 95%;
+    margin: auto;
+    border-radius: 10px;
+    padding: 10px;
   }
   .article_page .article .content_article pre strong {
-    color: #5ABF2C;
+    color: #ed6147;
+  }
+  .article_page .article .content_article pre em {
+    color: grey;
   }
 }
 @media screen and (min-width: 768px) {
   .article_page .article .content_article pre {
-    width: 70%;
+    width: 90%;
     margin: auto;
   }
 }
@@ -384,22 +698,28 @@
   }
   .article_page .article .comment-box .available_comment {
     border: 1px solid #E9EAEC;
-    background: #E9EAEC;
     border-radius: 10px;
     padding: 10px;
   }
   .article_page .article .comment-box .available_comment p {
     font-family: 'Roboto', sans-serif;
     line-height: 150%;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
+    border-left: 3px solid #2C3E50;
   }
   .article_page .article .comment-box .available_comment p .userComment {
     color: #2C3E50;
+    padding-left: 10px;
+    font-weight: bold;
   }
   .article_page .article .comment-box .available_comment p .dateComment {
     font-style: italic;
     font-size: 0.8em;
     color: grey;
+  }
+  .article_page .article .comment-box .available_comment p .content_comment {
+    padding-left: 20px;
+    font-family: "robotoLight";
   }
   .article_page .article .comment-box .available_comment .zeroComment {
     text-align: center;
@@ -521,7 +841,7 @@
     padding: 5px;
   }
   .admin_comments_page .recap table .infos_comments {
-    background: #F6F7F9;
+    background: #ECF0F1;
   }
   .admin_comments_page .recap table .infos_comments td {
     padding: 5px;
@@ -618,7 +938,7 @@
     padding: 5px;
   }
   .admin_articles_page .recap table .infos_articles {
-    background: #F6F7F9;
+    background: #ECF0F1;
   }
   .admin_articles_page .recap table .infos_articles td {
     padding: 5px;
@@ -745,7 +1065,7 @@
     padding: 5px;
   }
   .admin_users_page .recap table .infos_users {
-    background: #F6F7F9;
+    background: #ECF0F1;
   }
   .admin_users_page .recap table .infos_users td {
     padding: 5px;
@@ -824,6 +1144,7 @@
 
   .user_page {
     padding-top: 58px;
+    min-height: 500px;
   }
 }
 @media screen and (min-width: 768px) {
@@ -886,8 +1207,67 @@
     border-radius: 5px;
   }
 
+  .demo_ajax_page {
+    padding-top: 58px;
+    min-height: 500px;
+  }
+  .demo_ajax_page .container_form {
+    margin: 0 10px;
+  }
+  .demo_ajax_page .container_form .success-block-login {
+    color: #39B54A;
+    font-family: "PoppinsSemiBold";
+  }
+}
+@media screen and (min-width: 768px) {
+  .demo_ajax_page .container_form {
+    width: 40%;
+  }
+}
+@media screen {
+  .demo_ajax_page .container_form .title {
+    color: #2C3E50;
+    font-family: "robotoLight";
+    border-bottom: 2px solid #2C3E50;
+  }
+  .demo_ajax_page .container_form .login_form .error_username {
+    color: #ed6147;
+    font-family: "PoppinsSemiBold";
+  }
+  .demo_ajax_page .container_form .login_form .error_password {
+    color: #ed6147;
+    font-family: "PoppinsSemiBold";
+  }
+  .demo_ajax_page .container_form .login_form p {
+    color: #2C3E50;
+    font-family: "robotoBold";
+  }
+  .demo_ajax_page .container_form .login_form input {
+    width: 94%;
+    margin: 10px 0;
+    padding: 10px 10px;
+    font-size: 15px;
+    line-height: 1.42857143;
+    border-radius: 5px;
+  }
+  .demo_ajax_page .container_form .login_form input:focus {
+    border: 2px solid #0077B5;
+  }
+  .demo_ajax_page .container_form .button {
+    width: 100%;
+    padding: 10px 10px;
+    margin-bottom: 30px;
+    font-size: 15px;
+    line-height: 1.42857143;
+    background: #2C3E50;
+    color: white;
+    border: 1px solid #0077B5;
+    border-radius: 5px;
+  }
+
   .reglog_page {
     padding-top: 58px;
+    min-height: 500px;
   }
 }
 @media screen and (min-width: 768px) {
@@ -1073,7 +1453,14 @@
     font-family: "robotoBold";
   }
   footer .social img {
-    margin: 5px;
+    margin: 5px 10px;
+  }
+  footer .social img:hover {
+    filter: grayscale(50%);
+    -webkit-filter: grayscale(50%);
+    -moz-filter: grayscale(50%);
+    -ms-filter: grayscale(50%);
+    -o-filter: grayscale(50%);
   }
 }
 

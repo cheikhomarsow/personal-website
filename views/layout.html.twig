@@ -22,6 +22,7 @@
             <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
             <ul class="mobile_dropdown">
                 <li><a href="?action=home"><img src="assets/img/home.png">&nbsp;&nbsp;Accueil</a></li>
+                <li><a href="?action=forum"><img src="assets/img/question.png">&nbsp;&nbsp;Forum</a></li>
                 {% if user.username is defined %}
                     <li><a href="?action=user"><img src="assets/img/man-user.png">&nbsp;&nbsp;Mon profil</a></li>
                     {% if admin == true %}
@@ -38,6 +39,7 @@
 
         <ul class="menu_desktop">
             <li><a href="?action=home"><img src="assets/img/home.png">&nbsp;&nbsp;Accueil</a></li>
+            <li><a href="?action=forum"><img src="assets/img/question.png">&nbsp;&nbsp;Forum</a></li>
             {% if user.username is defined %}
                 <li><a href="?action=user"><img src="assets/img/man-user.png">&nbsp;&nbsp;Mon profil</a></li>
                 {% if admin == true %}

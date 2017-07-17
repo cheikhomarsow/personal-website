@@ -84,4 +84,88 @@ $(document).ready(function() {
         });
     });
 
+
+
+    var frmTer = $('#formASkQuestion');
+    frmTer.submit(function (e) {
+
+        e.preventDefault();
+
+        $.ajax({
+            type: frmTer.attr('method'),
+            url: frmTer.attr('action'),
+            data: frmTer.serialize(),
+
+            success: function (data) {
+                console.log('Submission was successful.');
+                console.log(data);
+            },
+            error: function (data) {
+                var res = data.responseText.split('<!DOCTYPE html>')[0];
+                var t0 = res.split(":")[0];
+                var errorORsuccess = t0.split("\"")[1];
+                if(errorORsuccess == 'error'){
+                    var error_message = res.split(":")[2].split("}}")[0].replace('"',' ').replace('"','');
+                    $('.error_block_ask_question').html(error_message);
+                }
+                if(errorORsuccess == 'success'){
+                    $('.success_block_ask_question').html('Message envoyé !');
+                    $('.error_block_ask_question').html('');
+                    $('.sujet').val('');
+                    $('.question').val('');
+
+
+                    $(".availables_questions").load(location.href + " .availables_questions>*", "");
+                    setInterval(function() {
+                        $('.container_form').css('display','none');
+                        }, 3000
+                    );
+                }
+            }
+        });
+    });
+
+    $('#goCom').click(function(){
+        var page = $('#commentBox'); // Page cible
+        var speed = 3000; // Durée de l'animation (en ms)
+        $('html, body').animate( { scrollTop: $(page).offset().top }, speed ); // Go        return false;
+    });
+
+    $('.ask_question').on('click', function () {
+        $('.container_form').css('display','block');
+    });
+
+    var frmAnswer = $('#formAnswer');
+
+    frmAnswer.submit(function (e) {
+
+        e.preventDefault();
+
+        $.ajax({
+            type: frmAnswer.attr('method'),
+            url: frmAnswer.attr('action'),
+            data: frmAnswer.serialize(),
+
+            success: function (data) {
+                console.log('Submission was successful.');
+                console.log(data);
+            },
+            error: function (data) {
+                var res = data.responseText.split('<!DOCTYPE html>')[0];
+                var t0 = res.split(":")[0];
+                var errorORsuccess = t0.split("\"")[1];
+                if(errorORsuccess == 'error'){
+                    var error_message = res.split(":")[2].split("}}")[0].replace('"',' ').replace('"','');
+                    $('.error_answer').html(error_message);
+                }
+                if(errorORsuccess == 'success'){
+                    $('.contentCommentAjax').val('');
+                    $('.error_answer').html('');
+
+                    $(".answers_box").load(location.href + " .answers_box>*", "");
+
+                }
+            }
+        });
+    });
 });
