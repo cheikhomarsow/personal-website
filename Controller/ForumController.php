@@ -10,6 +10,7 @@ class ForumController extends BaseController
     public function forumAction()
     {
         $userManager = UserManager::getInstance();
+        $userManager->auto_login();
         $forumManager = ForumManager::getInstance();
         $user_id = $_SESSION['user_id'];
         $user = $userManager->getUserById($user_id);
@@ -17,6 +18,7 @@ class ForumController extends BaseController
         $admin = false;
         $questions = $forumManager->getQuestions();
         $userWhoAskQuestion = [];
+        $countAnswers = [];
 
         if ($email == 'cheikhomar60@gmail.com') {
             $admin = true;
@@ -24,6 +26,7 @@ class ForumController extends BaseController
 
         foreach($questions as $value){
             $userWhoAskQuestion[$value['id']] = $userManager->getUserById($value['user_id'])['username'];
+            $countAnswers[$value['id']] = $forumManager->countAnswers($value['id']);
         }
 
 
@@ -39,13 +42,15 @@ class ForumController extends BaseController
             'admin' => $admin,
             'questions' => $questions,
             'userWhoAskQuestion' => $userWhoAskQuestion,
+            'countAnswers' => $countAnswers,
         ]);
     }
 
     public function questions_responsesAction()
     {
-        $forumManager = ForumManager::getInstance();
         $userManager = UserManager::getInstance();
+        $userManager->auto_login();
+        $forumManager = ForumManager::getInstance();
         $tokenExist = true;
         $admin = false;
         $token = $_GET['token'];

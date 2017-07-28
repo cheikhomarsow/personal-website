@@ -4,13 +4,16 @@ namespace Controller;
 
 use Model\ArticleManager;
 use Model\UserManager;
+use Model\ForumManager;
 
 class DefaultController extends BaseController
 {
     public function homeAction()
     {
         $userManager = UserManager::getInstance();
+        $userManager->auto_login();
         $articleManager = ArticleManager::getInstance();
+        $forumManager = ForumManager::getInstance();
         $user_id = $_SESSION['user_id'];
         $user = $userManager->getUserById($user_id);
         $email = $user['email'];
@@ -18,6 +21,12 @@ class DefaultController extends BaseController
         $availableArticle = $articleManager->availableArticle();
         $autor = $userManager->getUserByEmail("cheikhomar60@gmail.com");
         $commentsNumber = [];
+        $questions = $forumManager->getQuestions();
+        $countAnswers = [];
+
+        foreach($questions as $value){
+            $countAnswers[$value['id']] = $forumManager->countAnswers($value['id']);
+        }
 
 
         foreach ($availableArticle as $article){
@@ -35,12 +44,15 @@ class DefaultController extends BaseController
                 'availableArticle' => $availableArticle,
                 'autor' => $autor,
                 'commentsNumber' => $commentsNumber,
+                'questions' => $questions,
+                'countAnswers' => $countAnswers,
             ]);
     }
     public function articleAction()
     {
-        $articleManager = ArticleManager::getInstance();
         $userManager = UserManager::getInstance();
+        $userManager->auto_login();
+        $articleManager = ArticleManager::getInstance();
         $tokenExist = true;
         $isLog = false;
         $admin = false;
@@ -108,9 +120,10 @@ class DefaultController extends BaseController
     }
 
     public function contactAction(){
-        $manager = UserManager::getInstance();
+        $userManager = UserManager::getInstance();
+        $userManager->auto_login();
         $user_id = $_SESSION['user_id'];
-        $user = $manager->getUserById($user_id);
+        $user = $userManager->getUserById($user_id);
         $email = $user['email'];
         $admin = false;
 
@@ -118,11 +131,11 @@ class DefaultController extends BaseController
             $admin = true;
         }
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $res = $manager->checkContactMe($_POST);
+            $res = $userManager->checkContactMe($_POST);
             if($res['isFormGood']){
                 $to      = 'cheikhomar60@gmail.com';
                 $subject = 'COS - Contact';
-                $message = "Nom : " . $_POST['username'] . "<br>Email : " . $_POST['email']."<br>Message : <br>".$_POST['message'];
+                $message = 'Nom : ' . $_POST['username'] . "\r\n" . 'Email : ' . $_POST['email']."\r\n" . 'Sujet : ' . $_POST['sujet'] . "\r\n" . 'Message : ' .  "\r\n" . $_POST['message'];
                 $headers = 'From: postmaster@cheikhomarsow.ovh' . "\r\n" .
                     'Reply-To: postmaster@cheikhomarsow.ovh' . "\r\n" .
                     'X-Mailer: PHP/' . phpversion();
@@ -137,9 +150,10 @@ class DefaultController extends BaseController
             ]);
     }
     public function demo_ajaxAction(){
-        $manager = UserManager::getInstance();
+        $userManager = UserManager::getInstance();
+        $userManager->auto_login();
         $user_id = $_SESSION['user_id'];
-        $user = $manager->getUserById($user_id);
+        $user = $userManager->getUserById($user_id);
         $email = $user['email'];
         $admin = false;
         $error = '';

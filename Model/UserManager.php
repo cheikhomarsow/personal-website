@@ -27,11 +27,17 @@ class UserManager
         return $data;
     }
 
+    public function getSelector($selector)
+    {
+        return $this->DBManager->findOneSecure("SELECT * FROM auth_tokens WHERE selector = " . $selector,[
+            'selector' => $selector
+        ]);
+    }
+
     public function getUserByEmail($email)
     {
-        $data = $this->DBManager->findOneSecure("SELECT * FROM users WHERE email = :email",
+        return $this->DBManager->findOneSecure("SELECT * FROM users WHERE email = :email",
             ['email' => $email]);
-        return $data;
     }
     public function getAllUsers()
     {
@@ -70,7 +76,7 @@ class UserManager
         }
 
         if (!isset($data['password']) || !$this->passwordValid($data['password'])) {
-            $errors['password'] = "Veiller saisir un mot de passe valide ";
+            $errors['password'] = "Veiller saisir un mot de passe valide - 6 caractères minimum";
             $isFormGood = false;
         }
         if($this->passwordValid($data['password']) && $data['password'] !== $data['verifpassword']){
@@ -98,7 +104,7 @@ class UserManager
     //Minimum : 8 caractères avec au moins une lettre majuscule et un nombre
     private function passwordValid($password)
     {
-        return preg_match('`^([a-zA-Z0-9-_]{6,20})$`', $password);
+        return preg_match('`^([a-zA-Z0-9]{6,20})$`', $password);
     }
 
 
@@ -338,6 +344,73 @@ class UserManager
             echo(json_encode(array('error'=>false, 'error'=>$errors), JSON_UNESCAPED_UNICODE ,http_response_code(400)));
             exit(0);
         }
+    }
+
+    public function rememberMe($user_id){
+
+        $token = openssl_random_pseudo_bytes(24);
+
+        do{
+            $selector = openssl_random_pseudo_bytes(9);
+        }while($this->getSelector($selector));
+
+        $currentDate = $this->DBManager->getDatetimeNow();
+
+        $auth_token['selector'] = $selector;
+        $auth_token['expires'] = $this->DBManager->add_date($currentDate,2,0,0);
+        $auth_token['user_id'] = $user_id;
+        $auth_token['token'] = hash('sha256',$token);
+
+        $this->DBManager->insert('auth_tokens', $auth_token);
+
+
+        setcookie(
+            "auth",
+            base64_encode($selector).':'.base64_encode($token),
+            time()+172800
+        );
+    }
+
+    public function auto_login()
+    {
+        if(!empty($_COOKIE['auth'])){
+            $split = explode(':',$_COOKIE['auth']);
+
+            if(count($split) !== 2){
+                return false;
+            }
+
+            list($selector, $token) = $split;
+
+            $data = $this->DBManager->findOneSecure("SELECT auth_tokens.token, auth_tokens.user_id,
+                                                            users.id, users.username, users.email
+                                                              FROM auth_tokens 
+                                                              LEFT JOIN users
+                                                              ON auth_tokens.user_id = users.id
+                                                              WHERE selector = :selector AND expires >= CURRENT_DATE ",
+                ['selector' => base64_decode($selector)]
+            );
+
+            if($data){
+                if(hash_equals($data['token'], hash('sha256', base64_decode($token)))){
+                    //pour eviter un conflit
+                    session_regenerate_id(true);
+
+                    $_SESSION['user_id'] = $data['id'];
+                    $_SESSION['user_username'] = $data['username'];
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    //prend en paramètre l'id de l'utilisateur
+    public function deleteTokens($user_id)
+    {
+        return $this->DBManager->findOneSecure("DELETE FROM auth_tokens WHERE user_id = :user_id",
+            ['user_id' => $user_id]
+        );
     }
 
 

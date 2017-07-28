@@ -8,11 +8,12 @@ class UserController extends BaseController
 {
     public function userAction()
     {
+        $userManager = UserManager::getInstance();
+        $userManager->auto_login();
         if (!empty($_SESSION['user_id'])) {
-            $manager = UserManager::getInstance();
 
             $user_id = $_SESSION['user_id'];
-            $user = $manager->getUserById($user_id);
+            $user = $userManager->getUserById($user_id);
             $email = $user['email'];
             $admin = false;
 
@@ -21,18 +22,18 @@ class UserController extends BaseController
             }
 
             if(isset($_POST['updateContact'])){
-                $res = $manager->checkContact($_POST);
+                $res = $userManager->checkContact($_POST);
                 if($res['isFormGood']){
-                    $manager->updateContact($res['data']);
+                    $userManager->updateContact($res['data']);
                     header('Location: ?action=user');
                 }else{
                     $errorsUpdateContact = $res['errors'];
                 }
             }
             if(isset($_POST['updatePassword'])){
-                $res = $manager->checkPassword($_POST);
+                $res = $userManager->checkPassword($_POST);
                 if($res['isFormGood']){
-                    $manager->updatePassword($res['data']);
+                    $userManager->updatePassword($res['data']);
                     $successUpdatePassword[] = 'Mot de passe modifié avec success';
                 }else{
                     $errorsUpdatePassword = $res['errors'];

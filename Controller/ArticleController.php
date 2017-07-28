@@ -9,8 +9,9 @@ class ArticleController extends BaseController
 {
     public function add_articleAction()
     {
+        $userManager = UserManager::getInstance();
+        $userManager->auto_login();
         if (!empty($_SESSION['user_id'])) {
-            $userManager = UserManager::getInstance();
             $articleManager = ArticleManager::getInstance();
             $user_id = $_SESSION['user_id'];
             $user = $userManager->getUserById($user_id);
@@ -35,9 +36,10 @@ class ArticleController extends BaseController
 
     public function edit_articleAction()
     {
+        $userManager = UserManager::getInstance();
+        $userManager->auto_login();
         if (!empty($_SESSION['user_id'])) {
             $articleManager = ArticleManager::getInstance();
-            $userManager = UserManager::getInstance();
             $user_id = $_SESSION['user_id'];
             $user = $userManager->getUserById($user_id);
             $email = $user['email'];

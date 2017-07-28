@@ -2,20 +2,18 @@
 
 {% block content %}
     <main class="home_page">
-        <div class="about_me">
-            <p>Bienvenue sur mon site ! </p>
-        </div>
+        <p class="welcome">Bienvenue sur mon site ! </p>
         <div class="last-posts">
             <h3 class="title">Articles récents</h3>
             {% for article in  availableArticle %}
                 <div class="article_summary">
-                        <h3>
+                        <h5>
                             {% autoescape false %}
                                 <a class="title_article" href="?action=article&token={{ article.token }}">
                                     {{ article.title | striptags }}
                                 </a>
                             {% endautoescape %}
-                        </h3>
+                        </h5>
                         {% set comNb = article.id %}
                     <p class="resume_autor">
                         <img  class="me" src="assets/img/me.jpg" alt="img">
@@ -29,14 +27,42 @@
                         <a class="etc" href="?action=article&token={{ article.token }}">
                             <img class="img" src="{{ article.file }}" alt="article_img">
                         </a>
-                        <div class="more">
-                            <a href="?action=article&token={{ article.token }}">
-                                READ MORE &nbsp;
-                                <img src="assets/img/arrow.png" alt="article_img">
-                            </a>
-                        </div>
                 </div>
             {% endfor %}
+        </div>
+        <div class="last-questions">
+            <h3 class="title">Dernières questions</h3>
+            {% if questions is defined and questions is not empty %}
+                <div class="questions">
+                    <div class="subject">
+                        Sujet
+                    </div>
+                    <div class="response">
+                        Réponse
+                    </div>
+                    <div class="date">
+                        Date
+                    </div>
+                    <div class="content-questions">
+                        {% for question in questions %}
+                            <div class="subject-content">
+                                <a href="?action=questions_responses&token={{ question.token }}">{{ question.sujet }}</a>
+                            </div>
+                            <div class="response-content">
+                                {{ countAnswers[question.id] }}
+                            </div>
+                            <div class="date-content">
+                                {{ question.date | date("d/m/y") }}
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                {% else %}
+                    <div class="zeroQuestions">
+                        <p class="p">Pas de questions pour l'instant.</p>
+                        <p class="ask"><a href="?action=forum">&rarr; Aller au forum.</a></p>
+                    </div>
+            {% endif %}
         </div>
     </main>
 {% endblock %}

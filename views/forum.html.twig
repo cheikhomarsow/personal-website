@@ -22,7 +22,10 @@
                     </div>
                     <div class="forum_form" >
                         <label for="question"><p>Question : </p></label>
-                        <textarea name="question" class="question" placeholder="Votre question..."></textarea>
+                        <textarea name="editor1" class="ckeditor" id="editor1" placeholder="Votre question..."></textarea>
+                        <script>
+                            CKEDITOR.replace( 'editor1' );
+                        </script>
                     </div>
                     <button type="submit" class="button">Valider</button>
                 </form>
@@ -32,20 +35,28 @@
             <h3 class="title">Forum</h3>
             <div class="availables_questions">
                 {% if questions is defined and questions is not empty %}
-                    <table>
-                        <tr>
-                            <th class="subject">Sujet</th>
-                            <th class="response">Réponse</th>
-                            <th class="date">Date</th>
-                        </tr>
+                    <div class="subject">
+                        Sujet
+                    </div>
+                    <div class="response">
+                        Réponse
+                    </div>
+                    <div class="date">
+                        Date
+                    </div>
+                    <div class="content-questions">
                         {% for question in questions %}
-                            <tr>
-                                <td class="subject"><a href="?action=questions_responses&token={{ question.token }}">{{ question.sujet }}</a></td>
-                                <td class="response">0</td>
-                                <td class="date">{{ question.date }}</td>
-                            </tr>
+                            <div class="subject-content">
+                                <a href="?action=questions_responses&token={{ question.token }}">{{ question.sujet }}</a>
+                            </div>
+                            <div class="response-content">
+                                {{ countAnswers[question.id] }}
+                            </div>
+                            <div class="date-content">
+                                {{ question.date | date("d/m/y H:i") }}
+                            </div>
                         {% endfor %}
-                    </table>
+                    </div>
                     {% else %}
                         <p class="zeroQuestion">Pas de questions pour l'instant</p>
                 {% endif %}

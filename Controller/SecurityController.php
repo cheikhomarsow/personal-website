@@ -10,6 +10,14 @@ class SecurityController extends BaseController
 
     public function logoutAction()
     {
+
+        $userManager = UserManager::getInstance();
+        //on supprime l'entrée en bdd au niveau de auth_tokens
+        $userManager->deleteTokens($_SESSION['user_id']);
+
+        //supprimer les cookies et detruire la session
+        setcookie('auth','',time()-3600);
+
         session_destroy();
         echo $this->redirect('home');
     }
@@ -18,6 +26,8 @@ class SecurityController extends BaseController
 
 
     public function reglogAction(){
+        $userManager = UserManager::getInstance();
+        $userManager->auto_login();
         if (!empty($_SESSION['user_id'])) {
             $this->redirect('user');
         }else{
@@ -35,9 +45,22 @@ class SecurityController extends BaseController
 
             if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 if (isset($_POST['login'])) {
-                    $userManager = UserManager::getInstance();
+                    //on check les infos de l'utilisateur
                     if ($userManager->userCheckLogin($_POST)) {
+                        //on demarre la session
                         $userManager->userLogin($_POST['email']);
+
+                        //Si l'utilisateur choisit l'option "Se souvenir de moi"
+                        if(isset($_POST['remember_me']) && $_POST['remember_me'] == "on"){
+                            $data = $userManager->getUserByEmail($_POST['email']);
+                            /*
+                             * on fait appel a la fonction
+                             * remember_me
+                             * avec comme paramètre
+                             * l'id de l'utilisateur connecté
+                             */
+                            $userManager->rememberMe($data['id']);
+                        }
                         if($from != NULL && $token != NULL){
                             $token = $_GET['token'];
                             $route = $from."&token=".$token;
@@ -62,10 +85,9 @@ class SecurityController extends BaseController
                     }
                 }
                 if (isset($_POST['register'])) {
-                    $manager = UserManager::getInstance();
-                    $result = $manager->userCheckRegister($_POST);
+                    $result = $userManager->userCheckRegister($_POST);
                     if ($result['isFormGood']) {
-                        $manager->userRegister($result['data']);
+                        $userManager->userRegister($result['data']);
                         echo $this->renderView('reglog.html.twig', ['registerSuccess' => 'Inscription reussie !','from' => $from, 'token'=>$token]);
                     }
                     else {
@@ -81,11 +103,12 @@ class SecurityController extends BaseController
     }
 
    public function adminAction(){
+       $userManager = UserManager::getInstance();
+       $userManager->auto_login();
        if (!empty($_SESSION['user_id'])) {
-           $manager = UserManager::getInstance();
            $admin = false;
            $user_id = $_SESSION['user_id'];
-           $user = $manager->getUserById($user_id);
+           $user = $userManager->getUserById($user_id);
            $email = $user['email'];
            if($email == 'cheikhomar60@gmail.com'){
                if($email == 'cheikhomar60@gmail.com'){
@@ -104,12 +127,13 @@ class SecurityController extends BaseController
        }
    }
    public function admin_usersAction(){
+       $userManager = UserManager::getInstance();
+       $userManager->auto_login();
        if (!empty($_SESSION['user_id'])) {
-           $manager = UserManager::getInstance();
            $articleManager = ArticleManager::getInstance();
            $admin = false;
            $user_id = $_SESSION['user_id'];
-           $user = $manager->getUserById($user_id);
+           $user = $userManager->getUserById($user_id);
            $email = $user['email'];
            if($email == 'cheikhomar60@gmail.com'){
                if($email == 'cheikhomar60@gmail.com'){
@@ -118,7 +142,7 @@ class SecurityController extends BaseController
                if($_SERVER['REQUEST_METHOD'] === 'POST'){
                    $articleManager->removeUser($_POST['user_id']);
                }
-               $allUsers = $manager->getAllUsers();
+               $allUsers = $userManager->getAllUsers();
                echo $this->renderView('admin_users.html.twig',
                    [
                        'user'  => $user,
@@ -133,9 +157,10 @@ class SecurityController extends BaseController
        }
    }
     public function admin_articlesAction(){
+        $userManager = UserManager::getInstance();
+        $userManager->auto_login();
         if (!empty($_SESSION['user_id'])) {
             $articleManager = ArticleManager::getInstance();
-            $userManager = UserManager::getInstance();
             $admin = false;
             $user_id = $_SESSION['user_id'];
             $autor = $userManager->getUserByEmail("cheikhomar60@gmail.com");
@@ -165,9 +190,10 @@ class SecurityController extends BaseController
         }
     }
     public function admin_commentsAction(){
+        $userManager = UserManager::getInstance();
+        $userManager->auto_login();
         if (!empty($_SESSION['user_id'])) {
             $articleManager = ArticleManager::getInstance();
-            $userManager = UserManager::getInstance();
             $admin = false;
             $user_id = $_SESSION['user_id'];
             $user = $userManager->getUserById($user_id);

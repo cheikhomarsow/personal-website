@@ -36,7 +36,7 @@ class ForumManager
         $isFormGood = true;
         $errors = [];
         $sujet = $data['sujet'];
-        $question = $data['question'];
+        $question = $data['editor1'];
 
         if(!isset($sujet) || empty(trim($sujet)) || !isset($question) || empty(trim($question))){
             $isFormGood = false;
@@ -67,7 +67,7 @@ class ForumManager
     public function addQuestion($data)
     {
         $question['sujet'] = $data['sujet'];
-        $question['question'] = $data['question'];
+        $question['question'] = $data['editor1'];
         $question['user_id'] = $data['user_id'];
         $question['date'] = $this->DBManager->getDatetimeNow();
         $question['token'] = $this->DBManager->token();
@@ -90,17 +90,19 @@ class ForumManager
         $res = [];
         $isFormGood = true;
 
+        $content_answer = $data['editor1'];
 
-        if (!isset($data['content_answer']) || $data['content_answer'] == '') {
+
+        if (!isset($content_answer) || $content_answer == '') {
             $errors['content_comment'] = 'Ce champs ne doit pas être vide';
             $isFormGood = false;
         }else{
-            $str = trim($data['content_answer']);
+            $str = trim($content_answer);
             if(empty($str)){
                 $errors['content_answer'] = 'Ce champs ne doit pas être vide';
                 $isFormGood = false;
             }else{
-                if(strlen($data['content_answer']) > 1000){
+                if(strlen($content_answer) > 1000){
                     $errors['content_answer'] = 'Nombre de caractère non autorisé (max 1000)';
                     $isFormGood = false;
                 }
@@ -129,7 +131,7 @@ class ForumManager
 
     public function addAnswer($data)
     {
-        $answer['content'] = $data['content_answer'];
+        $answer['content'] = $data['editor1'];
         $answer['question_id'] = $data['question_id'];
         $answer['user_id'] = $data['user_id'];
         $answer['date'] = $this->DBManager->getDatetimeNow();
@@ -141,6 +143,12 @@ class ForumManager
         return $this->DBManager->findAllSecure("SELECT * FROM answers WHERE question_id =:question_id",
             ['question_id' => $question_id]
         );
+    }
+
+    public function countAnswers($question_id)
+    {
+        $data = $this->DBManager->findAllSecure('SELECT COUNT(*) FROM answers WHERE question_id =:question_id',['question_id' => $question_id]);
+        return $data[0]["COUNT(*)"];
     }
 
 }

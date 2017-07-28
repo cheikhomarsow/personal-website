@@ -1,5 +1,10 @@
 $(document).ready(function() {
 
+    function CKupdateCommentary(){
+        for ( instance in CKEDITOR.instances )
+            CKEDITOR.instances['editor1'].updateElement();
+    }
+
     var Url = window.location.href.split("?action=")[1];
     var page = Url.split("&token")[0];
     var current_page = page.split("&from")[0];
@@ -90,11 +95,13 @@ $(document).ready(function() {
     frmTer.submit(function (e) {
 
         e.preventDefault();
+        CKupdateCommentary();
 
         $.ajax({
             type: frmTer.attr('method'),
             url: frmTer.attr('action'),
             data: frmTer.serialize(),
+
 
             success: function (data) {
                 console.log('Submission was successful.');
@@ -112,7 +119,7 @@ $(document).ready(function() {
                     $('.success_block_ask_question').html('Message envoyé !');
                     $('.error_block_ask_question').html('');
                     $('.sujet').val('');
-                    $('.question').val('');
+                    $('#cke_1_contents').html('');
 
 
                     $(".availables_questions").load(location.href + " .availables_questions>*", "");
@@ -140,6 +147,8 @@ $(document).ready(function() {
     frmAnswer.submit(function (e) {
 
         e.preventDefault();
+        CKupdateCommentary();
+
 
         $.ajax({
             type: frmAnswer.attr('method'),
@@ -161,6 +170,7 @@ $(document).ready(function() {
                 if(errorORsuccess == 'success'){
                     $('.contentCommentAjax').val('');
                     $('.error_answer').html('');
+                    $('#cke_1_contents').html('');
 
                     $(".answers_box").load(location.href + " .answers_box>*", "");
 

@@ -112,6 +112,17 @@ class DBManager
         return date("Y/m/d H:i:s");
     }
 
+    /*
+     * voir la doc add_date
+     */
+    public function add_date($givendate,$day=0,$mth=0,$yr=0) {
+        $cd = strtotime($givendate);
+        $newdate = date('Y-m-d h:i:s', mktime(date('h',$cd),
+            date('i',$cd), date('s',$cd), date('m',$cd)+$mth,
+            date('d',$cd)+$day, date('Y',$cd)+$yr));
+        return $newdate;
+    }
+
     function watch_action_log($file, $text)
     {
         $file_log = fopen('logs/' . $file, 'a');
