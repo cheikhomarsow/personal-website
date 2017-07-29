@@ -20,70 +20,12 @@
     </head>
     <body>
     <header>
-        <section class="navigation">
-            <div class="nav-container">
-                <div class="brand">
-                    <a href="?action=home">COS</a>
-                </div>
-                <nav>
-                    <div class="nav-mobile"><a id="nav-toggle" href="#!"><span></span></a></div>
-                    <ul class="nav-list">
-                        <li>
-                            <a href="?action=home"><img src="assets/img/home.png">&nbsp;&nbsp;Accueil</a>
-                        </li>
-                        <li>
-                            <a href="?action=forum"><img src="assets/img/question.png">&nbsp;&nbsp;Forum</a>
-                        </li>
-                        <li>
-                            <a href="?action=contact"><img src="assets/img/contact.png">&nbsp;&nbsp;Contact</a>
-                        </li>
-                        {% if user.username is defined %}
-                            <li>
-                                <a href="#!"><img src="assets/img/man-user.png">&nbsp;&nbsp;Mon compte</a>
-                                <ul class="nav-dropdown">
-                                    {% if admin == true %}
-                                        <li>
-                                            <a href="?action=admin"><img src="assets/img/man-with-tie.png">&nbsp;&nbsp;Administration</a>
-                                        </li>
-                                    {% endif %}
-                                    <li>
-                                        <a href="?action=user"><img src="assets/img/settings-work-tool.png">&nbsp;&nbsp;Mon profil</a>
-                                    </li>
-                                    <li>
-                                        <a href="?action=logout"><img src="assets/img/logout.png">&nbsp;&nbsp;Me déconnecter</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            {% else %}
-                                <li>
-                                    <a href="?action=reglog"><img src="assets/img/man-user.png">&nbsp;&nbsp;Espace membre</a>
-                                </li>
-                        {% endif %}
-                    </ul>
-                </nav>
-            </div>
-        </section>
-
+        {% include 'partials/header.html.twig' %}
     </header>
         {% block content %}
         {% endblock %}
     <footer>
-        <h4 class="title">A propos de Cheikh Omar SOW</h4>
-        <div class="about">
-            <p class="sous-titre">Qui suis-je ?</p>
-            <p class="about_me">
-                Je m'appelle Cheikh Omar, j'ai 23 ans, je suis
-                passionné par tout ce qui touche à l'informatique.
-            </p>
-        </div>
-        <div class="social">
-            <p class="sous-titre">Retrouvez-moi sur les résaux sociaux !</p>
-            <a href="https://www.linkedin.com/in/cheikh-omar-sow-54904412b/" target="_blank"><img src="assets/img/linkedin.png" alt="social"></a>
-            <a href="https://github.com/cheikhomarsow/" target="_blank"><img src="assets/img/github.png" alt="social"></a>
-            <a href="https://www.facebook.com/cheikhomar.sow" target="_blank"><img src="assets/img/facebook.png" alt="social"></a>
-            <a href="https://twitter.com/cos45sin45" target="_blank"><img src="assets/img/twitter.png" alt="social"></a>
-            <a href="https://www.instagram.com/cos221_/?hl=fr" target="_blank"><img src="assets/img/instagram.png" alt="social"></a>
-        </div>
+        {% include 'partials/footer.html.twig' %}
     </footer>
 
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>

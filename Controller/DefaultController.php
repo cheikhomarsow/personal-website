@@ -5,6 +5,7 @@ namespace Controller;
 use Model\ArticleManager;
 use Model\UserManager;
 use Model\ForumManager;
+use Model\SearchManager;
 
 class DefaultController extends BaseController
 {
@@ -47,6 +48,48 @@ class DefaultController extends BaseController
                 'questions' => $questions,
                 'countAnswers' => $countAnswers,
             ]);
+    }
+    public function searchAction()
+    {
+        $searchManager = SearchManager::getInstance();
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            if ($searchManager->checkSearch($_POST)) {
+                $search = str_replace(' ', '_', trim($_POST['search']));
+                $this->redirect('search&q=' . $search);
+                $searchManager->getArticlesLike($_POST['search']);
+            }
+        }
+
+        if (isset($_GET['q']) && $_GET['q'] !== '') {
+            $like = str_replace('_', ' ', $_GET['q']);
+            $articles = $searchManager->getArticlesLike($like);
+            $questions = $searchManager->getQuestionsLike($like);
+
+            if (!$articles) {
+                $messageArticle = 'Aucun article correspondant à votre recherche n\'a été trouvé...';
+            }
+            if (!$questions) {
+                $messageQuestion = 'Aucune question correspondant à votre recherche n\'a été trouvé...';
+            }
+
+            echo $this->renderView('search.html.twig',
+                [
+                    'messageArticle' => $messageArticle,
+                    'messageQuestion' => $messageQuestion,
+                    'articles' => $articles,
+                    'questions' => $questions,
+                ]);
+        }else{
+            $messageArticle = 'Aucun article correspondant à votre recherche n\'a été trouvé...';
+            $messageQuestion = 'Aucune question correspondant à votre recherche n\'a été trouvé...';
+
+            echo $this->renderView('search.html.twig',
+                [
+                    'messageArticle' => $messageArticle,
+                    'messageQuestion' => $messageQuestion,
+                ]);
+        }
+
     }
     public function articleAction()
     {

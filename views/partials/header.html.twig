@@ -1,0 +1,56 @@
+<section class="navigation">
+    <div class="nav-container">
+        <div class="brand">
+            <a href="?action=home">COS</a>
+        </div>
+        <nav>
+            <div class="nav-mobile"><a id="nav-toggle" href="#!"><span></span></a></div>
+            <ul class="nav-list">
+                <li>
+                    <a href="?action=home"><img src="assets/img/home.png">&nbsp;&nbsp;Accueil</a>
+                </li>
+                <li>
+                    <a href="?action=forum"><img src="assets/img/question.png">&nbsp;&nbsp;Forum</a>
+                </li>
+                <li>
+                    <a href="?action=contact"><img src="assets/img/contact.png">&nbsp;&nbsp;Contact</a>
+                </li>
+                {% if user.username is defined %}
+                    <li>
+                        <a href="#!"><img src="assets/img/man-user.png">&nbsp;&nbsp;Mon compte</a>
+                        <ul class="nav-dropdown">
+                            {% if admin == true %}
+                                <li>
+                                    <a href="?action=admin"><img src="assets/img/man-with-tie.png">&nbsp;&nbsp;Administration</a>
+                                </li>
+                            {% endif %}
+                            <li>
+                                <a href="?action=user"><img src="assets/img/settings-work-tool.png">&nbsp;&nbsp;Mon profil</a>
+                            </li>
+                            <li>
+                                <a href="?action=logout"><img src="assets/img/logout.png">&nbsp;&nbsp;Me déconnecter</a>
+                            </li>
+                        </ul>
+                    </li>
+                {% else %}
+                    <li>
+                        <a href="?action=reglog"><img src="assets/img/man-user.png">&nbsp;&nbsp;Espace membre</a>
+                    </li>
+                {% endif %}
+                <li>
+                    <div class="flexsearch">
+                        <div class="flexsearch--wrapper">
+                            <form class="flexsearch--form" action="?action=search&q=" method="post">
+                                <div class="flexsearch--input-wrapper">
+                                    <input name="search" class="flexsearch--input" type="search" placeholder="Rechercher sur le site...">
+                                </div>
+                                <input class="flexsearch--submit" type="submit" value="&#10140;"/>
+                            </form>
+                        </div>
+                    </div>
+                </li>
+
+            </ul>
+        </nav>
+    </div>
+</section>
